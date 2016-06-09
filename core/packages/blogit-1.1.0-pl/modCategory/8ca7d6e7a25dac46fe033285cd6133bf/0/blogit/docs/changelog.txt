@@ -1,0 +1,9 @@
+Changelog for blogit
+
+blogit 1.1.0 (02-09-2015)
+---------------------------------
+- add support for dependencies (need MODX 2.4.0-pl or up to use BlogIt)
+
+blogit 1.0.0 (10-08-2015)
+---------------------------------
+- Initial Version

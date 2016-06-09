@@ -1,0 +1,185 @@
+@import "node_modules/bourbon/app/assets/stylesheets/_bourbon"
+@import "_vars.sass"
+h1
+	font-size: em(22px)
+	font-family: $ptsb
+h3
+	font-size: em(18px)
+	font-family: $ptsb
+
+h4
+	font-size: em(15px)
+	font-family: $ptsb
+a:hover
+	text-decoration: none
+
+html body
+	
+	padding: 0
+	margin: 0
+	overflow-x: hidden
+	font-size: 16px
+	font-family: $pts
+	line-height: 1
+	font-weight: normal
+
+header
+	min-height: 135px
+	position: relative
+	background-image: url(../img/head-bg.png)
+	background-repeat: no-repeat
+	background-position: center center
+
+button, button.btn, input, select, textarea
+	&:focus
+		outline: none
+	font-family: $hr
+	height: 30px
+	border: 1px solid #666
+	vertical-align: middle
+	padding: 0 10px
+	line-height: 18px
+
+.loginLoginForm
+	margin: 0
+	font-size: em(13px)
+	width: 730px
+	float: right
+	span > a, span
+		color: $white
+	span a.left 
+		margin-right: 20px
+	span a.right
+		margin-left: 20px
+
+.loginLogin
+	max-height: 51px
+	padding-left: 15px
+	button
+		margin-right: 15px
+		background-image: url(../img/in.png)
+		width: 120px
+		height: 40px
+		background-color: transparent
+		border: none
+
+
+	
+	p.error
+		color: $white
+		margin-top: 4px
+
+.loginUsernameLabel span, .loginPasswordLabel span
+	color: $white
+	font-weight: normal
+	letter-spacing: 1px
+
+.loginLoginFieldset
+	input
+		padding: 0 5px 
+		width: 262px
+		margin: 0 10px
+		font-family: $ptsb
+	a
+		margin: 0 5px
+		color: $white
+		display: inline-block
+
+.loginLoginForm label
+	display: inline-block
+	margin-bottom: 0
+.fa-search
+	margin-right: 9px
+
+.loginRegister
+	color: $white
+	position: relative
+	top: 15px
+	font-size: em(13px)
+	span 
+		b
+			font-family: $ptsb
+	button.out
+		background-image: url(../img/out.png)
+	
+.navbar-wrapper
+	position: absolute
+	width: 100%
+	z-index: 10
+	vertical-align: middle
+	top: 33%
+	
+	.logo
+		color: #d2d7d8
+		font-family: $psbi
+		font-size: em(29px)
+		margin-bottom: 5px
+
+html.slider
+	padding: 0
+
+.navbar-default 
+	.container-fluid
+		background-color: #151f1f
+	.navbar-nav >
+		.active > a, .open > a
+			background-image: none
+
+.navbar
+	position: relative
+	width: 100%
+	left: 0
+	min-height: 48px
+	margin-bottom: 0
+	
+	border-radius: 0
+	border-right: 0
+	border-left: 0
+
+#navbar .navbar-nav
+	width: 635px
+	margin: 0 auto
+	float: none
+
+.navbar
+	.nav >
+		li > a
+			line-height: 36px
+			letter-spacing: 1px
+			text-shadow: none
+			color: $seb
+			
+			font-weight: normal
+			font-size: em(14px)
+			&:hover
+				color: $white
+				-webkit-transition: color 1s ease
+				transition: color 1s ease
+		.active > a
+			color: $white
+			background-color: transparent
+			box-shadow: none
+			&:hover, &:focus
+				color: $white
+				background-color: transparent
+				box-shadow: none
+	.navbar-toggle
+		margin-top: 11px
+		margin-right: 30px
+		background-color: $orange
+
+.navbar-default .navbar-toggle
+	&:focus, &:hover
+		background-color: $orange
+
+.nav-collapse .nav
+	float: none
+
+.navbar-default
+	
+	.navbar-collapse
+		padding: 0
+	
+.navbar-header
+	margin-bottom: 9px
+@import "media"
