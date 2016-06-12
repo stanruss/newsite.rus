@@ -1,5 +1,5 @@
 @import "node_modules/bourbon/app/assets/stylesheets/_bourbon"
-@import "_vars.sass"
+@import "vars"
 
 /*==========  Desktop First Method  ==========*/
 
@@ -16,17 +16,17 @@
 @media only screen and (max-width : 767px)
 	body section.search .sisea-search-form input#search
 		width: 65%
-		
+
 	header
-		min-height: 600px
+		
 		.loginLogin
 			padding-left: 0
-		padding-bottom: 22px
+		
 	.navbar-default .navbar-collapse
-		margin: 10px 0 0 0
+		margin: 0
 	html p.log
 		color: $gbf
-		margin-bottom: 100px
+		
 		
 	.loginLoginForm label
 		display: block
@@ -38,13 +38,7 @@
 			margin-left: 0
 			margin-bottom: 15px
 			margin-top: 4px
-	.loginForm
-		top: 280px
-		height: 300px
-		width: 300px
-		margin: 0 auto
-		position: relative
-		z-index: 2
+	
 
 	.navbar .nav > li > a
 		color: $gbf
@@ -79,10 +73,9 @@
 	.loginLogin
 		button
 			margin-right: 9px
-	.loginForm
-		width: 280px
+	
 	.loginLoginFieldset
-		width: 250px
+		
 		a
 			font-size: 0.8em
 	.loginRegister span

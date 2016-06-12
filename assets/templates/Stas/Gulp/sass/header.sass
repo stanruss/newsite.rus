@@ -1,5 +1,5 @@
 @import "node_modules/bourbon/app/assets/stylesheets/_bourbon"
-@import "_vars.sass"
+@import "vars"
 h1
 	font-size: em(22px)
 	font-family: $ptsb
@@ -21,14 +21,11 @@ html body
 	font-size: 16px
 	font-family: $pts
 	line-height: 1
-	font-weight: normal
+	
 
 header
-	min-height: 135px
 	position: relative
-	background-image: url(../img/head-bg.png)
-	background-repeat: no-repeat
-	background-position: center center
+	
 
 button, button.btn, input, select, textarea
 	&:focus
@@ -39,12 +36,11 @@ button, button.btn, input, select, textarea
 	vertical-align: middle
 	padding: 0 10px
 	line-height: 18px
+	background-color: #333
 
 .loginLoginForm
 	margin: 0
 	font-size: em(13px)
-	width: 730px
-	float: right
 	span > a, span
 		color: $white
 	span a.left 
@@ -54,13 +50,10 @@ button, button.btn, input, select, textarea
 
 .loginLogin
 	max-height: 51px
-	padding-left: 15px
 	button
 		margin-right: 15px
-		background-image: url(../img/in.png)
 		width: 120px
 		height: 40px
-		background-color: transparent
 		border: none
 
 
@@ -78,7 +71,6 @@ button, button.btn, input, select, textarea
 	input
 		padding: 0 5px 
 		width: 262px
-		margin: 0 10px
 		font-family: $ptsb
 	a
 		margin: 0 5px
@@ -102,36 +94,16 @@ button, button.btn, input, select, textarea
 	button.out
 		background-image: url(../img/out.png)
 	
-.navbar-wrapper
-	position: absolute
-	width: 100%
-	z-index: 10
-	vertical-align: middle
-	top: 33%
 	
-	.logo
-		color: #d2d7d8
-		font-family: $psbi
-		font-size: em(29px)
-		margin-bottom: 5px
+	
 
 html.slider
 	padding: 0
 
-.navbar-default 
-	.container-fluid
-		background-color: #151f1f
-	.navbar-nav >
-		.active > a, .open > a
-			background-image: none
-
 .navbar
 	position: relative
-	width: 100%
-	left: 0
 	min-height: 48px
 	margin-bottom: 0
-	
 	border-radius: 0
 	border-right: 0
 	border-left: 0
@@ -147,8 +119,6 @@ html.slider
 			line-height: 36px
 			letter-spacing: 1px
 			text-shadow: none
-			color: $seb
-			
 			font-weight: normal
 			font-size: em(14px)
 			&:hover

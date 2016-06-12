@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 09 2016 г., 10:54
+-- Время создания: Июн 12 2016 г., 18:34
 -- Версия сервера: 5.5.45
 -- Версия PHP: 5.3.29
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- База данных: `poecil`
+-- База данных: `poecilot`
 --
 
 -- --------------------------------------------------------
@@ -1644,7 +1644,7 @@ CREATE TABLE IF NOT EXISTS `modx_manager_log` (
   `item` varchar(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `user_occurred` (`user`,`occurred`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=425 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=438 ;
 
 --
 -- Дамп данных таблицы `modx_manager_log`
@@ -2074,7 +2074,20 @@ INSERT INTO `modx_manager_log` (`id`, `user`, `occurred`, `action`, `classKey`, 
 (421, 1, '2016-06-09 10:40:18', 'propertyset_update_from_element', 'modChunk', '62'),
 (422, 1, '2016-06-09 10:47:07', 'login', 'modContext', 'web'),
 (423, 1, '2016-06-09 10:49:21', 'chunk_update', 'modChunk', '55'),
-(424, 1, '2016-06-09 10:49:21', 'propertyset_update_from_element', 'modChunk', '55');
+(424, 1, '2016-06-09 10:49:21', 'propertyset_update_from_element', 'modChunk', '55'),
+(425, 1, '2016-06-12 17:55:25', 'login', 'modContext', 'mgr'),
+(426, 1, '2016-06-12 17:56:49', 'template_update', 'modTemplate', '6'),
+(427, 1, '2016-06-12 17:56:50', 'propertyset_update_from_element', 'modTemplate', '6'),
+(428, 1, '2016-06-12 17:58:11', 'chunk_update', 'modChunk', '55'),
+(429, 1, '2016-06-12 17:58:11', 'propertyset_update_from_element', 'modChunk', '55'),
+(430, 1, '2016-06-12 18:26:06', 'resource_create', 'modDocument', '18'),
+(431, 1, '2016-06-12 18:26:27', 'delete_resource', 'modDocument', '7'),
+(432, 1, '2016-06-12 18:26:31', 'resource_update', 'modResource', '5'),
+(433, 1, '2016-06-12 18:26:45', 'delete_resource', 'modDocument', '18'),
+(434, 1, '2016-06-12 18:26:48', 'resource_update', 'modResource', '5'),
+(435, 1, '2016-06-12 18:27:15', 'resource_update', 'modResource', '5'),
+(436, 1, '2016-06-12 18:27:30', 'resource_update', 'modResource', '5'),
+(437, 1, '2016-06-12 18:33:51', 'login', 'modContext', 'mgr');
 
 -- --------------------------------------------------------
 
@@ -2649,7 +2662,7 @@ CREATE TABLE IF NOT EXISTS `modx_session` (
 --
 
 INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES
-('en3g0bskrn3tlebgph6j8a0ke4', 1465458771, 'modx.user.contextTokens|a:0:{}');
+('o3b3i0e7iqjb50ogl2sahmc912', 1465745648, 'modx.user.contextTokens|a:0:{}');
 
 -- --------------------------------------------------------
 
@@ -2721,7 +2734,7 @@ CREATE TABLE IF NOT EXISTS `modx_site_content` (
   KEY `show_in_tree` (`show_in_tree`),
   KEY `cache_refresh_idx` (`parent`,`menuindex`,`id`),
   FULLTEXT KEY `content_ft_idx` (`pagetitle`,`longtitle`,`description`,`introtext`,`content`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- Дамп данных таблицы `modx_site_content`
@@ -2732,14 +2745,15 @@ INSERT INTO `modx_site_content` (`id`, `type`, `contentType`, `pagetitle`, `long
 (2, 'document', 'text/html', '404', '', '', '404', '', 1, 0, 0, 0, 0, '', 'Содержимое сайта не найдено.', 0, 0, 0, 0, 1, 1, 1462430056, 1, 1462430093, 0, 0, 0, 1462430040, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, '404.html', 0, 0, 1, NULL),
 (3, 'document', 'text/xml', 'sitemap', '', '', 'sitemap', '', 1, 0, 0, 0, 0, '', '[[pdoSitemap]]', 0, 0, 2, 0, 1, 1, 1462430170, 1, 1462430407, 0, 0, 0, 1462430160, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 2, 'sitemap.xml', 0, 0, 1, NULL),
 (4, 'document', 'text/plain', 'robots', '', '', 'robots', '', 1, 0, 0, 0, 0, '', 'User-agent: *\r\nDisallow: /sm/\r\nDisallow: /assets/components/\r\nDisallow: /core/\r\nDisallow: /connectors/\r\nDisallow: /index.php\r\nDisallow: /index.html\r\nDisallow: /index\r\nDisallow: *?\r\nHost: [[Host]]\r\nSitemap: http://[[Host]]/sitemap.xml\r\n', 0, 0, 3, 0, 1, 1, 1462430229, 1, 1462431562, 0, 0, 0, 1462430220, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 3, 'robots.txt', 0, 0, 1, NULL),
-(5, 'document', 'text/html', 'Статьи', '', 'Demo blog container page for Blogit.', 'blog', '', 1, 0, 0, 0, 1, '', '<h1>Blog overview</h1>', 1, 12, 4, 1, 1, 1, 1462431871, 1, 1464615179, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 1, 'CollectionContainer', 'web', 1, 'blog/', 0, 0, 1, NULL),
-(7, 'document', 'text/html', 'Post 2', '', 'Demo post 2 for the BlogIt extra.', 'post-2', '', 1, 0, 0, 5, 0, 'Demo summary of post 2 for the BlogIt extra.', '<p>Demo content of post 2 for the BlogIt extra.</p>\r\n', 1, 11, 1, 1, 1, 1, 1462431871, 1, 1462439792, 0, 0, 0, 1462439792, 1, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, 'blog/post-2.html', 0, 0, 0, NULL),
+(5, 'document', 'text/html', 'Статьи', '', 'Demo blog container page for Blogit.', 'blog', '', 1, 0, 0, 0, 1, '', '<h1>Blog overview</h1>', 1, 12, 4, 1, 1, 1, 1462431871, 1, 1465745250, 0, 0, 0, 1465745250, 1, '', 0, 0, 0, 0, 1, 'CollectionContainer', 'web', 1, 'blog/', 0, 0, 1, NULL),
+(7, 'document', 'text/html', 'Post 2', '', 'Demo post 2 for the BlogIt extra.', 'post-2', '', 1, 0, 0, 5, 0, 'Demo summary of post 2 for the BlogIt extra.', '<p>Demo content of post 2 for the BlogIt extra.</p>\r\n', 1, 11, 1, 1, 1, 1, 1462431871, 1, 1462439792, 1, 1465745187, 1, 1462439792, 1, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, 'blog/post-2.html', 0, 0, 0, NULL),
 (11, 'document', 'text/html', 'Forgot Password', '', '', 'forgot-password', '', 1, 0, 0, 0, 0, '', '', 1, 4, 8, 1, 1, 1, 1462432162, 1, 1462432811, 0, 0, 0, 1462432140, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, 'forgot-password.html', 0, 0, 1, NULL),
 (12, 'document', 'text/html', 'Reset Password Handler', '', '', 'reset-password-handler', '', 1, 0, 0, 0, 0, '', '<p><span style="font-family: ''Lucida Grande'', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 18px; background-color: rgb(255, 255, 255);">[[!ResetPassword? &amp;loginResourceId=`1`]]</span></p>\r\n', 1, 0, 9, 1, 1, 1, 1462432223, 1, 1462434214, 0, 0, 0, 1462432200, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, 'reset-password-handler.html', 0, 0, 1, NULL),
 (13, 'document', 'text/html', 'Регистрация', '', '', 'registration', '', 1, 0, 0, 0, 0, '', '', 1, 10, 10, 1, 1, 1, 1462432267, 1, 1462433757, 0, 0, 0, 1462432260, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, 'registration.html', 0, 0, 1, NULL),
 (14, 'document', 'text/html', 'Подтверждение регистрации', '', '', 'registration-accese', '', 1, 0, 0, 0, 0, '', '', 1, 9, 11, 1, 1, 1, 1462432309, 1, 1462433702, 0, 0, 0, 1462432260, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, 'registration-accese.html', 0, 0, 1, NULL),
 (15, 'document', 'text/html', 'Активация регистрации', '', '', 'activation', '', 1, 0, 0, 0, 0, '', '', 1, 13, 12, 1, 1, 1, 1462432355, 1, 1462434082, 0, 0, 0, 1462432320, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, 'activation.html', 0, 0, 1, NULL),
-(17, 'document', 'text/html', 'Результаты поиска', '', '', 'result-search', '', 1, 0, 0, 0, 0, '', '', 1, 7, 14, 1, 1, 1, 1462432512, 1, 1462433589, 0, 0, 0, 1462432500, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, 'result-search.html', 0, 0, 1, NULL);
+(17, 'document', 'text/html', 'Результаты поиска', '', '', 'result-search', '', 1, 0, 0, 0, 0, '', '', 1, 7, 14, 1, 1, 1, 1462432512, 1, 1462433589, 0, 0, 0, 1462432500, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, 'result-search.html', 0, 0, 1, NULL),
+(18, 'document', 'text/html', 'fdd', '', '', 'fdd', '', 1, 0, 0, 5, 0, '', '', 1, 12, 1, 1, 1, 1, 1465745166, 0, 0, 1, 1465745205, 1, 1465745166, 1, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, 'blog/fdd.html', 0, 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -2827,7 +2841,7 @@ INSERT INTO `modx_site_htmlsnippets` (`id`, `source`, `property_preprocess`, `na
 (52, 1, 0, 'Content', '', 0, 3, 0, '<div id="content" class="main">\n	[[*id:isnot=`[[++site_start]]`:then=`<h1>[[*longtitle:default=`[[*pagetitle]]`]]</h1>`]]\n	[[*content]]\n</div>', 0, 'a:0:{}', 0, ''),
 (53, 1, 0, 'Content.list', '', 0, 3, 0, '<div id="content" class="main">\n	[[*id:isnot=`[[++site_start]]`:then=`<h1>[[*longtitle:default=`[[*pagetitle]]`]]</h1>`]]\n	[[*content]]\n	[[!getPage?\n		&parents=`[[*id]]`\n		&element=`getResources`\n		&tpl=`tpl.getResources.row`\n		&limit=`5`\n		&pageActiveTpl=`<li[[+activeClasses:default=` class="active"`]]><a[[+activeClasses:default=` class="active"`]][[+title]] href="[[+href]]">[[+pageNo]]</a></li>`\n	]]\n\n	<div class="pagination">\n		<ul>\n			[[!+page.nav]]\n		</ul>\n	</div>\n</div>\n', 0, 'a:0:{}', 0, ''),
 (54, 1, 0, 'Counters', '', 0, 3, 0, '<!-- Javascript code for counting page hits -->\n<!-- For example - Google analitics -->\n', 0, 'a:0:{}', 0, ''),
-(55, 1, 0, 'Header', '', 0, 3, 0, '\n<div class="navbar-wrapper">\n    <div class="container">\n       \n        \n\n        \n    <div class="logo pull-left">Poecilotheria.ru</div>\n\n[[!Login? &loginTpl=`lgnLoginTpl` &logoutTpl=`lgnLogoutTpl` &errTpl=`lgnErrTpl` &loginResourceId=`1` &logoutResourceId=`1`]]\n\n        \n	    \n            \n    </div>\n </div>', 0, 'a:0:{}', 0, ''),
+(55, 1, 0, 'Header', '', 0, 3, 0, '\n<div class="navbar-wrapper">\n    <div class="container">\n       \n        \n\n        \n    <div class="logo">Poecilotheria.ru</div>\n\n[[!Login? &loginTpl=`lgnLoginTpl` &logoutTpl=`lgnLogoutTpl` &errTpl=`lgnErrTpl` &loginResourceId=`1` &logoutResourceId=`1`]]\n\n        \n	    \n            \n    </div>\n </div>', 0, 'a:0:{}', 0, ''),
 (56, 1, 0, 'Hidden', '', 0, 3, 0, '<div class=hidden>\n[[!getImageList?\n               &tvname=`hiddeninfo`\n               &tpl=`hiddeninfo`\n               ]]	\n</div>', 0, 'a:0:{}', 0, ''),
 (57, 1, 0, 'Info', '', 0, 3, 0, '<section class="info">\n    <div class="container">\n        <div class="row">\n            <div class="col-md-12">\n               [[!getImageList?\n               &tvname=`opis`\n               &tpl=`opis`\n               ]]\n            </div>\n            \n        </div>\n    </div>\n</section>', 0, 'a:0:{}', 0, ''),
 (58, 1, 0, 'magnific-popupcss', '', 0, 3, 0, ' <link href="[[++assets_url]]templates/Stas/libs/magnific-popup/dist/magnific-popup.css" rel="stylesheet">\n     <link href="[[++assets_url]]templates/Stas/libs/magnific-popup/dist/magnific-custom.css" rel="stylesheet">', 0, 'a:0:{}', 0, ''),
@@ -4142,7 +4156,7 @@ CREATE TABLE IF NOT EXISTS `modx_user_attributes` (
 --
 
 INSERT INTO `modx_user_attributes` (`id`, `internalKey`, `fullname`, `email`, `phone`, `mobilephone`, `blocked`, `blockeduntil`, `blockedafter`, `logincount`, `lastlogin`, `thislogin`, `failedlogincount`, `sessionid`, `dob`, `gender`, `address`, `country`, `city`, `state`, `zip`, `fax`, `photo`, `comment`, `website`, `extended`) VALUES
-(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 48, 1465454320, 1465458427, 0, 'oot65ttl4n8e7ikma1u4djcd92', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
+(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 50, 1465743325, 1465745631, 0, '555l3gdbu3pujvp98jhlg3r1k3', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
 (5, 21, 'Елена', 'El.v.grach@gmail.com', '', '', 0, 0, 0, 2, 1462557837, 1463385057, 0, '875e8b21d41ee290402eb98fb8c389f8', 0, 0, '', '', '', '', '', '', '', '', '', '[]'),
 (6, 22, 'Владимир', 'vova.karabok.02@mail.ru', '', '', 0, 0, 0, 1, 0, 1463421916, 0, 'd9d0b90b26e0a8a18db0f838d8bc16b5', 0, 0, '', '', '', '', '', '', '', '', '', '[]');
 

@@ -7,9 +7,9 @@ $database_server = '127.0.0.1';
 $database_user = 'root';
 $database_password = '';
 $database_connection_charset = 'utf8';
-$dbase = 'poecil';
+$dbase = 'poecilot';
 $table_prefix = 'modx_';
-$database_dsn = 'mysql:host=127.0.0.1;dbname=poecil;charset=utf8';
+$database_dsn = 'mysql:host=127.0.0.1;dbname=poecilot;charset=utf8';
 $config_options = array (
 );
 $driver_options = array (
