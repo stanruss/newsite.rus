@@ -1,155 +1,70 @@
 @import "node_modules/bourbon/app/assets/stylesheets/_bourbon"
 @import "vars"
+@import "media"
 h1
-	font-size: em(22px)
+	font-size: em(36px)
+	font-family: $ptsb
+h2
+	font-size: em(30px)
 	font-family: $ptsb
 h3
-	font-size: em(18px)
+	font-size: em(24px)
 	font-family: $ptsb
 
 h4
-	font-size: em(15px)
+	font-size: em(18px)
+	font-family: $ptsb
+h5
+	font-size: em(14px)
+	font-family: $ptsb
+h6
+	font-size: em(12px)
 	font-family: $ptsb
 a:hover
 	text-decoration: none
 
 html body
-	
+	font-family: $pts
+	font-size: 16px
+	font-weight: normal
+	line-height: 1.5em
+	letter-spacing: -.015em
+	color: $sdgrey
+	background-color: #fff
+	border: none
 	padding: 0
 	margin: 0
 	overflow-x: hidden
-	font-size: 16px
-	font-family: $pts
-	line-height: 1
-	
-
-header
-	position: relative
-	
-
-button, button.btn, input, select, textarea
-	&:focus
-		outline: none
-	font-family: $hr
-	height: 30px
-	border: 1px solid #666
-	vertical-align: middle
-	padding: 0 10px
-	line-height: 18px
-	background-color: #333
-
-.loginLoginForm
-	margin: 0
-	font-size: em(13px)
-	span > a, span
-		color: $white
-	span a.left 
-		margin-right: 20px
-	span a.right
-		margin-left: 20px
-
-.loginLogin
-	max-height: 51px
+.loginLoginFieldset	
+	input[type="text"],
+	input[type="password"],
+	textarea,
 	button
-		margin-right: 15px
-		width: 120px
-		height: 40px
-		border: none
+		&:focus
+			outline: none
+		font-family: $pts
+		font-size: 0.9em
+		border: 1px solid #666
+		vertical-align: middle
+		line-height: 18px
+		background-color: #fff
+		padding: 9px 15px
+
+p.error
+	color: $black
+	margin-top: 4px
+
 
 
 	
-	p.error
-		color: $white
-		margin-top: 4px
 
-.loginUsernameLabel span, .loginPasswordLabel span
-	color: $white
-	font-weight: normal
-	letter-spacing: 1px
 
-.loginLoginFieldset
-	input
-		padding: 0 5px 
-		width: 262px
-		font-family: $ptsb
-	a
-		margin: 0 5px
-		color: $white
-		display: inline-block
 
-.loginLoginForm label
-	display: inline-block
-	margin-bottom: 0
-.fa-search
-	margin-right: 9px
 
-.loginRegister
-	color: $white
-	position: relative
-	top: 15px
-	font-size: em(13px)
-	span 
-		b
-			font-family: $ptsb
-	button.out
-		background-image: url(../img/out.png)
+
 	
 	
 	
 
-html.slider
-	padding: 0
 
-.navbar
-	position: relative
-	min-height: 48px
-	margin-bottom: 0
-	border-radius: 0
-	border-right: 0
-	border-left: 0
 
-#navbar .navbar-nav
-	width: 635px
-	margin: 0 auto
-	float: none
-
-.navbar
-	.nav >
-		li > a
-			line-height: 36px
-			letter-spacing: 1px
-			text-shadow: none
-			font-weight: normal
-			font-size: em(14px)
-			&:hover
-				color: $white
-				-webkit-transition: color 1s ease
-				transition: color 1s ease
-		.active > a
-			color: $white
-			background-color: transparent
-			box-shadow: none
-			&:hover, &:focus
-				color: $white
-				background-color: transparent
-				box-shadow: none
-	.navbar-toggle
-		margin-top: 11px
-		margin-right: 30px
-		background-color: $orange
-
-.navbar-default .navbar-toggle
-	&:focus, &:hover
-		background-color: $orange
-
-.nav-collapse .nav
-	float: none
-
-.navbar-default
-	
-	.navbar-collapse
-		padding: 0
-	
-.navbar-header
-	margin-bottom: 9px
-@import "media"
