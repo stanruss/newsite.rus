@@ -14,7 +14,23 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
-	/**/
+	nav.navbar-default
+		.navbar-nav
+			height: auto
+			text-align: center
+			li
+				margin-left: 0
+	nav.navbar-default .navbar-nav>.active>a,
+	nav.navbar-default .navbar-nav>.active>a:focus, 
+	nav.navbar-default .navbar-nav>.active>a:hover
+		color: $mcb
+		border-bottom: 1px #333 solid
+		border-top: 1px #333 solid
+	
+	nav.navbar-default .navbar-nav li > a
+		color: $sdgrey
+	nav.navbar-default .navbar-nav li > a:hover
+		color: $mco
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 400px)

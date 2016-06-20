@@ -25,38 +25,95 @@ a:hover
 
 html body
 	font-family: $pts
-	font-size: 16px
+	font-size: 1.6rem
 	font-weight: normal
 	line-height: 1.5em
 	letter-spacing: -.015em
 	color: $sdgrey
-	background-color: #fff
+	background-color: $white
 	border: none
 	padding: 0
 	margin: 0
 	overflow-x: hidden
-.loginLoginFieldset	
-	input[type="text"],
-	input[type="password"],
-	textarea,
-	button
-		&:focus
-			outline: none
-		font-family: $pts
-		font-size: 0.9em
-		border: 1px solid #666
-		vertical-align: middle
-		line-height: 18px
-		background-color: #fff
-		padding: 9px 15px
 
 p.error
 	color: $black
 	margin-top: 4px
 
-
-
-	
+header
+	position: fixed
+	height: 7.8rem
+	width: 100%
+	background-color: $mcg
+	background-image: url(../img/sunlight.png)
+	background-position: center center
+	background-size: 71px 304px
+	background-repeat: repeat-x
+	z-index: 50000
+.header-menu
+	.logo
+		position: relative
+		float: left
+		display: block
+		width: 320px
+		font-family: $psbi
+		z-index: 2
+		line-height: 78px
+		font-size: 3rem
+		color: $white
+		text-transform: uppercase
+		margin-left: 15px
+		margin-right: 15px
+		text-shadow: -2px 2px 3px #000
+	.col-lg-12
+		padding-right: 0
+		padding-left: 0
+.navbar-default
+	height: 78px
+	margin-bottom: 0
+	background-image: none
+	border: none
+	background-color: transparent
+	.navbar-nav
+		height: 78px
+		padding-top: 15px
+		li
+			margin-left: 55px
+			a
+				line-height: 38px
+				font-size: 22px
+				font-family: $psbi
+				color: $white
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a:hover
+	background-image: none
+	background-color: transparent
+	box-shadow: none
+.navbar-default .navbar-nav>li > a:before
+	transition: 0.2s ease
+	position: absolute
+	height: 2px
+	bottom: 0
+	left: 0
+	content: ''
+	border-radius: 2px
+	background-color: $white
+	opacity: 1
+	width: 0
+	z-index: 2
+.navbar-default .navbar-nav>li > a:hover:before,
+.navbar-default .navbar-nav>li > a.active:before
+	width: 100%	
+.navbar-default .navbar-nav > .active > a:before,  
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover
+	width: 100%
+section
+	&.carousels
+		position: relative
+		top: 7.8rem
+		height: 5000px
 
 
 
