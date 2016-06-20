@@ -23,15 +23,21 @@
 			li
 				margin-left: 0
 				a
-					font-size: em(17px)
+					font-size: em(16px)
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
+	.carousels .loginRegister
+		margin-top: 10px
+	body section.carousels .loginForm
+		margin-top: 30px
 	nav.navbar-default
 		.navbar-nav
 			height: auto
 			text-align: center
 			float: none
+			background-color: #fff
+			border-bottom: 2px $mcb solid
 			li
 				margin-left: 0
 	nav.navbar-default .navbar-nav>.active>a,
@@ -40,9 +46,11 @@
 		color: $mcb
 		border-bottom: 1px #333 solid
 		border-top: 1px #333 solid
+		text-shadow: none
 	
 	nav.navbar-default .navbar-nav li > a
 		color: $sdgrey
+		text-shadow: none
 	nav.navbar-default .navbar-nav li > a:hover
 		color: $mco
 	
