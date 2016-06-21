@@ -7,10 +7,14 @@
 @media only screen and (max-width : 1300px)
 	nav.navbar-default 
 		.navbar-nav li
-			margin-left: 10px
+			margin-left: 0
 	header .header-menu
 		.logo
 			width: 245px
+	section.carousels .loginForm
+		width: 261px
+		.forget
+			width: 261px
 
 
 /* Medium Devices, Desktops */
@@ -28,6 +32,7 @@
 		width: 210px
 		.forget
 			font-size: em(12px)
+			width: 210px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
@@ -35,6 +40,7 @@
 		margin-top: 10px
 	body section.carousels .loginForm
 		margin-top: 30px
+		width: 70%
 	nav.navbar-default
 		.navbar-nav
 			height: auto
@@ -59,8 +65,9 @@
 		color: $mco
 	
 /* Extra Small Devices, Phones */
-@media only screen and (max-width : 420px)
-	/**/
+@media only screen and (max-width : 400px)
+	body section.carousels .loginForm
+		width: 210px
 	
 
 /* Custom, iPhone Retina */

@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10.10
+-- version 4.4.15.5
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 21 2016 г., 08:33
--- Версия сервера: 5.5.45
+-- Время создания: Июн 21 2016 г., 14:29
+-- Версия сервера: 5.5.48
 -- Версия PHP: 5.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- База данных: `poecilot`
@@ -27,19 +27,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_actiondom` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `target` varchar(100) NOT NULL DEFAULT '',
   `principal_class` varchar(100) NOT NULL DEFAULT 'modPrincipal',
   `principal` int(10) unsigned NOT NULL DEFAULT '0',
   `authority` int(10) unsigned NOT NULL DEFAULT '9999',
-  `policy` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `target` (`target`),
-  KEY `principal_class` (`principal_class`),
-  KEY `principal` (`principal`),
-  KEY `authority` (`authority`),
-  KEY `policy` (`policy`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `policy` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -48,19 +42,13 @@ CREATE TABLE IF NOT EXISTS `modx_access_actiondom` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_actions` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `target` varchar(100) NOT NULL DEFAULT '',
   `principal_class` varchar(100) NOT NULL DEFAULT 'modPrincipal',
   `principal` int(10) unsigned NOT NULL DEFAULT '0',
   `authority` int(10) unsigned NOT NULL DEFAULT '9999',
-  `policy` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `target` (`target`),
-  KEY `principal_class` (`principal_class`),
-  KEY `principal` (`principal`),
-  KEY `authority` (`authority`),
-  KEY `policy` (`policy`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `policy` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -69,21 +57,14 @@ CREATE TABLE IF NOT EXISTS `modx_access_actions` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_category` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `target` varchar(100) NOT NULL DEFAULT '',
   `principal_class` varchar(100) NOT NULL DEFAULT 'modPrincipal',
   `principal` int(10) unsigned NOT NULL DEFAULT '0',
   `authority` int(10) unsigned NOT NULL DEFAULT '9999',
   `policy` int(10) unsigned NOT NULL DEFAULT '0',
-  `context_key` varchar(100) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `target` (`target`),
-  KEY `principal_class` (`principal_class`),
-  KEY `principal` (`principal`),
-  KEY `authority` (`authority`),
-  KEY `policy` (`policy`),
-  KEY `context_key` (`context_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `context_key` varchar(100) NOT NULL DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -92,19 +73,13 @@ CREATE TABLE IF NOT EXISTS `modx_access_category` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_context` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `target` varchar(100) NOT NULL DEFAULT '',
   `principal_class` varchar(100) NOT NULL DEFAULT 'modPrincipal',
   `principal` int(10) unsigned NOT NULL DEFAULT '0',
   `authority` int(10) unsigned NOT NULL DEFAULT '9999',
-  `policy` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `target` (`target`),
-  KEY `principal_class` (`principal_class`),
-  KEY `principal` (`principal`),
-  KEY `authority` (`authority`),
-  KEY `policy` (`policy`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `policy` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_access_context`
@@ -123,21 +98,14 @@ INSERT INTO `modx_access_context` (`id`, `target`, `principal_class`, `principal
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_elements` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `target` varchar(100) NOT NULL DEFAULT '',
   `principal_class` varchar(100) NOT NULL DEFAULT 'modPrincipal',
   `principal` int(10) unsigned NOT NULL DEFAULT '0',
   `authority` int(10) unsigned NOT NULL DEFAULT '9999',
   `policy` int(10) unsigned NOT NULL DEFAULT '0',
-  `context_key` varchar(100) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `target` (`target`),
-  KEY `principal_class` (`principal_class`),
-  KEY `principal` (`principal`),
-  KEY `authority` (`authority`),
-  KEY `policy` (`policy`),
-  KEY `context_key` (`context_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `context_key` varchar(100) NOT NULL DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -146,21 +114,14 @@ CREATE TABLE IF NOT EXISTS `modx_access_elements` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_media_source` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `target` varchar(100) NOT NULL DEFAULT '',
   `principal_class` varchar(100) NOT NULL DEFAULT 'modPrincipal',
   `principal` int(10) unsigned NOT NULL DEFAULT '0',
   `authority` int(10) unsigned NOT NULL DEFAULT '9999',
   `policy` int(10) unsigned NOT NULL DEFAULT '0',
-  `context_key` varchar(100) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `target` (`target`),
-  KEY `principal_class` (`principal_class`),
-  KEY `principal` (`principal`),
-  KEY `authority` (`authority`),
-  KEY `policy` (`policy`),
-  KEY `context_key` (`context_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `context_key` varchar(100) NOT NULL DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -169,19 +130,13 @@ CREATE TABLE IF NOT EXISTS `modx_access_media_source` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_menus` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `target` varchar(100) NOT NULL DEFAULT '',
   `principal_class` varchar(100) NOT NULL DEFAULT 'modPrincipal',
   `principal` int(10) unsigned NOT NULL DEFAULT '0',
   `authority` int(10) unsigned NOT NULL DEFAULT '9999',
-  `policy` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `target` (`target`),
-  KEY `principal_class` (`principal_class`),
-  KEY `principal` (`principal`),
-  KEY `authority` (`authority`),
-  KEY `policy` (`policy`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `policy` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -190,21 +145,14 @@ CREATE TABLE IF NOT EXISTS `modx_access_menus` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_namespace` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `target` varchar(100) NOT NULL DEFAULT '',
   `principal_class` varchar(100) NOT NULL DEFAULT 'modPrincipal',
   `principal` int(10) unsigned NOT NULL DEFAULT '0',
   `authority` int(10) unsigned NOT NULL DEFAULT '9999',
   `policy` int(10) unsigned NOT NULL DEFAULT '0',
-  `context_key` varchar(100) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `target` (`target`),
-  KEY `principal_class` (`principal_class`),
-  KEY `principal` (`principal`),
-  KEY `authority` (`authority`),
-  KEY `policy` (`policy`),
-  KEY `context_key` (`context_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `context_key` varchar(100) NOT NULL DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -213,15 +161,12 @@ CREATE TABLE IF NOT EXISTS `modx_access_namespace` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_permissions` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `template` int(10) unsigned NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL DEFAULT '',
   `description` text NOT NULL,
-  `value` tinyint(1) unsigned NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`),
-  KEY `template` (`template`),
-  KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=231 ;
+  `value` tinyint(1) unsigned NOT NULL DEFAULT '1'
+) ENGINE=MyISAM AUTO_INCREMENT=231 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_access_permissions`
@@ -466,20 +411,15 @@ INSERT INTO `modx_access_permissions` (`id`, `template`, `name`, `description`, 
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_policies` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` mediumtext,
   `parent` int(10) unsigned NOT NULL DEFAULT '0',
   `template` int(10) unsigned NOT NULL DEFAULT '0',
   `class` varchar(255) NOT NULL DEFAULT '',
   `data` text,
-  `lexicon` varchar(255) NOT NULL DEFAULT 'permissions',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`),
-  KEY `parent` (`parent`),
-  KEY `class` (`class`),
-  KEY `template` (`template`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+  `lexicon` varchar(255) NOT NULL DEFAULT 'permissions'
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_access_policies`
@@ -507,13 +447,12 @@ INSERT INTO `modx_access_policies` (`id`, `name`, `description`, `parent`, `temp
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_policy_templates` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `template_group` int(10) unsigned NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL DEFAULT '',
   `description` mediumtext,
-  `lexicon` varchar(255) NOT NULL DEFAULT 'permissions',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+  `lexicon` varchar(255) NOT NULL DEFAULT 'permissions'
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_access_policy_templates`
@@ -536,11 +475,10 @@ INSERT INTO `modx_access_policy_templates` (`id`, `template_group`, `name`, `des
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_policy_template_groups` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
-  `description` mediumtext,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+  `description` mediumtext
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_access_policy_template_groups`
@@ -561,21 +499,14 @@ INSERT INTO `modx_access_policy_template_groups` (`id`, `name`, `description`) V
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_resources` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `target` varchar(100) NOT NULL DEFAULT '',
   `principal_class` varchar(100) NOT NULL DEFAULT 'modPrincipal',
   `principal` int(10) unsigned NOT NULL DEFAULT '0',
   `authority` int(10) unsigned NOT NULL DEFAULT '9999',
   `policy` int(10) unsigned NOT NULL DEFAULT '0',
-  `context_key` varchar(100) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `target` (`target`),
-  KEY `principal_class` (`principal_class`),
-  KEY `principal` (`principal`),
-  KEY `authority` (`authority`),
-  KEY `policy` (`policy`),
-  KEY `context_key` (`context_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `context_key` varchar(100) NOT NULL DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -584,21 +515,14 @@ CREATE TABLE IF NOT EXISTS `modx_access_resources` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_resource_groups` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `target` varchar(100) NOT NULL DEFAULT '',
   `principal_class` varchar(100) NOT NULL DEFAULT 'modPrincipal',
   `principal` int(10) unsigned NOT NULL DEFAULT '0',
   `authority` int(10) unsigned NOT NULL DEFAULT '9999',
   `policy` int(10) unsigned NOT NULL DEFAULT '0',
-  `context_key` varchar(100) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `target` (`target`),
-  KEY `principal_class` (`principal_class`,`target`,`principal`,`authority`),
-  KEY `principal` (`principal`),
-  KEY `authority` (`authority`),
-  KEY `policy` (`policy`),
-  KEY `context_key` (`context_key`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `context_key` varchar(100) NOT NULL DEFAULT ''
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_access_resource_groups`
@@ -614,21 +538,14 @@ INSERT INTO `modx_access_resource_groups` (`id`, `target`, `principal_class`, `p
 --
 
 CREATE TABLE IF NOT EXISTS `modx_access_templatevars` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `target` varchar(100) NOT NULL DEFAULT '',
   `principal_class` varchar(100) NOT NULL DEFAULT 'modPrincipal',
   `principal` int(10) unsigned NOT NULL DEFAULT '0',
   `authority` int(10) unsigned NOT NULL DEFAULT '9999',
   `policy` int(10) unsigned NOT NULL DEFAULT '0',
-  `context_key` varchar(100) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `target` (`target`),
-  KEY `principal_class` (`principal_class`),
-  KEY `principal` (`principal`),
-  KEY `authority` (`authority`),
-  KEY `policy` (`policy`),
-  KEY `context_key` (`context_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `context_key` varchar(100) NOT NULL DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -637,7 +554,7 @@ CREATE TABLE IF NOT EXISTS `modx_access_templatevars` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_actiondom` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `set` int(11) NOT NULL DEFAULT '0',
   `action` varchar(255) NOT NULL DEFAULT '',
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -651,15 +568,8 @@ CREATE TABLE IF NOT EXISTS `modx_actiondom` (
   `constraint_class` varchar(100) NOT NULL DEFAULT '',
   `active` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `for_parent` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `rank` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `set` (`set`),
-  KEY `action` (`action`),
-  KEY `name` (`name`),
-  KEY `active` (`active`),
-  KEY `for_parent` (`for_parent`),
-  KEY `rank` (`rank`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `rank` int(11) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -668,17 +578,14 @@ CREATE TABLE IF NOT EXISTS `modx_actiondom` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_actions` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `namespace` varchar(100) NOT NULL DEFAULT 'core',
   `controller` varchar(255) NOT NULL,
   `haslayout` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `lang_topics` text NOT NULL,
   `assets` text NOT NULL,
-  `help_url` text NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `namespace` (`namespace`),
-  KEY `controller` (`controller`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+  `help_url` text NOT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_actions`
@@ -700,19 +607,15 @@ INSERT INTO `modx_actions` (`id`, `namespace`, `controller`, `haslayout`, `lang_
 --
 
 CREATE TABLE IF NOT EXISTS `modx_actions_fields` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `action` varchar(255) NOT NULL DEFAULT '',
   `name` varchar(255) NOT NULL DEFAULT '',
   `type` varchar(100) NOT NULL DEFAULT 'field',
   `tab` varchar(255) NOT NULL DEFAULT '',
   `form` varchar(255) NOT NULL DEFAULT '',
   `other` varchar(255) NOT NULL DEFAULT '',
-  `rank` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `action` (`action`),
-  KEY `type` (`type`),
-  KEY `tab` (`tab`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=77 ;
+  `rank` int(11) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=77 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_actions_fields`
@@ -808,8 +711,7 @@ CREATE TABLE IF NOT EXISTS `modx_active_users` (
   `lasthit` int(20) NOT NULL DEFAULT '0',
   `id` int(10) DEFAULT NULL,
   `action` varchar(255) NOT NULL DEFAULT '',
-  `ip` varchar(20) NOT NULL DEFAULT '',
-  PRIMARY KEY (`internalKey`)
+  `ip` varchar(20) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -819,15 +721,11 @@ CREATE TABLE IF NOT EXISTS `modx_active_users` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_categories` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `parent` int(10) unsigned DEFAULT '0',
   `category` varchar(45) NOT NULL DEFAULT '',
-  `rank` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `category` (`parent`,`category`),
-  KEY `parent` (`parent`),
-  KEY `rank` (`rank`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+  `rank` int(11) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_categories`
@@ -863,8 +761,7 @@ INSERT INTO `modx_categories` (`id`, `parent`, `category`, `rank`) VALUES
 CREATE TABLE IF NOT EXISTS `modx_categories_closure` (
   `ancestor` int(10) unsigned NOT NULL DEFAULT '0',
   `descendant` int(10) unsigned NOT NULL DEFAULT '0',
-  `depth` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ancestor`,`descendant`)
+  `depth` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -918,17 +815,13 @@ INSERT INTO `modx_categories_closure` (`ancestor`, `descendant`, `depth`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `modx_class_map` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `class` varchar(120) NOT NULL DEFAULT '',
   `parent_class` varchar(120) NOT NULL DEFAULT '',
   `name_field` varchar(255) NOT NULL DEFAULT 'name',
   `path` tinytext,
-  `lexicon` varchar(255) NOT NULL DEFAULT 'core:resource',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `class` (`class`),
-  KEY `parent_class` (`parent_class`),
-  KEY `name_field` (`name_field`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+  `lexicon` varchar(255) NOT NULL DEFAULT 'core:resource'
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_class_map`
@@ -952,12 +845,11 @@ INSERT INTO `modx_class_map` (`id`, `class`, `parent_class`, `name_field`, `path
 --
 
 CREATE TABLE IF NOT EXISTS `modx_clientconfig_group` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `label` varchar(75) NOT NULL DEFAULT '',
   `description` text NOT NULL,
-  `sortorder` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `sortorder` int(10) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_clientconfig_group`
@@ -973,7 +865,7 @@ INSERT INTO `modx_clientconfig_group` (`id`, `label`, `description`, `sortorder`
 --
 
 CREATE TABLE IF NOT EXISTS `modx_clientconfig_setting` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `key` varchar(75) NOT NULL DEFAULT '',
   `label` varchar(75) NOT NULL DEFAULT '',
   `xtype` varchar(75) NOT NULL DEFAULT '',
@@ -983,9 +875,8 @@ CREATE TABLE IF NOT EXISTS `modx_clientconfig_setting` (
   `value` mediumtext NOT NULL,
   `default` mediumtext NOT NULL,
   `group` int(11) DEFAULT '0',
-  `options` mediumtext,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+  `options` mediumtext
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_clientconfig_setting`
@@ -1007,8 +898,7 @@ INSERT INTO `modx_clientconfig_setting` (`id`, `key`, `label`, `xtype`, `descrip
 
 CREATE TABLE IF NOT EXISTS `modx_collection_resource_template` (
   `collection_template` int(10) unsigned NOT NULL,
-  `resource_template` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`collection_template`,`resource_template`)
+  `resource_template` int(10) unsigned NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1020,8 +910,7 @@ CREATE TABLE IF NOT EXISTS `modx_collection_resource_template` (
 CREATE TABLE IF NOT EXISTS `modx_collection_selections` (
   `collection` int(10) unsigned NOT NULL,
   `resource` int(10) unsigned NOT NULL,
-  `menuindex` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`collection`,`resource`)
+  `menuindex` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1031,12 +920,10 @@ CREATE TABLE IF NOT EXISTS `modx_collection_selections` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_collection_settings` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `collection` int(10) unsigned NOT NULL,
-  `template` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `collection` (`collection`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `template` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_collection_settings`
@@ -1052,7 +939,7 @@ INSERT INTO `modx_collection_settings` (`id`, `collection`, `template`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `modx_collection_templates` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(50) NOT NULL,
   `description` varchar(255) NOT NULL DEFAULT '',
   `global_template` int(1) NOT NULL DEFAULT '0',
@@ -1086,10 +973,8 @@ CREATE TABLE IF NOT EXISTS `modx_collection_templates` (
   `child_content_disposition` int(1) DEFAULT NULL,
   `permanent_sort_before` varchar(255) NOT NULL DEFAULT '',
   `permanent_sort_after` varchar(255) NOT NULL DEFAULT '',
-  `selection_link_condition` text,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `selection_link_condition` text
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_collection_templates`
@@ -1105,7 +990,7 @@ INSERT INTO `modx_collection_templates` (`id`, `name`, `description`, `global_te
 --
 
 CREATE TABLE IF NOT EXISTS `modx_collection_template_columns` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `template` int(10) unsigned NOT NULL,
   `label` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -1116,9 +1001,8 @@ CREATE TABLE IF NOT EXISTS `modx_collection_template_columns` (
   `renderer` varchar(255) NOT NULL DEFAULT '',
   `php_renderer` varchar(255) NOT NULL DEFAULT '',
   `position` int(10) unsigned NOT NULL DEFAULT '0',
-  `sort_type` varchar(64) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `sort_type` varchar(64) DEFAULT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_collection_template_columns`
@@ -1138,16 +1022,14 @@ INSERT INTO `modx_collection_template_columns` (`id`, `template`, `label`, `name
 --
 
 CREATE TABLE IF NOT EXISTS `modx_content_type` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` tinytext,
   `mime_type` tinytext,
   `file_extensions` tinytext,
   `headers` mediumtext,
-  `binary` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+  `binary` tinyint(1) unsigned NOT NULL DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_content_type`
@@ -1173,10 +1055,7 @@ CREATE TABLE IF NOT EXISTS `modx_context` (
   `key` varchar(100) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `description` tinytext,
-  `rank` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`key`),
-  KEY `name` (`name`),
-  KEY `rank` (`rank`)
+  `rank` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -1195,8 +1074,7 @@ INSERT INTO `modx_context` (`key`, `name`, `description`, `rank`) VALUES
 
 CREATE TABLE IF NOT EXISTS `modx_context_resource` (
   `context_key` varchar(255) NOT NULL,
-  `resource` int(11) unsigned NOT NULL,
-  PRIMARY KEY (`context_key`,`resource`)
+  `resource` int(11) unsigned NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1212,8 +1090,7 @@ CREATE TABLE IF NOT EXISTS `modx_context_setting` (
   `xtype` varchar(75) NOT NULL DEFAULT 'textfield',
   `namespace` varchar(40) NOT NULL DEFAULT 'core',
   `area` varchar(255) NOT NULL DEFAULT '',
-  `editedon` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`context_key`,`key`)
+  `editedon` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -1231,14 +1108,11 @@ INSERT INTO `modx_context_setting` (`context_key`, `key`, `value`, `xtype`, `nam
 --
 
 CREATE TABLE IF NOT EXISTS `modx_dashboard` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `description` text,
-  `hide_trees` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `name` (`name`),
-  KEY `hide_trees` (`hide_trees`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `hide_trees` tinyint(1) unsigned NOT NULL DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_dashboard`
@@ -1254,20 +1128,15 @@ INSERT INTO `modx_dashboard` (`id`, `name`, `description`, `hide_trees`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `modx_dashboard_widget` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `description` text,
   `type` varchar(100) NOT NULL,
   `content` mediumtext,
   `namespace` varchar(255) NOT NULL DEFAULT '',
   `lexicon` varchar(255) NOT NULL DEFAULT 'core:dashboards',
-  `size` varchar(255) NOT NULL DEFAULT 'half',
-  PRIMARY KEY (`id`),
-  KEY `name` (`name`),
-  KEY `type` (`type`),
-  KEY `namespace` (`namespace`),
-  KEY `lexicon` (`lexicon`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `size` varchar(255) NOT NULL DEFAULT 'half'
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_dashboard_widget`
@@ -1289,9 +1158,7 @@ INSERT INTO `modx_dashboard_widget` (`id`, `name`, `description`, `type`, `conte
 CREATE TABLE IF NOT EXISTS `modx_dashboard_widget_placement` (
   `dashboard` int(10) unsigned NOT NULL DEFAULT '0',
   `widget` int(10) unsigned NOT NULL DEFAULT '0',
-  `rank` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`dashboard`,`widget`),
-  KEY `rank` (`rank`)
+  `rank` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -1312,13 +1179,11 @@ INSERT INTO `modx_dashboard_widget_placement` (`dashboard`, `widget`, `rank`) VA
 --
 
 CREATE TABLE IF NOT EXISTS `modx_documentgroup_names` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `private_memgroup` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `private_webgroup` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `private_webgroup` tinyint(1) unsigned NOT NULL DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_documentgroup_names`
@@ -1334,13 +1199,10 @@ INSERT INTO `modx_documentgroup_names` (`id`, `name`, `private_memgroup`, `priva
 --
 
 CREATE TABLE IF NOT EXISTS `modx_document_groups` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `document_group` int(10) NOT NULL DEFAULT '0',
-  `document` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `document_group` (`document_group`),
-  KEY `document` (`document`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `document` int(10) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1351,8 +1213,7 @@ CREATE TABLE IF NOT EXISTS `modx_document_groups` (
 CREATE TABLE IF NOT EXISTS `modx_element_property_sets` (
   `element` int(10) unsigned NOT NULL DEFAULT '0',
   `element_class` varchar(100) NOT NULL DEFAULT '',
-  `property_set` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`element`,`element_class`,`property_set`)
+  `property_set` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1362,7 +1223,7 @@ CREATE TABLE IF NOT EXISTS `modx_element_property_sets` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_extension_packages` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `namespace` varchar(40) NOT NULL DEFAULT 'core',
   `name` varchar(100) NOT NULL DEFAULT 'core',
   `path` text,
@@ -1370,11 +1231,8 @@ CREATE TABLE IF NOT EXISTS `modx_extension_packages` (
   `service_class` varchar(255) NOT NULL DEFAULT '',
   `service_name` varchar(255) NOT NULL DEFAULT '',
   `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `namespace` (`namespace`),
-  KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1383,16 +1241,12 @@ CREATE TABLE IF NOT EXISTS `modx_extension_packages` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_fc_profiles` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `description` text NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '0',
-  `rank` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `name` (`name`),
-  KEY `rank` (`rank`),
-  KEY `active` (`active`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `rank` int(11) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1402,8 +1256,7 @@ CREATE TABLE IF NOT EXISTS `modx_fc_profiles` (
 
 CREATE TABLE IF NOT EXISTS `modx_fc_profiles_usergroups` (
   `usergroup` int(11) NOT NULL DEFAULT '0',
-  `profile` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`usergroup`,`profile`)
+  `profile` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1413,7 +1266,7 @@ CREATE TABLE IF NOT EXISTS `modx_fc_profiles_usergroups` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_fc_sets` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `profile` int(11) NOT NULL DEFAULT '0',
   `action` varchar(255) NOT NULL DEFAULT '',
   `description` text NOT NULL,
@@ -1421,13 +1274,8 @@ CREATE TABLE IF NOT EXISTS `modx_fc_sets` (
   `template` int(11) NOT NULL DEFAULT '0',
   `constraint` varchar(255) NOT NULL DEFAULT '',
   `constraint_field` varchar(100) NOT NULL DEFAULT '',
-  `constraint_class` varchar(100) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `profile` (`profile`),
-  KEY `action` (`action`),
-  KEY `active` (`active`),
-  KEY `template` (`template`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `constraint_class` varchar(100) NOT NULL DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1436,15 +1284,14 @@ CREATE TABLE IF NOT EXISTS `modx_fc_sets` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_formit_forms` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `form` varchar(255) NOT NULL DEFAULT '',
   `context_key` varchar(100) NOT NULL DEFAULT '',
   `values` text NOT NULL,
   `ip` varchar(15) NOT NULL DEFAULT '',
   `date` int(11) NOT NULL DEFAULT '0',
-  `encrypted` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `encrypted` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1453,7 +1300,7 @@ CREATE TABLE IF NOT EXISTS `modx_formit_forms` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_gallery_albums` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `parent` int(10) unsigned NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL DEFAULT '',
   `year` varchar(100) DEFAULT NULL,
@@ -1464,15 +1311,8 @@ CREATE TABLE IF NOT EXISTS `modx_gallery_albums` (
   `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `prominent` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `watermark` varchar(255) NOT NULL DEFAULT '',
-  `cover_filename` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `parent` (`parent`),
-  KEY `name` (`name`),
-  KEY `createdby` (`createdby`),
-  KEY `rank` (`rank`),
-  KEY `active` (`active`),
-  KEY `prominent` (`prominent`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+  `cover_filename` varchar(255) NOT NULL DEFAULT ''
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_gallery_albums`
@@ -1501,13 +1341,10 @@ INSERT INTO `modx_gallery_albums` (`id`, `parent`, `name`, `year`, `description`
 --
 
 CREATE TABLE IF NOT EXISTS `modx_gallery_album_contexts` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `album` int(10) unsigned NOT NULL DEFAULT '0',
-  `context_key` varchar(100) NOT NULL DEFAULT 'web',
-  PRIMARY KEY (`id`),
-  KEY `album` (`album`),
-  KEY `context_key` (`context_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `context_key` varchar(100) NOT NULL DEFAULT 'web'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1516,15 +1353,11 @@ CREATE TABLE IF NOT EXISTS `modx_gallery_album_contexts` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_gallery_album_items` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `item` int(10) unsigned NOT NULL DEFAULT '0',
   `album` int(10) unsigned NOT NULL DEFAULT '0',
-  `rank` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `item` (`item`),
-  KEY `album` (`album`),
-  KEY `rank` (`rank`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+  `rank` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_gallery_album_items`
@@ -1553,7 +1386,7 @@ INSERT INTO `modx_gallery_album_items` (`id`, `item`, `album`, `rank`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `modx_gallery_items` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(100) NOT NULL DEFAULT '',
   `filename` varchar(255) NOT NULL DEFAULT '',
   `description` text,
@@ -1564,13 +1397,8 @@ CREATE TABLE IF NOT EXISTS `modx_gallery_items` (
   `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `duration` varchar(40) NOT NULL DEFAULT '',
   `streamer` text,
-  `watermark_pos` varchar(10) NOT NULL DEFAULT 'tl',
-  PRIMARY KEY (`id`),
-  KEY `createdby` (`createdby`),
-  KEY `name` (`name`),
-  KEY `active` (`active`),
-  KEY `mediatype` (`mediatype`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+  `watermark_pos` varchar(10) NOT NULL DEFAULT 'tl'
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_gallery_items`
@@ -1599,13 +1427,10 @@ INSERT INTO `modx_gallery_items` (`id`, `name`, `filename`, `description`, `medi
 --
 
 CREATE TABLE IF NOT EXISTS `modx_gallery_tags` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `item` int(10) unsigned NOT NULL DEFAULT '0',
-  `tag` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `item` (`item`),
-  KEY `tag` (`tag`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `tag` varchar(255) NOT NULL DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1614,20 +1439,15 @@ CREATE TABLE IF NOT EXISTS `modx_gallery_tags` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_lexicon_entries` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `value` text NOT NULL,
   `topic` varchar(255) NOT NULL DEFAULT 'default',
   `namespace` varchar(40) NOT NULL DEFAULT 'core',
   `language` varchar(20) NOT NULL DEFAULT 'en',
   `createdon` datetime DEFAULT NULL,
-  `editedon` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  KEY `name` (`name`),
-  KEY `topic` (`topic`),
-  KEY `namespace` (`namespace`),
-  KEY `language` (`language`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `editedon` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1636,15 +1456,13 @@ CREATE TABLE IF NOT EXISTS `modx_lexicon_entries` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_manager_log` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `user` int(10) unsigned NOT NULL DEFAULT '0',
   `occurred` datetime DEFAULT '0000-00-00 00:00:00',
   `action` varchar(100) NOT NULL DEFAULT '',
   `classKey` varchar(100) NOT NULL DEFAULT '',
-  `item` varchar(255) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `user_occurred` (`user`,`occurred`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=712 ;
+  `item` varchar(255) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=720 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_manager_log`
@@ -2362,7 +2180,15 @@ INSERT INTO `modx_manager_log` (`id`, `user`, `occurred`, `action`, `classKey`, 
 (708, 1, '2016-06-20 22:15:25', 'propertyset_update_from_element', 'modChunk', '62'),
 (709, 1, '2016-06-20 22:15:56', 'chunk_update', 'modChunk', '62'),
 (710, 1, '2016-06-20 22:15:56', 'propertyset_update_from_element', 'modChunk', '62'),
-(711, 1, '2016-06-21 08:32:03', 'login', 'modContext', 'mgr');
+(711, 1, '2016-06-21 08:32:03', 'login', 'modContext', 'mgr'),
+(712, 1, '2016-06-21 11:52:05', 'login', 'modContext', 'mgr'),
+(713, 1, '2016-06-21 12:57:27', 'login', 'modContext', 'web'),
+(714, 1, '2016-06-21 13:35:29', 'chunk_update', 'modChunk', '9'),
+(715, 1, '2016-06-21 13:35:29', 'propertyset_update_from_element', 'modChunk', '9'),
+(716, 1, '2016-06-21 13:35:50', 'chunk_update', 'modChunk', '9'),
+(717, 1, '2016-06-21 13:35:51', 'propertyset_update_from_element', 'modChunk', '9'),
+(718, 1, '2016-06-21 13:36:09', 'chunk_update', 'modChunk', '9'),
+(719, 1, '2016-06-21 13:36:09', 'propertyset_update_from_element', 'modChunk', '9');
 
 -- --------------------------------------------------------
 
@@ -2371,17 +2197,13 @@ INSERT INTO `modx_manager_log` (`id`, `user`, `occurred`, `action`, `classKey`, 
 --
 
 CREATE TABLE IF NOT EXISTS `modx_media_sources` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `description` text,
   `class_key` varchar(100) NOT NULL DEFAULT 'sources.modFileMediaSource',
   `properties` mediumtext,
-  `is_stream` tinyint(1) unsigned NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`),
-  KEY `name` (`name`),
-  KEY `class_key` (`class_key`),
-  KEY `is_stream` (`is_stream`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `is_stream` tinyint(1) unsigned NOT NULL DEFAULT '1'
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_media_sources`
@@ -2398,8 +2220,7 @@ INSERT INTO `modx_media_sources` (`id`, `name`, `description`, `class_key`, `pro
 
 CREATE TABLE IF NOT EXISTS `modx_media_sources_contexts` (
   `source` int(11) NOT NULL DEFAULT '0',
-  `context_key` varchar(100) NOT NULL DEFAULT 'web',
-  PRIMARY KEY (`source`,`context_key`)
+  `context_key` varchar(100) NOT NULL DEFAULT 'web'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2412,8 +2233,7 @@ CREATE TABLE IF NOT EXISTS `modx_media_sources_elements` (
   `source` int(11) unsigned NOT NULL DEFAULT '0',
   `object_class` varchar(100) NOT NULL DEFAULT 'modTemplateVar',
   `object` int(11) unsigned NOT NULL DEFAULT '0',
-  `context_key` varchar(100) NOT NULL DEFAULT 'web',
-  PRIMARY KEY (`source`,`object`,`object_class`,`context_key`)
+  `context_key` varchar(100) NOT NULL DEFAULT 'web'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -2435,18 +2255,13 @@ INSERT INTO `modx_media_sources_elements` (`source`, `object_class`, `object`, `
 --
 
 CREATE TABLE IF NOT EXISTS `modx_membergroup_names` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `description` text,
   `parent` int(10) unsigned NOT NULL DEFAULT '0',
   `rank` int(10) unsigned NOT NULL DEFAULT '0',
-  `dashboard` int(10) unsigned NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`),
-  KEY `parent` (`parent`),
-  KEY `rank` (`rank`),
-  KEY `dashboard` (`dashboard`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `dashboard` int(10) unsigned NOT NULL DEFAULT '1'
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_membergroup_names`
@@ -2463,15 +2278,12 @@ INSERT INTO `modx_membergroup_names` (`id`, `name`, `description`, `parent`, `ra
 --
 
 CREATE TABLE IF NOT EXISTS `modx_member_groups` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `user_group` int(10) unsigned NOT NULL DEFAULT '0',
   `member` int(10) unsigned NOT NULL DEFAULT '0',
   `role` int(10) unsigned NOT NULL DEFAULT '1',
-  `rank` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `role` (`role`),
-  KEY `rank` (`rank`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+  `rank` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_member_groups`
@@ -2498,11 +2310,7 @@ CREATE TABLE IF NOT EXISTS `modx_menus` (
   `params` text NOT NULL,
   `handler` text NOT NULL,
   `permissions` text NOT NULL,
-  `namespace` varchar(100) NOT NULL DEFAULT 'core',
-  PRIMARY KEY (`text`),
-  KEY `parent` (`parent`),
-  KEY `action` (`action`),
-  KEY `namespace` (`namespace`)
+  `namespace` varchar(100) NOT NULL DEFAULT 'core'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -2566,7 +2374,7 @@ INSERT INTO `modx_menus` (`text`, `parent`, `action`, `description`, `icon`, `me
 --
 
 CREATE TABLE IF NOT EXISTS `modx_migx_configs` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(100) NOT NULL DEFAULT '',
   `formtabs` text NOT NULL,
   `contextmenus` text NOT NULL,
@@ -2584,9 +2392,8 @@ CREATE TABLE IF NOT EXISTS `modx_migx_configs` (
   `deletedby` int(10) NOT NULL DEFAULT '0',
   `published` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `publishedon` datetime DEFAULT NULL,
-  `publishedby` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `publishedby` int(10) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2595,7 +2402,7 @@ CREATE TABLE IF NOT EXISTS `modx_migx_configs` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_migx_config_elements` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `config_id` int(10) NOT NULL DEFAULT '0',
   `element_id` int(10) NOT NULL DEFAULT '0',
   `rank` int(10) NOT NULL DEFAULT '0',
@@ -2608,9 +2415,8 @@ CREATE TABLE IF NOT EXISTS `modx_migx_config_elements` (
   `deletedby` int(10) NOT NULL DEFAULT '0',
   `published` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `publishedon` datetime NOT NULL,
-  `publishedby` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `publishedby` int(10) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2619,7 +2425,7 @@ CREATE TABLE IF NOT EXISTS `modx_migx_config_elements` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_migx_elements` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `type` varchar(100) NOT NULL DEFAULT '',
   `content` text NOT NULL,
   `createdby` int(10) NOT NULL DEFAULT '0',
@@ -2631,9 +2437,8 @@ CREATE TABLE IF NOT EXISTS `modx_migx_elements` (
   `deletedby` int(10) NOT NULL DEFAULT '0',
   `published` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `publishedon` datetime NOT NULL,
-  `publishedby` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `publishedby` int(10) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2642,15 +2447,13 @@ CREATE TABLE IF NOT EXISTS `modx_migx_elements` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_migx_formtabs` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `config_id` int(10) NOT NULL DEFAULT '0',
   `caption` varchar(255) NOT NULL DEFAULT '',
   `pos` int(10) NOT NULL DEFAULT '0',
   `print_before_tabs` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `extended` text NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `config_id` (`config_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `extended` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2659,7 +2462,7 @@ CREATE TABLE IF NOT EXISTS `modx_migx_formtabs` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_migx_formtab_fields` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `config_id` int(10) NOT NULL DEFAULT '0',
   `formtab_id` int(10) NOT NULL DEFAULT '0',
   `field` varchar(255) NOT NULL DEFAULT '',
@@ -2677,13 +2480,8 @@ CREATE TABLE IF NOT EXISTS `modx_migx_formtab_fields` (
   `sources` varchar(255) NOT NULL DEFAULT '',
   `inputOptionValues` text NOT NULL,
   `default` text NOT NULL,
-  `extended` text NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `config_id` (`config_id`),
-  KEY `formtab_id` (`formtab_id`),
-  KEY `field` (`field`),
-  KEY `pos` (`pos`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `extended` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2694,8 +2492,7 @@ CREATE TABLE IF NOT EXISTS `modx_migx_formtab_fields` (
 CREATE TABLE IF NOT EXISTS `modx_namespaces` (
   `name` varchar(40) NOT NULL DEFAULT '',
   `path` text,
-  `assets_path` text,
-  PRIMARY KEY (`name`)
+  `assets_path` text
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -2738,15 +2535,12 @@ INSERT INTO `modx_namespaces` (`name`, `path`, `assets_path`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `modx_property_set` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(50) NOT NULL DEFAULT '',
   `category` int(10) NOT NULL DEFAULT '0',
   `description` varchar(255) NOT NULL DEFAULT '',
-  `properties` text,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`),
-  KEY `category` (`category`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `properties` text
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2755,7 +2549,7 @@ CREATE TABLE IF NOT EXISTS `modx_property_set` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_quip_comments` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `thread` varchar(255) NOT NULL DEFAULT '',
   `parent` int(10) unsigned NOT NULL DEFAULT '0',
   `rank` tinytext,
@@ -2775,17 +2569,8 @@ CREATE TABLE IF NOT EXISTS `modx_quip_comments` (
   `deletedby` int(10) unsigned NOT NULL DEFAULT '0',
   `resource` int(10) unsigned NOT NULL DEFAULT '0',
   `idprefix` varchar(255) NOT NULL DEFAULT 'qcom',
-  `existing_params` text,
-  PRIMARY KEY (`id`),
-  KEY `thread` (`thread`),
-  KEY `parent` (`parent`),
-  KEY `author` (`author`),
-  KEY `approved` (`approved`),
-  KEY `approvedby` (`approvedby`),
-  KEY `deleted` (`deleted`),
-  KEY `deletedby` (`deletedby`),
-  KEY `resource` (`resource`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `existing_params` text
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2796,8 +2581,7 @@ CREATE TABLE IF NOT EXISTS `modx_quip_comments` (
 CREATE TABLE IF NOT EXISTS `modx_quip_comments_closure` (
   `ancestor` int(10) unsigned NOT NULL DEFAULT '0',
   `descendant` int(10) unsigned NOT NULL DEFAULT '0',
-  `depth` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ancestor`,`descendant`)
+  `depth` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2807,13 +2591,11 @@ CREATE TABLE IF NOT EXISTS `modx_quip_comments_closure` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_quip_comment_notify` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `thread` varchar(255) NOT NULL DEFAULT '',
   `email` varchar(255) NOT NULL DEFAULT '',
-  `createdon` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `thread` (`thread`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `createdon` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2832,11 +2614,7 @@ CREATE TABLE IF NOT EXISTS `modx_quip_threads` (
   `idprefix` varchar(255) NOT NULL DEFAULT 'qcom',
   `existing_params` text,
   `quip_call_params` text,
-  `quipreply_call_params` text,
-  PRIMARY KEY (`name`),
-  KEY `moderated` (`moderated`),
-  KEY `moderator_group` (`moderator_group`),
-  KEY `resource` (`resource`)
+  `quipreply_call_params` text
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -2861,13 +2639,7 @@ CREATE TABLE IF NOT EXISTS `modx_register_messages` (
   `accesses` int(10) unsigned NOT NULL DEFAULT '0',
   `expires` int(20) NOT NULL DEFAULT '0',
   `payload` mediumtext NOT NULL,
-  `kill` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`topic`,`id`),
-  KEY `created` (`created`),
-  KEY `valid` (`valid`),
-  KEY `accessed` (`accessed`),
-  KEY `accesses` (`accesses`),
-  KEY `expires` (`expires`)
+  `kill` tinyint(1) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2877,12 +2649,10 @@ CREATE TABLE IF NOT EXISTS `modx_register_messages` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_register_queues` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
-  `options` mediumtext,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `options` mediumtext
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_register_queues`
@@ -2899,16 +2669,13 @@ INSERT INTO `modx_register_queues` (`id`, `name`, `options`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `modx_register_topics` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `queue` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
   `updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `options` mediumtext,
-  PRIMARY KEY (`id`),
-  KEY `queue` (`queue`),
-  KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `options` mediumtext
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_register_topics`
@@ -2927,9 +2694,7 @@ INSERT INTO `modx_register_topics` (`id`, `queue`, `name`, `created`, `updated`,
 CREATE TABLE IF NOT EXISTS `modx_session` (
   `id` varchar(255) NOT NULL DEFAULT '',
   `access` int(20) unsigned NOT NULL,
-  `data` mediumtext,
-  PRIMARY KEY (`id`),
-  KEY `access` (`access`)
+  `data` mediumtext
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -2937,7 +2702,8 @@ CREATE TABLE IF NOT EXISTS `modx_session` (
 --
 
 INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES
-('4mf58p9sv9g7rpcsbarsdn1807', 1466487141, 'modx.user.contextTokens|a:0:{}');
+('4mf58p9sv9g7rpcsbarsdn1807', 1466487141, 'modx.user.contextTokens|a:0:{}'),
+('a0ith6cdjla25hi78adch6hge0', 1466503052, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:1;}modx.mgr.user.token|s:52:"modx56f9829a055867.21816248_1576900351a2343.36379041";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}AjaxForm|a:1:{s:32:"7a0f9db6636dfb9d1288b9dfa562e0a7";a:13:{s:4:"form";s:20:"tpl.AjaxForm.example";s:7:"snippet";s:6:"FormIt";s:12:"frontend_css";s:29:"[[+assetsUrl]]css/default.css";s:11:"frontend_js";s:27:"[[+assetsUrl]]js/default.js";s:9:"actionUrl";s:24:"[[+assetsUrl]]action.php";s:12:"formSelector";s:9:"ajax_form";s:10:"objectName";s:8:"AjaxForm";s:5:"hooks";s:5:"email";s:12:"emailSubject";s:49:"Сообщение с сайта Poecilotheria.ru";s:7:"emailTo";s:19:"stan19781@gmail.com";s:8:"validate";s:45:"name:required,email:required,message:required";s:22:"validationErrorMessage";s:48:"В форме содержатся ошибки!";s:14:"successMessage";s:54:"Сообщение успешно отправлено";}}');
 
 -- --------------------------------------------------------
 
@@ -2946,7 +2712,7 @@ INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `modx_site_content` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `type` varchar(20) NOT NULL DEFAULT 'document',
   `contentType` varchar(50) NOT NULL DEFAULT 'text/html',
   `pagetitle` varchar(255) NOT NULL DEFAULT '',
@@ -2988,28 +2754,8 @@ CREATE TABLE IF NOT EXISTS `modx_site_content` (
   `uri_override` tinyint(1) NOT NULL DEFAULT '0',
   `hide_children_in_tree` tinyint(1) NOT NULL DEFAULT '0',
   `show_in_tree` tinyint(1) NOT NULL DEFAULT '1',
-  `properties` mediumtext,
-  PRIMARY KEY (`id`),
-  KEY `alias` (`alias`),
-  KEY `published` (`published`),
-  KEY `pub_date` (`pub_date`),
-  KEY `unpub_date` (`unpub_date`),
-  KEY `parent` (`parent`),
-  KEY `isfolder` (`isfolder`),
-  KEY `template` (`template`),
-  KEY `menuindex` (`menuindex`),
-  KEY `searchable` (`searchable`),
-  KEY `cacheable` (`cacheable`),
-  KEY `hidemenu` (`hidemenu`),
-  KEY `class_key` (`class_key`),
-  KEY `context_key` (`context_key`),
-  KEY `uri` (`uri`(333)),
-  KEY `uri_override` (`uri_override`),
-  KEY `hide_children_in_tree` (`hide_children_in_tree`),
-  KEY `show_in_tree` (`show_in_tree`),
-  KEY `cache_refresh_idx` (`parent`,`menuindex`,`id`),
-  FULLTEXT KEY `content_ft_idx` (`pagetitle`,`longtitle`,`description`,`introtext`,`content`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+  `properties` mediumtext
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_site_content`
@@ -3040,7 +2786,7 @@ INSERT INTO `modx_site_content` (`id`, `type`, `contentType`, `pagetitle`, `long
 --
 
 CREATE TABLE IF NOT EXISTS `modx_site_htmlsnippets` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `source` int(10) unsigned NOT NULL DEFAULT '0',
   `property_preprocess` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `name` varchar(50) NOT NULL DEFAULT '',
@@ -3052,13 +2798,8 @@ CREATE TABLE IF NOT EXISTS `modx_site_htmlsnippets` (
   `locked` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `properties` text,
   `static` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `static_file` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`),
-  KEY `category` (`category`),
-  KEY `locked` (`locked`),
-  KEY `static` (`static`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=72 ;
+  `static_file` varchar(255) NOT NULL DEFAULT ''
+) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_site_htmlsnippets`
@@ -3143,7 +2884,7 @@ INSERT INTO `modx_site_htmlsnippets` (`id`, `source`, `property_preprocess`, `na
 --
 
 CREATE TABLE IF NOT EXISTS `modx_site_plugins` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `source` int(10) unsigned NOT NULL DEFAULT '0',
   `property_preprocess` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `name` varchar(50) NOT NULL DEFAULT '',
@@ -3157,14 +2898,8 @@ CREATE TABLE IF NOT EXISTS `modx_site_plugins` (
   `disabled` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `moduleguid` varchar(32) NOT NULL DEFAULT '',
   `static` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `static_file` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`),
-  KEY `category` (`category`),
-  KEY `locked` (`locked`),
-  KEY `disabled` (`disabled`),
-  KEY `static` (`static`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+  `static_file` varchar(255) NOT NULL DEFAULT ''
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_site_plugins`
@@ -3196,9 +2931,7 @@ CREATE TABLE IF NOT EXISTS `modx_site_plugin_events` (
   `pluginid` int(10) NOT NULL DEFAULT '0',
   `event` varchar(255) NOT NULL DEFAULT '',
   `priority` int(10) NOT NULL DEFAULT '0',
-  `propertyset` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`pluginid`,`event`),
-  KEY `priority` (`priority`)
+  `propertyset` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -3263,7 +2996,7 @@ INSERT INTO `modx_site_plugin_events` (`pluginid`, `event`, `priority`, `propert
 --
 
 CREATE TABLE IF NOT EXISTS `modx_site_snippets` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `source` int(10) unsigned NOT NULL DEFAULT '0',
   `property_preprocess` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `name` varchar(50) NOT NULL DEFAULT '',
@@ -3276,14 +3009,8 @@ CREATE TABLE IF NOT EXISTS `modx_site_snippets` (
   `properties` text,
   `moduleguid` varchar(32) NOT NULL DEFAULT '',
   `static` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `static_file` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`),
-  KEY `category` (`category`),
-  KEY `locked` (`locked`),
-  KEY `moduleguid` (`moduleguid`),
-  KEY `static` (`static`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=76 ;
+  `static_file` varchar(255) NOT NULL DEFAULT ''
+) ENGINE=MyISAM AUTO_INCREMENT=76 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_site_snippets`
@@ -3384,7 +3111,7 @@ INSERT INTO `modx_site_snippets` (`id`, `source`, `property_preprocess`, `name`,
 --
 
 CREATE TABLE IF NOT EXISTS `modx_site_templates` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `source` int(10) unsigned NOT NULL DEFAULT '0',
   `property_preprocess` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `templatename` varchar(50) NOT NULL DEFAULT '',
@@ -3397,13 +3124,8 @@ CREATE TABLE IF NOT EXISTS `modx_site_templates` (
   `locked` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `properties` text,
   `static` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `static_file` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `templatename` (`templatename`),
-  KEY `category` (`category`),
-  KEY `locked` (`locked`),
-  KEY `static` (`static`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+  `static_file` varchar(255) NOT NULL DEFAULT ''
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_site_templates`
@@ -3432,7 +3154,7 @@ INSERT INTO `modx_site_templates` (`id`, `source`, `property_preprocess`, `templ
 --
 
 CREATE TABLE IF NOT EXISTS `modx_site_tmplvars` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `source` int(10) unsigned NOT NULL DEFAULT '0',
   `property_preprocess` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `type` varchar(20) NOT NULL DEFAULT '',
@@ -3450,14 +3172,8 @@ CREATE TABLE IF NOT EXISTS `modx_site_tmplvars` (
   `input_properties` text,
   `output_properties` text,
   `static` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `static_file` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`),
-  KEY `category` (`category`),
-  KEY `locked` (`locked`),
-  KEY `rank` (`rank`),
-  KEY `static` (`static`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+  `static_file` varchar(255) NOT NULL DEFAULT ''
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_site_tmplvars`
@@ -3480,12 +3196,10 @@ INSERT INTO `modx_site_tmplvars` (`id`, `source`, `property_preprocess`, `type`,
 --
 
 CREATE TABLE IF NOT EXISTS `modx_site_tmplvar_access` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `tmplvarid` int(10) NOT NULL DEFAULT '0',
-  `documentgroup` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `tmplvar_template` (`tmplvarid`,`documentgroup`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `documentgroup` int(10) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -3494,15 +3208,11 @@ CREATE TABLE IF NOT EXISTS `modx_site_tmplvar_access` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_site_tmplvar_contentvalues` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `tmplvarid` int(10) NOT NULL DEFAULT '0',
   `contentid` int(10) NOT NULL DEFAULT '0',
-  `value` mediumtext NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `tmplvarid` (`tmplvarid`),
-  KEY `contentid` (`contentid`),
-  KEY `tv_cnt` (`tmplvarid`,`contentid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+  `value` mediumtext NOT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_site_tmplvar_contentvalues`
@@ -3521,8 +3231,7 @@ INSERT INTO `modx_site_tmplvar_contentvalues` (`id`, `tmplvarid`, `contentid`, `
 CREATE TABLE IF NOT EXISTS `modx_site_tmplvar_templates` (
   `tmplvarid` int(10) NOT NULL DEFAULT '0',
   `templateid` int(11) NOT NULL DEFAULT '0',
-  `rank` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`tmplvarid`,`templateid`)
+  `rank` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -3545,8 +3254,7 @@ INSERT INTO `modx_site_tmplvar_templates` (`tmplvarid`, `templateid`, `rank`) VA
 CREATE TABLE IF NOT EXISTS `modx_system_eventnames` (
   `name` varchar(50) NOT NULL,
   `service` tinyint(4) unsigned NOT NULL DEFAULT '0',
-  `groupname` varchar(20) NOT NULL DEFAULT '',
-  PRIMARY KEY (`name`)
+  `groupname` varchar(20) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -3747,8 +3455,7 @@ CREATE TABLE IF NOT EXISTS `modx_system_settings` (
   `xtype` varchar(75) NOT NULL DEFAULT 'textfield',
   `namespace` varchar(40) NOT NULL DEFAULT 'core',
   `area` varchar(255) NOT NULL DEFAULT '',
-  `editedon` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`key`)
+  `editedon` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -4166,7 +3873,7 @@ INSERT INTO `modx_system_settings` (`key`, `value`, `xtype`, `namespace`, `area`
 --
 
 CREATE TABLE IF NOT EXISTS `modx_tagger_groups` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(100) NOT NULL,
   `alias` varchar(100) NOT NULL,
   `field_type` varchar(100) NOT NULL,
@@ -4181,9 +3888,8 @@ CREATE TABLE IF NOT EXISTS `modx_tagger_groups` (
   `place` varchar(100) NOT NULL DEFAULT 'in-tab',
   `position` int(10) unsigned NOT NULL DEFAULT '0',
   `description` text NOT NULL,
-  `in_tvs_position` int(10) unsigned NOT NULL DEFAULT '9999',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `in_tvs_position` int(10) unsigned NOT NULL DEFAULT '9999'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -4192,16 +3898,11 @@ CREATE TABLE IF NOT EXISTS `modx_tagger_groups` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_tagger_tags` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `tag` varchar(100) NOT NULL,
   `alias` varchar(100) NOT NULL,
-  `group` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `iTagGroup` (`tag`,`group`),
-  KEY `iTag` (`tag`),
-  KEY `iAlias` (`alias`),
-  KEY `iGroup` (`group`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `group` int(10) unsigned NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -4211,8 +3912,7 @@ CREATE TABLE IF NOT EXISTS `modx_tagger_tags` (
 
 CREATE TABLE IF NOT EXISTS `modx_tagger_tag_resources` (
   `tag` int(10) unsigned NOT NULL,
-  `resource` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`tag`,`resource`)
+  `resource` int(10) unsigned NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -4222,14 +3922,12 @@ CREATE TABLE IF NOT EXISTS `modx_tagger_tag_resources` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_thumb_images` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `cache_image` varchar(255) DEFAULT NULL,
   `config` mediumtext,
-  `isend` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `image` (`image`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `isend` tinyint(1) unsigned NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -4255,17 +3953,7 @@ CREATE TABLE IF NOT EXISTS `modx_transport_packages` (
   `version_minor` smallint(5) unsigned NOT NULL DEFAULT '0',
   `version_patch` smallint(5) unsigned NOT NULL DEFAULT '0',
   `release` varchar(100) NOT NULL DEFAULT '',
-  `release_index` smallint(5) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`signature`),
-  KEY `workspace` (`workspace`),
-  KEY `provider` (`provider`),
-  KEY `disabled` (`disabled`),
-  KEY `package_name` (`package_name`),
-  KEY `version_major` (`version_major`),
-  KEY `version_minor` (`version_minor`),
-  KEY `version_patch` (`version_patch`),
-  KEY `release` (`release`),
-  KEY `release_index` (`release_index`)
+  `release_index` smallint(5) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -4330,7 +4018,7 @@ INSERT INTO `modx_transport_packages` (`signature`, `created`, `updated`, `insta
 --
 
 CREATE TABLE IF NOT EXISTS `modx_transport_providers` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` mediumtext,
   `service_url` tinytext,
@@ -4340,14 +4028,8 @@ CREATE TABLE IF NOT EXISTS `modx_transport_providers` (
   `updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   `priority` tinyint(4) NOT NULL DEFAULT '10',
-  `properties` mediumtext NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`),
-  KEY `api_key` (`api_key`),
-  KEY `username` (`username`),
-  KEY `active` (`active`),
-  KEY `priority` (`priority`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `properties` mediumtext NOT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_transport_providers`
@@ -4364,7 +4046,7 @@ INSERT INTO `modx_transport_providers` (`id`, `name`, `description`, `service_ur
 --
 
 CREATE TABLE IF NOT EXISTS `modx_users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `username` varchar(100) NOT NULL DEFAULT '',
   `password` varchar(100) NOT NULL DEFAULT '',
   `cachepwd` varchar(100) NOT NULL DEFAULT '',
@@ -4377,13 +4059,8 @@ CREATE TABLE IF NOT EXISTS `modx_users` (
   `primary_group` int(10) unsigned NOT NULL DEFAULT '0',
   `session_stale` text,
   `sudo` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `createdon` int(20) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`),
-  KEY `class_key` (`class_key`),
-  KEY `remote_key` (`remote_key`),
-  KEY `primary_group` (`primary_group`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+  `createdon` int(20) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_users`
@@ -4401,7 +4078,7 @@ INSERT INTO `modx_users` (`id`, `username`, `password`, `cachepwd`, `class_key`,
 --
 
 CREATE TABLE IF NOT EXISTS `modx_user_attributes` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `internalKey` int(10) NOT NULL,
   `fullname` varchar(100) NOT NULL DEFAULT '',
   `email` varchar(100) NOT NULL DEFAULT '',
@@ -4426,17 +4103,15 @@ CREATE TABLE IF NOT EXISTS `modx_user_attributes` (
   `photo` varchar(255) NOT NULL DEFAULT '',
   `comment` text NOT NULL,
   `website` varchar(255) NOT NULL DEFAULT '',
-  `extended` text,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `internalKey` (`internalKey`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+  `extended` text
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_user_attributes`
 --
 
 INSERT INTO `modx_user_attributes` (`id`, `internalKey`, `fullname`, `email`, `phone`, `mobilephone`, `blocked`, `blockeduntil`, `blockedafter`, `logincount`, `lastlogin`, `thislogin`, `failedlogincount`, `sessionid`, `dob`, `gender`, `address`, `country`, `city`, `state`, `zip`, `fax`, `photo`, `comment`, `website`, `extended`) VALUES
-(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 71, 1466448812, 1466487123, 0, 'jo20414ihu5tjkqlds726ictu0', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
+(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 73, 1466499125, 1466503047, 0, 'a0ith6cdjla25hi78adch6hge0', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
 (5, 21, 'Елена', 'El.v.grach@gmail.com', '', '', 0, 0, 0, 2, 1462557837, 1463385057, 0, '875e8b21d41ee290402eb98fb8c389f8', 0, 0, '', '', '', '', '', '', '', '', '', '[]'),
 (6, 22, 'Владимир', 'vova.karabok.02@mail.ru', '', '', 0, 0, 0, 1, 0, 1463421916, 0, 'd9d0b90b26e0a8a18db0f838d8bc16b5', 0, 0, '', '', '', '', '', '', '', '', '', '[]');
 
@@ -4447,14 +4122,11 @@ INSERT INTO `modx_user_attributes` (`id`, `internalKey`, `fullname`, `email`, `p
 --
 
 CREATE TABLE IF NOT EXISTS `modx_user_group_roles` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` mediumtext,
-  `authority` int(10) unsigned NOT NULL DEFAULT '9999',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`),
-  KEY `authority` (`authority`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `authority` int(10) unsigned NOT NULL DEFAULT '9999'
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_user_group_roles`
@@ -4477,8 +4149,7 @@ CREATE TABLE IF NOT EXISTS `modx_user_group_settings` (
   `xtype` varchar(75) NOT NULL DEFAULT 'textfield',
   `namespace` varchar(40) NOT NULL DEFAULT 'core',
   `area` varchar(255) NOT NULL DEFAULT '',
-  `editedon` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`group`,`key`)
+  `editedon` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -4488,7 +4159,7 @@ CREATE TABLE IF NOT EXISTS `modx_user_group_settings` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_user_messages` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `type` varchar(15) NOT NULL DEFAULT '',
   `subject` varchar(255) NOT NULL DEFAULT '',
   `message` text NOT NULL,
@@ -4496,9 +4167,8 @@ CREATE TABLE IF NOT EXISTS `modx_user_messages` (
   `recipient` int(10) NOT NULL DEFAULT '0',
   `private` tinyint(4) NOT NULL DEFAULT '0',
   `date_sent` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `read` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `read` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -4513,8 +4183,7 @@ CREATE TABLE IF NOT EXISTS `modx_user_settings` (
   `xtype` varchar(75) NOT NULL DEFAULT 'textfield',
   `namespace` varchar(40) NOT NULL DEFAULT 'core',
   `area` varchar(255) NOT NULL DEFAULT '',
-  `editedon` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`user`,`key`)
+  `editedon` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -4524,17 +4193,13 @@ CREATE TABLE IF NOT EXISTS `modx_user_settings` (
 --
 
 CREATE TABLE IF NOT EXISTS `modx_workspaces` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `path` varchar(255) NOT NULL DEFAULT '',
   `created` datetime NOT NULL,
   `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `attributes` mediumtext,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `path` (`path`),
-  KEY `name` (`name`),
-  KEY `active` (`active`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `attributes` mediumtext
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_workspaces`
@@ -4543,6 +4208,1198 @@ CREATE TABLE IF NOT EXISTS `modx_workspaces` (
 INSERT INTO `modx_workspaces` (`id`, `name`, `path`, `created`, `active`, `attributes`) VALUES
 (1, 'Default MODX workspace', '{core_path}', '2016-05-05 09:21:51', 1, NULL);
 
+--
+-- Индексы сохранённых таблиц
+--
+
+--
+-- Индексы таблицы `modx_access_actiondom`
+--
+ALTER TABLE `modx_access_actiondom`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `target` (`target`),
+  ADD KEY `principal_class` (`principal_class`),
+  ADD KEY `principal` (`principal`),
+  ADD KEY `authority` (`authority`),
+  ADD KEY `policy` (`policy`);
+
+--
+-- Индексы таблицы `modx_access_actions`
+--
+ALTER TABLE `modx_access_actions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `target` (`target`),
+  ADD KEY `principal_class` (`principal_class`),
+  ADD KEY `principal` (`principal`),
+  ADD KEY `authority` (`authority`),
+  ADD KEY `policy` (`policy`);
+
+--
+-- Индексы таблицы `modx_access_category`
+--
+ALTER TABLE `modx_access_category`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `target` (`target`),
+  ADD KEY `principal_class` (`principal_class`),
+  ADD KEY `principal` (`principal`),
+  ADD KEY `authority` (`authority`),
+  ADD KEY `policy` (`policy`),
+  ADD KEY `context_key` (`context_key`);
+
+--
+-- Индексы таблицы `modx_access_context`
+--
+ALTER TABLE `modx_access_context`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `target` (`target`),
+  ADD KEY `principal_class` (`principal_class`),
+  ADD KEY `principal` (`principal`),
+  ADD KEY `authority` (`authority`),
+  ADD KEY `policy` (`policy`);
+
+--
+-- Индексы таблицы `modx_access_elements`
+--
+ALTER TABLE `modx_access_elements`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `target` (`target`),
+  ADD KEY `principal_class` (`principal_class`),
+  ADD KEY `principal` (`principal`),
+  ADD KEY `authority` (`authority`),
+  ADD KEY `policy` (`policy`),
+  ADD KEY `context_key` (`context_key`);
+
+--
+-- Индексы таблицы `modx_access_media_source`
+--
+ALTER TABLE `modx_access_media_source`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `target` (`target`),
+  ADD KEY `principal_class` (`principal_class`),
+  ADD KEY `principal` (`principal`),
+  ADD KEY `authority` (`authority`),
+  ADD KEY `policy` (`policy`),
+  ADD KEY `context_key` (`context_key`);
+
+--
+-- Индексы таблицы `modx_access_menus`
+--
+ALTER TABLE `modx_access_menus`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `target` (`target`),
+  ADD KEY `principal_class` (`principal_class`),
+  ADD KEY `principal` (`principal`),
+  ADD KEY `authority` (`authority`),
+  ADD KEY `policy` (`policy`);
+
+--
+-- Индексы таблицы `modx_access_namespace`
+--
+ALTER TABLE `modx_access_namespace`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `target` (`target`),
+  ADD KEY `principal_class` (`principal_class`),
+  ADD KEY `principal` (`principal`),
+  ADD KEY `authority` (`authority`),
+  ADD KEY `policy` (`policy`),
+  ADD KEY `context_key` (`context_key`);
+
+--
+-- Индексы таблицы `modx_access_permissions`
+--
+ALTER TABLE `modx_access_permissions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `template` (`template`),
+  ADD KEY `name` (`name`);
+
+--
+-- Индексы таблицы `modx_access_policies`
+--
+ALTER TABLE `modx_access_policies`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`),
+  ADD KEY `parent` (`parent`),
+  ADD KEY `class` (`class`),
+  ADD KEY `template` (`template`);
+
+--
+-- Индексы таблицы `modx_access_policy_templates`
+--
+ALTER TABLE `modx_access_policy_templates`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `modx_access_policy_template_groups`
+--
+ALTER TABLE `modx_access_policy_template_groups`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `modx_access_resources`
+--
+ALTER TABLE `modx_access_resources`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `target` (`target`),
+  ADD KEY `principal_class` (`principal_class`),
+  ADD KEY `principal` (`principal`),
+  ADD KEY `authority` (`authority`),
+  ADD KEY `policy` (`policy`),
+  ADD KEY `context_key` (`context_key`);
+
+--
+-- Индексы таблицы `modx_access_resource_groups`
+--
+ALTER TABLE `modx_access_resource_groups`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `target` (`target`),
+  ADD KEY `principal_class` (`principal_class`,`target`,`principal`,`authority`),
+  ADD KEY `principal` (`principal`),
+  ADD KEY `authority` (`authority`),
+  ADD KEY `policy` (`policy`),
+  ADD KEY `context_key` (`context_key`);
+
+--
+-- Индексы таблицы `modx_access_templatevars`
+--
+ALTER TABLE `modx_access_templatevars`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `target` (`target`),
+  ADD KEY `principal_class` (`principal_class`),
+  ADD KEY `principal` (`principal`),
+  ADD KEY `authority` (`authority`),
+  ADD KEY `policy` (`policy`),
+  ADD KEY `context_key` (`context_key`);
+
+--
+-- Индексы таблицы `modx_actiondom`
+--
+ALTER TABLE `modx_actiondom`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `set` (`set`),
+  ADD KEY `action` (`action`),
+  ADD KEY `name` (`name`),
+  ADD KEY `active` (`active`),
+  ADD KEY `for_parent` (`for_parent`),
+  ADD KEY `rank` (`rank`);
+
+--
+-- Индексы таблицы `modx_actions`
+--
+ALTER TABLE `modx_actions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `namespace` (`namespace`),
+  ADD KEY `controller` (`controller`);
+
+--
+-- Индексы таблицы `modx_actions_fields`
+--
+ALTER TABLE `modx_actions_fields`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `action` (`action`),
+  ADD KEY `type` (`type`),
+  ADD KEY `tab` (`tab`);
+
+--
+-- Индексы таблицы `modx_active_users`
+--
+ALTER TABLE `modx_active_users`
+  ADD PRIMARY KEY (`internalKey`);
+
+--
+-- Индексы таблицы `modx_categories`
+--
+ALTER TABLE `modx_categories`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `category` (`parent`,`category`),
+  ADD KEY `parent` (`parent`),
+  ADD KEY `rank` (`rank`);
+
+--
+-- Индексы таблицы `modx_categories_closure`
+--
+ALTER TABLE `modx_categories_closure`
+  ADD PRIMARY KEY (`ancestor`,`descendant`);
+
+--
+-- Индексы таблицы `modx_class_map`
+--
+ALTER TABLE `modx_class_map`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `class` (`class`),
+  ADD KEY `parent_class` (`parent_class`),
+  ADD KEY `name_field` (`name_field`);
+
+--
+-- Индексы таблицы `modx_clientconfig_group`
+--
+ALTER TABLE `modx_clientconfig_group`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `modx_clientconfig_setting`
+--
+ALTER TABLE `modx_clientconfig_setting`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `modx_collection_resource_template`
+--
+ALTER TABLE `modx_collection_resource_template`
+  ADD PRIMARY KEY (`collection_template`,`resource_template`);
+
+--
+-- Индексы таблицы `modx_collection_selections`
+--
+ALTER TABLE `modx_collection_selections`
+  ADD PRIMARY KEY (`collection`,`resource`);
+
+--
+-- Индексы таблицы `modx_collection_settings`
+--
+ALTER TABLE `modx_collection_settings`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `collection` (`collection`);
+
+--
+-- Индексы таблицы `modx_collection_templates`
+--
+ALTER TABLE `modx_collection_templates`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
+
+--
+-- Индексы таблицы `modx_collection_template_columns`
+--
+ALTER TABLE `modx_collection_template_columns`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `modx_content_type`
+--
+ALTER TABLE `modx_content_type`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
+
+--
+-- Индексы таблицы `modx_context`
+--
+ALTER TABLE `modx_context`
+  ADD PRIMARY KEY (`key`),
+  ADD KEY `name` (`name`),
+  ADD KEY `rank` (`rank`);
+
+--
+-- Индексы таблицы `modx_context_resource`
+--
+ALTER TABLE `modx_context_resource`
+  ADD PRIMARY KEY (`context_key`,`resource`);
+
+--
+-- Индексы таблицы `modx_context_setting`
+--
+ALTER TABLE `modx_context_setting`
+  ADD PRIMARY KEY (`context_key`,`key`);
+
+--
+-- Индексы таблицы `modx_dashboard`
+--
+ALTER TABLE `modx_dashboard`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `name` (`name`),
+  ADD KEY `hide_trees` (`hide_trees`);
+
+--
+-- Индексы таблицы `modx_dashboard_widget`
+--
+ALTER TABLE `modx_dashboard_widget`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `name` (`name`),
+  ADD KEY `type` (`type`),
+  ADD KEY `namespace` (`namespace`),
+  ADD KEY `lexicon` (`lexicon`);
+
+--
+-- Индексы таблицы `modx_dashboard_widget_placement`
+--
+ALTER TABLE `modx_dashboard_widget_placement`
+  ADD PRIMARY KEY (`dashboard`,`widget`),
+  ADD KEY `rank` (`rank`);
+
+--
+-- Индексы таблицы `modx_documentgroup_names`
+--
+ALTER TABLE `modx_documentgroup_names`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
+
+--
+-- Индексы таблицы `modx_document_groups`
+--
+ALTER TABLE `modx_document_groups`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `document_group` (`document_group`),
+  ADD KEY `document` (`document`);
+
+--
+-- Индексы таблицы `modx_element_property_sets`
+--
+ALTER TABLE `modx_element_property_sets`
+  ADD PRIMARY KEY (`element`,`element_class`,`property_set`);
+
+--
+-- Индексы таблицы `modx_extension_packages`
+--
+ALTER TABLE `modx_extension_packages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `namespace` (`namespace`),
+  ADD KEY `name` (`name`);
+
+--
+-- Индексы таблицы `modx_fc_profiles`
+--
+ALTER TABLE `modx_fc_profiles`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `name` (`name`),
+  ADD KEY `rank` (`rank`),
+  ADD KEY `active` (`active`);
+
+--
+-- Индексы таблицы `modx_fc_profiles_usergroups`
+--
+ALTER TABLE `modx_fc_profiles_usergroups`
+  ADD PRIMARY KEY (`usergroup`,`profile`);
+
+--
+-- Индексы таблицы `modx_fc_sets`
+--
+ALTER TABLE `modx_fc_sets`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `profile` (`profile`),
+  ADD KEY `action` (`action`),
+  ADD KEY `active` (`active`),
+  ADD KEY `template` (`template`);
+
+--
+-- Индексы таблицы `modx_formit_forms`
+--
+ALTER TABLE `modx_formit_forms`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `modx_gallery_albums`
+--
+ALTER TABLE `modx_gallery_albums`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `parent` (`parent`),
+  ADD KEY `name` (`name`),
+  ADD KEY `createdby` (`createdby`),
+  ADD KEY `rank` (`rank`),
+  ADD KEY `active` (`active`),
+  ADD KEY `prominent` (`prominent`);
+
+--
+-- Индексы таблицы `modx_gallery_album_contexts`
+--
+ALTER TABLE `modx_gallery_album_contexts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `album` (`album`),
+  ADD KEY `context_key` (`context_key`);
+
+--
+-- Индексы таблицы `modx_gallery_album_items`
+--
+ALTER TABLE `modx_gallery_album_items`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `item` (`item`),
+  ADD KEY `album` (`album`),
+  ADD KEY `rank` (`rank`);
+
+--
+-- Индексы таблицы `modx_gallery_items`
+--
+ALTER TABLE `modx_gallery_items`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `createdby` (`createdby`),
+  ADD KEY `name` (`name`),
+  ADD KEY `active` (`active`),
+  ADD KEY `mediatype` (`mediatype`);
+
+--
+-- Индексы таблицы `modx_gallery_tags`
+--
+ALTER TABLE `modx_gallery_tags`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `item` (`item`),
+  ADD KEY `tag` (`tag`);
+
+--
+-- Индексы таблицы `modx_lexicon_entries`
+--
+ALTER TABLE `modx_lexicon_entries`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `name` (`name`),
+  ADD KEY `topic` (`topic`),
+  ADD KEY `namespace` (`namespace`),
+  ADD KEY `language` (`language`);
+
+--
+-- Индексы таблицы `modx_manager_log`
+--
+ALTER TABLE `modx_manager_log`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_occurred` (`user`,`occurred`);
+
+--
+-- Индексы таблицы `modx_media_sources`
+--
+ALTER TABLE `modx_media_sources`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `name` (`name`),
+  ADD KEY `class_key` (`class_key`),
+  ADD KEY `is_stream` (`is_stream`);
+
+--
+-- Индексы таблицы `modx_media_sources_contexts`
+--
+ALTER TABLE `modx_media_sources_contexts`
+  ADD PRIMARY KEY (`source`,`context_key`);
+
+--
+-- Индексы таблицы `modx_media_sources_elements`
+--
+ALTER TABLE `modx_media_sources_elements`
+  ADD PRIMARY KEY (`source`,`object`,`object_class`,`context_key`);
+
+--
+-- Индексы таблицы `modx_membergroup_names`
+--
+ALTER TABLE `modx_membergroup_names`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`),
+  ADD KEY `parent` (`parent`),
+  ADD KEY `rank` (`rank`),
+  ADD KEY `dashboard` (`dashboard`);
+
+--
+-- Индексы таблицы `modx_member_groups`
+--
+ALTER TABLE `modx_member_groups`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `role` (`role`),
+  ADD KEY `rank` (`rank`);
+
+--
+-- Индексы таблицы `modx_menus`
+--
+ALTER TABLE `modx_menus`
+  ADD PRIMARY KEY (`text`),
+  ADD KEY `parent` (`parent`),
+  ADD KEY `action` (`action`),
+  ADD KEY `namespace` (`namespace`);
+
+--
+-- Индексы таблицы `modx_migx_configs`
+--
+ALTER TABLE `modx_migx_configs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `modx_migx_config_elements`
+--
+ALTER TABLE `modx_migx_config_elements`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `modx_migx_elements`
+--
+ALTER TABLE `modx_migx_elements`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `modx_migx_formtabs`
+--
+ALTER TABLE `modx_migx_formtabs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `config_id` (`config_id`);
+
+--
+-- Индексы таблицы `modx_migx_formtab_fields`
+--
+ALTER TABLE `modx_migx_formtab_fields`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `config_id` (`config_id`),
+  ADD KEY `formtab_id` (`formtab_id`),
+  ADD KEY `field` (`field`),
+  ADD KEY `pos` (`pos`);
+
+--
+-- Индексы таблицы `modx_namespaces`
+--
+ALTER TABLE `modx_namespaces`
+  ADD PRIMARY KEY (`name`);
+
+--
+-- Индексы таблицы `modx_property_set`
+--
+ALTER TABLE `modx_property_set`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`),
+  ADD KEY `category` (`category`);
+
+--
+-- Индексы таблицы `modx_quip_comments`
+--
+ALTER TABLE `modx_quip_comments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `thread` (`thread`),
+  ADD KEY `parent` (`parent`),
+  ADD KEY `author` (`author`),
+  ADD KEY `approved` (`approved`),
+  ADD KEY `approvedby` (`approvedby`),
+  ADD KEY `deleted` (`deleted`),
+  ADD KEY `deletedby` (`deletedby`),
+  ADD KEY `resource` (`resource`);
+
+--
+-- Индексы таблицы `modx_quip_comments_closure`
+--
+ALTER TABLE `modx_quip_comments_closure`
+  ADD PRIMARY KEY (`ancestor`,`descendant`);
+
+--
+-- Индексы таблицы `modx_quip_comment_notify`
+--
+ALTER TABLE `modx_quip_comment_notify`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `thread` (`thread`);
+
+--
+-- Индексы таблицы `modx_quip_threads`
+--
+ALTER TABLE `modx_quip_threads`
+  ADD PRIMARY KEY (`name`),
+  ADD KEY `moderated` (`moderated`),
+  ADD KEY `moderator_group` (`moderator_group`),
+  ADD KEY `resource` (`resource`);
+
+--
+-- Индексы таблицы `modx_register_messages`
+--
+ALTER TABLE `modx_register_messages`
+  ADD PRIMARY KEY (`topic`,`id`),
+  ADD KEY `created` (`created`),
+  ADD KEY `valid` (`valid`),
+  ADD KEY `accessed` (`accessed`),
+  ADD KEY `accesses` (`accesses`),
+  ADD KEY `expires` (`expires`);
+
+--
+-- Индексы таблицы `modx_register_queues`
+--
+ALTER TABLE `modx_register_queues`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
+
+--
+-- Индексы таблицы `modx_register_topics`
+--
+ALTER TABLE `modx_register_topics`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `queue` (`queue`),
+  ADD KEY `name` (`name`);
+
+--
+-- Индексы таблицы `modx_session`
+--
+ALTER TABLE `modx_session`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `access` (`access`);
+
+--
+-- Индексы таблицы `modx_site_content`
+--
+ALTER TABLE `modx_site_content`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `alias` (`alias`),
+  ADD KEY `published` (`published`),
+  ADD KEY `pub_date` (`pub_date`),
+  ADD KEY `unpub_date` (`unpub_date`),
+  ADD KEY `parent` (`parent`),
+  ADD KEY `isfolder` (`isfolder`),
+  ADD KEY `template` (`template`),
+  ADD KEY `menuindex` (`menuindex`),
+  ADD KEY `searchable` (`searchable`),
+  ADD KEY `cacheable` (`cacheable`),
+  ADD KEY `hidemenu` (`hidemenu`),
+  ADD KEY `class_key` (`class_key`),
+  ADD KEY `context_key` (`context_key`),
+  ADD KEY `uri` (`uri`(333)),
+  ADD KEY `uri_override` (`uri_override`),
+  ADD KEY `hide_children_in_tree` (`hide_children_in_tree`),
+  ADD KEY `show_in_tree` (`show_in_tree`),
+  ADD KEY `cache_refresh_idx` (`parent`,`menuindex`,`id`),
+  ADD FULLTEXT KEY `content_ft_idx` (`pagetitle`,`longtitle`,`description`,`introtext`,`content`);
+
+--
+-- Индексы таблицы `modx_site_htmlsnippets`
+--
+ALTER TABLE `modx_site_htmlsnippets`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`),
+  ADD KEY `category` (`category`),
+  ADD KEY `locked` (`locked`),
+  ADD KEY `static` (`static`);
+
+--
+-- Индексы таблицы `modx_site_plugins`
+--
+ALTER TABLE `modx_site_plugins`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`),
+  ADD KEY `category` (`category`),
+  ADD KEY `locked` (`locked`),
+  ADD KEY `disabled` (`disabled`),
+  ADD KEY `static` (`static`);
+
+--
+-- Индексы таблицы `modx_site_plugin_events`
+--
+ALTER TABLE `modx_site_plugin_events`
+  ADD PRIMARY KEY (`pluginid`,`event`),
+  ADD KEY `priority` (`priority`);
+
+--
+-- Индексы таблицы `modx_site_snippets`
+--
+ALTER TABLE `modx_site_snippets`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`),
+  ADD KEY `category` (`category`),
+  ADD KEY `locked` (`locked`),
+  ADD KEY `moduleguid` (`moduleguid`),
+  ADD KEY `static` (`static`);
+
+--
+-- Индексы таблицы `modx_site_templates`
+--
+ALTER TABLE `modx_site_templates`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `templatename` (`templatename`),
+  ADD KEY `category` (`category`),
+  ADD KEY `locked` (`locked`),
+  ADD KEY `static` (`static`);
+
+--
+-- Индексы таблицы `modx_site_tmplvars`
+--
+ALTER TABLE `modx_site_tmplvars`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`),
+  ADD KEY `category` (`category`),
+  ADD KEY `locked` (`locked`),
+  ADD KEY `rank` (`rank`),
+  ADD KEY `static` (`static`);
+
+--
+-- Индексы таблицы `modx_site_tmplvar_access`
+--
+ALTER TABLE `modx_site_tmplvar_access`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tmplvar_template` (`tmplvarid`,`documentgroup`);
+
+--
+-- Индексы таблицы `modx_site_tmplvar_contentvalues`
+--
+ALTER TABLE `modx_site_tmplvar_contentvalues`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tmplvarid` (`tmplvarid`),
+  ADD KEY `contentid` (`contentid`),
+  ADD KEY `tv_cnt` (`tmplvarid`,`contentid`);
+
+--
+-- Индексы таблицы `modx_site_tmplvar_templates`
+--
+ALTER TABLE `modx_site_tmplvar_templates`
+  ADD PRIMARY KEY (`tmplvarid`,`templateid`);
+
+--
+-- Индексы таблицы `modx_system_eventnames`
+--
+ALTER TABLE `modx_system_eventnames`
+  ADD PRIMARY KEY (`name`);
+
+--
+-- Индексы таблицы `modx_system_settings`
+--
+ALTER TABLE `modx_system_settings`
+  ADD PRIMARY KEY (`key`);
+
+--
+-- Индексы таблицы `modx_tagger_groups`
+--
+ALTER TABLE `modx_tagger_groups`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `modx_tagger_tags`
+--
+ALTER TABLE `modx_tagger_tags`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `iTagGroup` (`tag`,`group`),
+  ADD KEY `iTag` (`tag`),
+  ADD KEY `iAlias` (`alias`),
+  ADD KEY `iGroup` (`group`);
+
+--
+-- Индексы таблицы `modx_tagger_tag_resources`
+--
+ALTER TABLE `modx_tagger_tag_resources`
+  ADD PRIMARY KEY (`tag`,`resource`);
+
+--
+-- Индексы таблицы `modx_thumb_images`
+--
+ALTER TABLE `modx_thumb_images`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `image` (`image`);
+
+--
+-- Индексы таблицы `modx_transport_packages`
+--
+ALTER TABLE `modx_transport_packages`
+  ADD PRIMARY KEY (`signature`),
+  ADD KEY `workspace` (`workspace`),
+  ADD KEY `provider` (`provider`),
+  ADD KEY `disabled` (`disabled`),
+  ADD KEY `package_name` (`package_name`),
+  ADD KEY `version_major` (`version_major`),
+  ADD KEY `version_minor` (`version_minor`),
+  ADD KEY `version_patch` (`version_patch`),
+  ADD KEY `release` (`release`),
+  ADD KEY `release_index` (`release_index`);
+
+--
+-- Индексы таблицы `modx_transport_providers`
+--
+ALTER TABLE `modx_transport_providers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`),
+  ADD KEY `api_key` (`api_key`),
+  ADD KEY `username` (`username`),
+  ADD KEY `active` (`active`),
+  ADD KEY `priority` (`priority`);
+
+--
+-- Индексы таблицы `modx_users`
+--
+ALTER TABLE `modx_users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD KEY `class_key` (`class_key`),
+  ADD KEY `remote_key` (`remote_key`),
+  ADD KEY `primary_group` (`primary_group`);
+
+--
+-- Индексы таблицы `modx_user_attributes`
+--
+ALTER TABLE `modx_user_attributes`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `internalKey` (`internalKey`);
+
+--
+-- Индексы таблицы `modx_user_group_roles`
+--
+ALTER TABLE `modx_user_group_roles`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`),
+  ADD KEY `authority` (`authority`);
+
+--
+-- Индексы таблицы `modx_user_group_settings`
+--
+ALTER TABLE `modx_user_group_settings`
+  ADD PRIMARY KEY (`group`,`key`);
+
+--
+-- Индексы таблицы `modx_user_messages`
+--
+ALTER TABLE `modx_user_messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `modx_user_settings`
+--
+ALTER TABLE `modx_user_settings`
+  ADD PRIMARY KEY (`user`,`key`);
+
+--
+-- Индексы таблицы `modx_workspaces`
+--
+ALTER TABLE `modx_workspaces`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `path` (`path`),
+  ADD KEY `name` (`name`),
+  ADD KEY `active` (`active`);
+
+--
+-- AUTO_INCREMENT для сохранённых таблиц
+--
+
+--
+-- AUTO_INCREMENT для таблицы `modx_access_actiondom`
+--
+ALTER TABLE `modx_access_actiondom`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_access_actions`
+--
+ALTER TABLE `modx_access_actions`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_access_category`
+--
+ALTER TABLE `modx_access_category`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_access_context`
+--
+ALTER TABLE `modx_access_context`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT для таблицы `modx_access_elements`
+--
+ALTER TABLE `modx_access_elements`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_access_media_source`
+--
+ALTER TABLE `modx_access_media_source`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_access_menus`
+--
+ALTER TABLE `modx_access_menus`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_access_namespace`
+--
+ALTER TABLE `modx_access_namespace`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_access_permissions`
+--
+ALTER TABLE `modx_access_permissions`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=231;
+--
+-- AUTO_INCREMENT для таблицы `modx_access_policies`
+--
+ALTER TABLE `modx_access_policies`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT для таблицы `modx_access_policy_templates`
+--
+ALTER TABLE `modx_access_policy_templates`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT для таблицы `modx_access_policy_template_groups`
+--
+ALTER TABLE `modx_access_policy_template_groups`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT для таблицы `modx_access_resources`
+--
+ALTER TABLE `modx_access_resources`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_access_resource_groups`
+--
+ALTER TABLE `modx_access_resource_groups`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT для таблицы `modx_access_templatevars`
+--
+ALTER TABLE `modx_access_templatevars`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_actiondom`
+--
+ALTER TABLE `modx_actiondom`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_actions`
+--
+ALTER TABLE `modx_actions`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT для таблицы `modx_actions_fields`
+--
+ALTER TABLE `modx_actions_fields`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=77;
+--
+-- AUTO_INCREMENT для таблицы `modx_categories`
+--
+ALTER TABLE `modx_categories`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+--
+-- AUTO_INCREMENT для таблицы `modx_class_map`
+--
+ALTER TABLE `modx_class_map`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT для таблицы `modx_clientconfig_group`
+--
+ALTER TABLE `modx_clientconfig_group`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT для таблицы `modx_clientconfig_setting`
+--
+ALTER TABLE `modx_clientconfig_setting`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT для таблицы `modx_collection_settings`
+--
+ALTER TABLE `modx_collection_settings`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT для таблицы `modx_collection_templates`
+--
+ALTER TABLE `modx_collection_templates`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT для таблицы `modx_collection_template_columns`
+--
+ALTER TABLE `modx_collection_template_columns`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT для таблицы `modx_content_type`
+--
+ALTER TABLE `modx_content_type`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT для таблицы `modx_dashboard`
+--
+ALTER TABLE `modx_dashboard`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT для таблицы `modx_dashboard_widget`
+--
+ALTER TABLE `modx_dashboard_widget`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT для таблицы `modx_documentgroup_names`
+--
+ALTER TABLE `modx_documentgroup_names`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT для таблицы `modx_document_groups`
+--
+ALTER TABLE `modx_document_groups`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_extension_packages`
+--
+ALTER TABLE `modx_extension_packages`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_fc_profiles`
+--
+ALTER TABLE `modx_fc_profiles`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_fc_sets`
+--
+ALTER TABLE `modx_fc_sets`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_formit_forms`
+--
+ALTER TABLE `modx_formit_forms`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_gallery_albums`
+--
+ALTER TABLE `modx_gallery_albums`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT для таблицы `modx_gallery_album_contexts`
+--
+ALTER TABLE `modx_gallery_album_contexts`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_gallery_album_items`
+--
+ALTER TABLE `modx_gallery_album_items`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT для таблицы `modx_gallery_items`
+--
+ALTER TABLE `modx_gallery_items`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT для таблицы `modx_gallery_tags`
+--
+ALTER TABLE `modx_gallery_tags`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_lexicon_entries`
+--
+ALTER TABLE `modx_lexicon_entries`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_manager_log`
+--
+ALTER TABLE `modx_manager_log`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=720;
+--
+-- AUTO_INCREMENT для таблицы `modx_media_sources`
+--
+ALTER TABLE `modx_media_sources`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT для таблицы `modx_membergroup_names`
+--
+ALTER TABLE `modx_membergroup_names`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT для таблицы `modx_member_groups`
+--
+ALTER TABLE `modx_member_groups`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT для таблицы `modx_migx_configs`
+--
+ALTER TABLE `modx_migx_configs`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_migx_config_elements`
+--
+ALTER TABLE `modx_migx_config_elements`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_migx_elements`
+--
+ALTER TABLE `modx_migx_elements`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_migx_formtabs`
+--
+ALTER TABLE `modx_migx_formtabs`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_migx_formtab_fields`
+--
+ALTER TABLE `modx_migx_formtab_fields`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_property_set`
+--
+ALTER TABLE `modx_property_set`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_quip_comments`
+--
+ALTER TABLE `modx_quip_comments`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_quip_comment_notify`
+--
+ALTER TABLE `modx_quip_comment_notify`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_register_queues`
+--
+ALTER TABLE `modx_register_queues`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT для таблицы `modx_register_topics`
+--
+ALTER TABLE `modx_register_topics`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT для таблицы `modx_site_content`
+--
+ALTER TABLE `modx_site_content`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+--
+-- AUTO_INCREMENT для таблицы `modx_site_htmlsnippets`
+--
+ALTER TABLE `modx_site_htmlsnippets`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
+--
+-- AUTO_INCREMENT для таблицы `modx_site_plugins`
+--
+ALTER TABLE `modx_site_plugins`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT для таблицы `modx_site_snippets`
+--
+ALTER TABLE `modx_site_snippets`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=76;
+--
+-- AUTO_INCREMENT для таблицы `modx_site_templates`
+--
+ALTER TABLE `modx_site_templates`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT для таблицы `modx_site_tmplvars`
+--
+ALTER TABLE `modx_site_tmplvars`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT для таблицы `modx_site_tmplvar_access`
+--
+ALTER TABLE `modx_site_tmplvar_access`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_site_tmplvar_contentvalues`
+--
+ALTER TABLE `modx_site_tmplvar_contentvalues`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT для таблицы `modx_tagger_groups`
+--
+ALTER TABLE `modx_tagger_groups`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_tagger_tags`
+--
+ALTER TABLE `modx_tagger_tags`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_thumb_images`
+--
+ALTER TABLE `modx_thumb_images`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_transport_providers`
+--
+ALTER TABLE `modx_transport_providers`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT для таблицы `modx_users`
+--
+ALTER TABLE `modx_users`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+--
+-- AUTO_INCREMENT для таблицы `modx_user_attributes`
+--
+ALTER TABLE `modx_user_attributes`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT для таблицы `modx_user_group_roles`
+--
+ALTER TABLE `modx_user_group_roles`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT для таблицы `modx_user_messages`
+--
+ALTER TABLE `modx_user_messages`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `modx_workspaces`
+--
+ALTER TABLE `modx_workspaces`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
