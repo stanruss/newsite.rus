@@ -37,15 +37,15 @@ function changeNavMenu(){
   {
     if ($(window).scrollTop() > 1)
     {
-      $('.navbar-default, .logo').addClass("sticky");        
+      $('.navbar-default, .logo, header').addClass("sticky");        
     }
     else 
     {
-      $('.navbar-default, .logo').removeClass("sticky");
+      $('.navbar-default, .logo, header').removeClass("sticky");
     } 
   }
   else {
-    $('.navbar-default, .logo').removeClass("sticky");
+    $('.navbar-default, .logo, header').removeClass("sticky");
   }
 }
 

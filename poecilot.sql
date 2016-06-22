@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 21 2016 г., 14:29
+-- Время создания: Июн 22 2016 г., 14:56
 -- Версия сервера: 5.5.48
 -- Версия PHP: 5.3.29
 
@@ -1462,7 +1462,7 @@ CREATE TABLE IF NOT EXISTS `modx_manager_log` (
   `action` varchar(100) NOT NULL DEFAULT '',
   `classKey` varchar(100) NOT NULL DEFAULT '',
   `item` varchar(255) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=720 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=721 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_manager_log`
@@ -2188,7 +2188,8 @@ INSERT INTO `modx_manager_log` (`id`, `user`, `occurred`, `action`, `classKey`, 
 (716, 1, '2016-06-21 13:35:50', 'chunk_update', 'modChunk', '9'),
 (717, 1, '2016-06-21 13:35:51', 'propertyset_update_from_element', 'modChunk', '9'),
 (718, 1, '2016-06-21 13:36:09', 'chunk_update', 'modChunk', '9'),
-(719, 1, '2016-06-21 13:36:09', 'propertyset_update_from_element', 'modChunk', '9');
+(719, 1, '2016-06-21 13:36:09', 'propertyset_update_from_element', 'modChunk', '9'),
+(720, 1, '2016-06-22 11:05:55', 'login', 'modContext', 'mgr');
 
 -- --------------------------------------------------------
 
@@ -2703,7 +2704,9 @@ CREATE TABLE IF NOT EXISTS `modx_session` (
 
 INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES
 ('4mf58p9sv9g7rpcsbarsdn1807', 1466487141, 'modx.user.contextTokens|a:0:{}'),
-('a0ith6cdjla25hi78adch6hge0', 1466503052, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:1;}modx.mgr.user.token|s:52:"modx56f9829a055867.21816248_1576900351a2343.36379041";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}AjaxForm|a:1:{s:32:"7a0f9db6636dfb9d1288b9dfa562e0a7";a:13:{s:4:"form";s:20:"tpl.AjaxForm.example";s:7:"snippet";s:6:"FormIt";s:12:"frontend_css";s:29:"[[+assetsUrl]]css/default.css";s:11:"frontend_js";s:27:"[[+assetsUrl]]js/default.js";s:9:"actionUrl";s:24:"[[+assetsUrl]]action.php";s:12:"formSelector";s:9:"ajax_form";s:10:"objectName";s:8:"AjaxForm";s:5:"hooks";s:5:"email";s:12:"emailSubject";s:49:"Сообщение с сайта Poecilotheria.ru";s:7:"emailTo";s:19:"stan19781@gmail.com";s:8:"validate";s:45:"name:required,email:required,message:required";s:22:"validationErrorMessage";s:48:"В форме содержатся ошибки!";s:14:"successMessage";s:54:"Сообщение успешно отправлено";}}');
+('a0ith6cdjla25hi78adch6hge0', 1466503052, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:1;}modx.mgr.user.token|s:52:"modx56f9829a055867.21816248_1576900351a2343.36379041";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}AjaxForm|a:1:{s:32:"7a0f9db6636dfb9d1288b9dfa562e0a7";a:13:{s:4:"form";s:20:"tpl.AjaxForm.example";s:7:"snippet";s:6:"FormIt";s:12:"frontend_css";s:29:"[[+assetsUrl]]css/default.css";s:11:"frontend_js";s:27:"[[+assetsUrl]]js/default.js";s:9:"actionUrl";s:24:"[[+assetsUrl]]action.php";s:12:"formSelector";s:9:"ajax_form";s:10:"objectName";s:8:"AjaxForm";s:5:"hooks";s:5:"email";s:12:"emailSubject";s:49:"Сообщение с сайта Poecilotheria.ru";s:7:"emailTo";s:19:"stan19781@gmail.com";s:8:"validate";s:45:"name:required,email:required,message:required";s:22:"validationErrorMessage";s:48:"В форме содержатся ошибки!";s:14:"successMessage";s:54:"Сообщение успешно отправлено";}}'),
+('rq9574ojer4778g3j58j1gtq40', 1466582770, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:1;}modx.mgr.user.token|s:52:"modx56f9829a055867.21816248_1576a46e391dda3.51000707";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}AjaxForm|a:1:{s:32:"7a0f9db6636dfb9d1288b9dfa562e0a7";a:13:{s:4:"form";s:20:"tpl.AjaxForm.example";s:7:"snippet";s:6:"FormIt";s:12:"frontend_css";s:29:"[[+assetsUrl]]css/default.css";s:11:"frontend_js";s:27:"[[+assetsUrl]]js/default.js";s:9:"actionUrl";s:24:"[[+assetsUrl]]action.php";s:12:"formSelector";s:9:"ajax_form";s:10:"objectName";s:8:"AjaxForm";s:5:"hooks";s:5:"email";s:12:"emailSubject";s:49:"Сообщение с сайта Poecilotheria.ru";s:7:"emailTo";s:19:"stan19781@gmail.com";s:8:"validate";s:45:"name:required,email:required,message:required";s:22:"validationErrorMessage";s:48:"В форме содержатся ошибки!";s:14:"successMessage";s:54:"Сообщение успешно отправлено";}}'),
+('visc5s1c95u4f02ao9n1sede65', 1466582755, 'modx.user.contextTokens|a:0:{}modx.user.0.resourceGroups|a:1:{s:3:"web";a:0:{}}modx.user.0.attributes|a:1:{s:3:"web";a:5:{s:16:"modAccessContext";a:1:{s:3:"web";a:1:{i:0;a:3:{s:9:"principal";i:0;s:9:"authority";s:1:"0";s:6:"policy";a:1:{s:4:"load";b:1;}}}}s:22:"modAccessResourceGroup";a:0:{}s:17:"modAccessCategory";a:0:{}s:28:"sources.modAccessMediaSource";a:0:{}s:18:"modAccessNamespace";a:0:{}}}');
 
 -- --------------------------------------------------------
 
@@ -4111,7 +4114,7 @@ CREATE TABLE IF NOT EXISTS `modx_user_attributes` (
 --
 
 INSERT INTO `modx_user_attributes` (`id`, `internalKey`, `fullname`, `email`, `phone`, `mobilephone`, `blocked`, `blockeduntil`, `blockedafter`, `logincount`, `lastlogin`, `thislogin`, `failedlogincount`, `sessionid`, `dob`, `gender`, `address`, `country`, `city`, `state`, `zip`, `fax`, `photo`, `comment`, `website`, `extended`) VALUES
-(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 73, 1466499125, 1466503047, 0, 'a0ith6cdjla25hi78adch6hge0', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
+(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 74, 1466503047, 1466582755, 0, 'rq9574ojer4778g3j58j1gtq40', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
 (5, 21, 'Елена', 'El.v.grach@gmail.com', '', '', 0, 0, 0, 2, 1462557837, 1463385057, 0, '875e8b21d41ee290402eb98fb8c389f8', 0, 0, '', '', '', '', '', '', '', '', '', '[]'),
 (6, 22, 'Владимир', 'vova.karabok.02@mail.ru', '', '', 0, 0, 0, 1, 0, 1463421916, 0, 'd9d0b90b26e0a8a18db0f838d8bc16b5', 0, 0, '', '', '', '', '', '', '', '', '', '[]');
 
@@ -5249,7 +5252,7 @@ ALTER TABLE `modx_lexicon_entries`
 -- AUTO_INCREMENT для таблицы `modx_manager_log`
 --
 ALTER TABLE `modx_manager_log`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=720;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=721;
 --
 -- AUTO_INCREMENT для таблицы `modx_media_sources`
 --

@@ -51,6 +51,9 @@ header
 	background-repeat: repeat-x
 	z-index: 50000
 	box-shadow: 0px 1px 11px $black
+	&.sticky
+		height: 3.5rem
+		transition: all 0.4s ease-in
 .header-menu
 	.logo
 		position: relative
@@ -66,6 +69,9 @@ header
 		margin-left: 1.5rem
 		margin-right: 1.5rem
 		text-shadow: -2px 2px 3px #000
+		&.sticky
+			line-height: 3.5rem
+			transition: all 0.4s ease-in
 	.col-lg-12
 		padding-right: 0
 		padding-left: 0
@@ -75,6 +81,18 @@ header
 	background-image: none
 	border: none
 	background-color: transparent
+	&.sticky
+		height: 3.5rem
+		.navbar-nav
+			height: 3.5rem
+			padding: 0
+			transition: all 0.4s ease-in
+			li 
+				
+				a
+					line-height: 3.5rem
+					padding-top: 0 
+					padding-bottom: 0
 	.navbar-nav
 		height: 7.8rem
 		padding-top: 1.5rem
@@ -90,6 +108,9 @@ header
 nav.navbar-default .navbar-toggle
 	background-color: $mcb
 	margin-top: 2.5rem
+nav.navbar-default.sticky .navbar-toggle
+	margin-top: 0.5rem
+	transition: all 0.4s ease-in
 nav.navbar-default .navbar-toggle:focus, 
 nav.navbar-default .navbar-toggle:hover
 	background-color: $mco
