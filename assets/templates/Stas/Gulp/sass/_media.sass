@@ -38,9 +38,13 @@
 @media only screen and (max-width : 767px)
 	.carousels .loginRegister
 		margin-top: 10px
-	body section.carousels .loginForm
-		margin-top: 30px
-		width: 70%
+	body section
+		&.carousels .loginForm
+			margin-top: 30px
+			width: 70%
+		&.hal
+			#kursvalut-com-informer-main-220x130-moskva-orange-container
+				margin-top: 15px
 	nav.navbar-default.sticky .navbar-nav
 		height: 100%
 		margin-top: 0
@@ -69,9 +73,17 @@
 	
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 400px)
-	body section.carousels .loginForm
-		width: 210px
-	
+	body section
+		&.carousels .loginForm
+			width: 210px
+		&.search
+			input#search
+				width: 100%
+				float: none
+				margin-bottom: 10px
+			button
+				margin: 0 auto
+				display: block
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)

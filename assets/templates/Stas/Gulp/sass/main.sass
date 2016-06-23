@@ -37,12 +37,46 @@ section
 		height: 250px
 		margin: 0 auto
 section
+	&.about
+		position: relative
+		top: 7.8rem
+		padding-bottom: 30px
+	&.search
+		position: relative
+		top: 7.8rem
+		border-top: 1px $black dashed
+		border-bottom: 1px $black dashed
+		padding: 10px 0
+		margin-bottom: 30px
+		background-color: $mco
+		.fa-search
+			margin-right: 7px
+		button
+			line-height: 26px
+		input#search
+			width: 70%
+			float: left
+			margin-right: 15px
+			padding: 1px 15px
+	&.hal
+		position: relative
+		top: 7.8rem
+		background-color: $seb
+		margin-bottom: 30px
+		img
+			margin-top: 15px
+			margin-left: auto
+			margin-right: auto
+			display: block
 	&#contact
 		position: relative
 		top: 7.8rem
 		padding: 30px 0
+		border-top: 3px $white dashed
+		background-color: #222
 		label
 			font-family: $psbi
+			color: $white
 	&.carousels
 		position: relative
 		top: 7.8rem
@@ -64,7 +98,7 @@ section
 			color: $white
 			text-shadow: 1px 1px 0px #000
 			
-		
+	
 			
 	.loginRegister
 		margin-top: 70px
@@ -110,3 +144,72 @@ section
 			
 			&:hover
 				color: $mco
+.photo1, .photo2, .photo3 
+	position: relative
+	z-index: 1
+	&:hover
+		background-color: $seb
+		background-image: none
+		position: relative
+		h3
+			padding-top: 50%
+			opacity: 1
+			color: #192626
+			transition: all .5s ease
+		h5
+			opacity: 1
+			color: #192626
+			transition: all .5s ease
+			
+	&::after
+		z-index: 1
+		display: block
+		content: ""
+		width: 200px
+		height: 266px
+		position: absolute
+		top: 0
+		left: 0
+		text-align: center
+		opacity: 0
+		
+	h3, h5
+		opacity: 0
+
+.photo1
+	background-image: url(../img/platonov.jpg) 
+	background-size: 200px 266px
+	width: 200px
+	height: 266px
+	margin: 0 auto
+	position: relative
+	z-index: 1
+	transition: all 1s ease
+	box-shadow: -2px 2px 11px 4px rgba(0, 0, 0, 0.5)
+.photo2
+	background-image: url(../img/Kaidalov.jpg) 
+	background-size: 200px 266px
+	width: 200px
+	height: 266px
+	margin: 0 auto
+	position: relative
+	z-index: 1
+	transition: all 1s ease
+	box-shadow: -2px 2px 11px 4px rgba(0, 0, 0, 0.5)
+.photo3
+	background-image: url(../img/Polyakova.jpg) 
+	background-size: 200px 266px
+	width: 200px
+	height: 266px
+	margin: 0 auto
+	position: relative
+	z-index: 1
+	transition: all 1s ease
+	box-shadow: -2px 2px 11px 4px rgba(0, 0, 0, 0.5)
+p.log
+	text-align: center
+	position: relative
+	top: 142px
+	font-size: em(22px)
+	color: red
+	padding: 0 20px	
