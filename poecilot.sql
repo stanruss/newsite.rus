@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 13 2016 г., 12:26
+-- Время создания: Окт 13 2016 г., 14:38
 -- Версия сервера: 5.5.50
 -- Версия PHP: 5.3.29
 
@@ -1462,7 +1462,7 @@ CREATE TABLE IF NOT EXISTS `modx_manager_log` (
   `action` varchar(100) NOT NULL DEFAULT '',
   `classKey` varchar(100) NOT NULL DEFAULT '',
   `item` varchar(255) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=1170 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1187 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_manager_log`
@@ -2638,7 +2638,24 @@ INSERT INTO `modx_manager_log` (`id`, `user`, `occurred`, `action`, `classKey`, 
 (1166, 1, '2016-10-13 12:24:12', 'chunk_update', 'modChunk', '64'),
 (1167, 1, '2016-10-13 12:24:12', 'propertyset_update_from_element', 'modChunk', '64'),
 (1168, 1, '2016-10-13 12:24:54', 'chunk_update', 'modChunk', '64'),
-(1169, 1, '2016-10-13 12:24:55', 'propertyset_update_from_element', 'modChunk', '64');
+(1169, 1, '2016-10-13 12:24:55', 'propertyset_update_from_element', 'modChunk', '64'),
+(1170, 1, '2016-10-13 14:16:10', 'login', 'modContext', 'mgr'),
+(1171, 1, '2016-10-13 14:17:05', 'chunk_update', 'modChunk', '55'),
+(1172, 1, '2016-10-13 14:17:06', 'propertyset_update_from_element', 'modChunk', '55'),
+(1173, 1, '2016-10-13 14:18:33', 'chunk_update', 'modChunk', '55'),
+(1174, 1, '2016-10-13 14:18:33', 'propertyset_update_from_element', 'modChunk', '55'),
+(1175, 1, '2016-10-13 14:22:16', 'chunk_update', 'modChunk', '55'),
+(1176, 1, '2016-10-13 14:22:16', 'propertyset_update_from_element', 'modChunk', '55'),
+(1177, 1, '2016-10-13 14:23:08', 'chunk_update', 'modChunk', '55'),
+(1178, 1, '2016-10-13 14:23:08', 'propertyset_update_from_element', 'modChunk', '55'),
+(1179, 1, '2016-10-13 14:23:36', 'chunk_update', 'modChunk', '55'),
+(1180, 1, '2016-10-13 14:23:37', 'propertyset_update_from_element', 'modChunk', '55'),
+(1181, 1, '2016-10-13 14:32:58', 'chunk_update', 'modChunk', '55'),
+(1182, 1, '2016-10-13 14:32:58', 'propertyset_update_from_element', 'modChunk', '55'),
+(1183, 1, '2016-10-13 14:36:13', 'chunk_update', 'modChunk', '55'),
+(1184, 1, '2016-10-13 14:36:14', 'propertyset_update_from_element', 'modChunk', '55'),
+(1185, 1, '2016-10-13 14:36:59', 'chunk_update', 'modChunk', '55'),
+(1186, 1, '2016-10-13 14:37:00', 'propertyset_update_from_element', 'modChunk', '55');
 
 -- --------------------------------------------------------
 
@@ -3145,7 +3162,7 @@ CREATE TABLE IF NOT EXISTS `modx_session` (
 --
 
 INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES
-('5l7r0b660jojoplk6mihi2pni0', 1476350714, 'modx.user.contextTokens|a:0:{}');
+('85mal7ja451p7hdbihg2dcbfj5', 1476358698, 'modx.user.contextTokens|a:0:{}');
 
 -- --------------------------------------------------------
 
@@ -4549,7 +4566,7 @@ CREATE TABLE IF NOT EXISTS `modx_user_attributes` (
 --
 
 INSERT INTO `modx_user_attributes` (`id`, `internalKey`, `fullname`, `email`, `phone`, `mobilephone`, `blocked`, `blockeduntil`, `blockedafter`, `logincount`, `lastlogin`, `thislogin`, `failedlogincount`, `sessionid`, `dob`, `gender`, `address`, `country`, `city`, `state`, `zip`, `fax`, `photo`, `comment`, `website`, `extended`) VALUES
-(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 85, 1476270619, 1476348213, 0, '82k53rfcp1ittuf2qrgk7qusa7', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
+(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 86, 1476348213, 1476357370, 0, 'k18qear30h4ufi32f9pdc82vm3', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
 (5, 21, 'Елена', 'El.v.grach@gmail.com', '', '', 0, 0, 0, 2, 1462557837, 1463385057, 0, '875e8b21d41ee290402eb98fb8c389f8', 0, 0, '', '', '', '', '', '', '', '', '', '[]'),
 (6, 22, 'Владимир', 'vova.karabok.02@mail.ru', '', '', 0, 0, 0, 1, 0, 1463421916, 0, 'd9d0b90b26e0a8a18db0f838d8bc16b5', 0, 0, '', '', '', '', '', '', '', '', '', '[]');
 
@@ -5687,7 +5704,7 @@ ALTER TABLE `modx_lexicon_entries`
 -- AUTO_INCREMENT для таблицы `modx_manager_log`
 --
 ALTER TABLE `modx_manager_log`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1170;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1187;
 --
 -- AUTO_INCREMENT для таблицы `modx_media_sources`
 --

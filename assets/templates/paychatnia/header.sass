@@ -1,31 +1,6 @@
 @import "bourbon"
 @import "assets/templates/paychatnia/sass/vars.sass"
 
-
-
-
-
-h1
-  font-size: 1.375em
-
-h2
-  font-size: 1.25em
-
-h3
-  font-size: 1.125em
-
-h4
-  font-size: 1em
-
-h5
-  font-size: .9375em
-
-h6
-  font-size: .875em
-
-b, strong
-  font-weight: 700
-
 body
   font-size: 16px
   min-width: 240
@@ -66,14 +41,8 @@ a
 @-ms-viewport
   width: device-width
 
-
 @viewport
   width: device-width
-
-
-
-
-  
 
 .js .nav-collapse
   clip: rect(0 0 0 0)
@@ -88,125 +57,8 @@ a
 .disable-pointer-events
   pointer-events: none !important
 
-@media screen and (min-width: 768px)
-  .js .nav-collapse
-    position: relative
-    &.closed
-      max-height: none
-  .nav-toggle
-    display: none
-  .owl-carousel
-    margin-top: 121px
-  .nav-collapse ul.navbar a
-    padding-top: 7px
-    padding-bottom: 6px
-  nav.nav-collapse.sticky
-    position: fixed
-    z-index: 2000
-    top: 0
-    transition: all 1s ease
-  .logo.sticky
-    display: none
-    transition: all 1s ease
-  nav.nav-collapse
-    background-image: url(img/menu-bg.jpg)
-    background-repeat: repeat-x
-    transition: all 1s ease
-    float: none
-    width: 100%
-    ul
-      margin: 0 auto
-      width: 418px
-      min-height: 33px
-  .menu-item a
-    display: flex
-    justify-content: center
-    align-items: center
-    width: 100px
-
-  
-  nav.nav-collapse .navbar > li > a:hover:after, nav.nav-collapse .navbar > li > a.active:after
-    width: 100px
-
-  nav.nav-collapse .navbar > li > a
-    color: $white
-    background-color: #3b4255
-    transition: color 1s ease
-    position: relative
-    text-align: center
-    text-decoration: none
-  nav.nav-collapse .navbar > li
-    width: 100px
-
-  nav.nav-collapse .navbar > li > a:after
-    -webkit-transition: 0.5s ease
-    transition: 0.5s ease
-    position: absolute
-    height: 2px
-    top: 100%
-    margin-top: -1px
-    content: ''
-    left: 50%
-    margin-left: -50px
-    background-color: $red
-    opacity: 1
-    width: 0
-    z-index: 20
-
-  nav.nav-collapse .navbar > .active > a,  nav.nav-collapse .navbar > .active > a:focus
-    color: $white
-    background-color: $sdgrey
-    border-left: 1px $mc solid  
-    border-right: 1px $mc solid 
-    border-bottom: 1px $red solid
-    transition: background-color 1s ease
-
-  nav.nav-collapse .navbar > .active > a:hover
-    
-    background-color: $sdgrey
-    transition: color 1s ease
-
-  nav.nav-collapse .navbar > .active > a:after
-    -webkit-transition: 0.5s ease
-    transition: 0.5s ease
-    position: absolute
-    height: 2px
-    top: 100%
-    margin-top: -1px
-    content: ''
-    left: 50%
-    margin-left: -50px
-    background-color: $red
-    opacity: 1
-    width: 0
-    z-index: 20
-
-  nav.nav-collapse .navbar > li > a:hover
-    color: $white
-    background-color: $sdgrey
-    transition: color 1s ease
-  nav.nav-collapse .navbar > li > a:focus
-    color: $white
-    background-color: $dbc
-    transition: color 1s ease
-
-
-
-section
-  position: relative
-  text-align: center
-  width: 100%
-  top: 56px
-    
-
-h1
-  margin-bottom: .5em
-
-p.logo
-  margin-bottom: 0
-
 header
-  background: #bec1c8
+  background: $b
   position: fixed
   z-index: 300
   width: 100%
@@ -244,7 +96,7 @@ header
       margin-top: 0
       margin-bottom: 0
       padding-top: 30px
-      color: #ebdbaa
+      color: $p
       text-align: center
       font-family: $hr
       text-shadow: 0 0 1px rgba(0, 0, 0, 1)
@@ -258,88 +110,12 @@ header
   visibility: visible
   opacity: 1
 
-
-@media screen and (max-width: 490px) 
-  header .logo
-    height: 70px
-    h3
-      font-size: em(18px) 
-      margin-right: 0
-      width: 100%
-      height: 30px
-      padding-top: 10px
-    p
-      font-size: em(9px)
-      width: 100%
-      padding-top: 10px
-
-  section#owl, section#about
-    top: 0
-
-@media screen and (max-width: 767px)
-  header .nav-collapse
-    float: left
-    top: 0
-    clear: both
-    margin-bottom: 0
-    width: 100%
-    z-index: 200
-    ul
-      width: 100%
-      padding-bottom: 20px
-      padding-right: 0
-      background-color: #57617c
-      border-bottom: 25px #57617c solid
-      li
-        padding: 22px 20px
-        float: none
-        width: 100%
-        text-align: center
-        background-color: #fff
-        &.active
-          background: #313747
-          border-bottom: 1px $black solid
-          a
-            color: $white
-            background: #313747
-            padding-top: 24px
-            padding-bottom: 24px
-            padding-left: 43%
-            padding-right: 43% 
-
-        &:hover
-          background-color: #313747
-
-        a
-          float: none
-          padding-top: 24px
-          padding-bottom: 24px
-          padding-left: 46%
-          padding-right: 46%
-          &:hover
-            color: $white
-            transition: color 1s ease
-            text-decoration: none
-  .menutriangle
-    background-image: url(img/mtr.jpg)
-    background-repeat: repeat-x
-    height: 15px
-    width: 100%
-
-
-  .owl-carousel
-    margin-top: 121px
-  .logo.sticky
-    display: none
-
-
 @font-face
   font-family: responsivenav
   src: url(icons/responsivenav.eot)
   src: url(icons/responsivenav.eot?#iefix) format("embedded-opentype"), url(icons/responsivenav.ttf) format("truetype"), url(icons/responsivenav.woff) format("woff"), url(icons/responsivenav.svg#responsivenav) format("svg")
   font-weight: 400
   font-style: normal
-
 
 .nav-toggle
   -webkit-touch-callout: none
@@ -374,5 +150,3 @@ header
     font-size: 20px
     content: "\78"
     transition: all 0.5s ease
-
-

@@ -34,13 +34,71 @@
 		-o-animation: none !important
 		-ms-animation: none !important
 		animation: none !important
+	header .nav-collapse
+		float: none
+		top: 0
+		clear: both
+		margin-bottom: 0
+		width: 100%
+		z-index: 200
+		display: block
+		ul
+			width: 100%
+			padding-bottom: 20px
+			padding-right: 0
+			padding-left: 0
+			background-color: $bgs
+			border-bottom: 25px $bgs solid
+			margin-left: 0
+			li
+				padding: 22px 0
+				float: none
+				width: 100%
+				text-align: center
+				background-color: $b
+				&.active
+					background: $bm
+					border-bottom: 1px $black solid
+					a
+						color: $white
+						background: $bm
+						padding-top: 24px
+						padding-bottom: 24px
+						padding-left: 35%
+						padding-right: 35% 
 
+				&:hover
+					background-color: $bm
+				a
+					float: none
+					padding-top: 24px
+					padding-bottom: 24px
+					padding-left: 35%
+					padding-right: 35%
+					&:hover
+						color: $white
+						transition: color 1s ease
+						text-decoration: none
+						background-color: $bm
+						padding-left: 35%
+						padding-right: 35%
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+	header .logo
+		height: 70px
+		h3
+			font-size: em(18px) 
+			margin-right: 0
+			width: 100%
+			height: 30px
+			padding-top: 10px
+		p
+			font-size: em(9px)
+			width: 100%
+			padding-top: 10px
 
-
+	
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/
@@ -60,7 +118,107 @@
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px)
-	/**/
+	.js .nav-collapse
+		position: relative
+		&.closed
+			max-height: none
+	.nav-toggle
+		display: none
+	.owl-carousel
+		margin-top: 121px
+	.nav-collapse ul.navbar a
+		padding-top: 7px
+		padding-bottom: 6px
+	nav.nav-collapse.sticky
+		position: fixed
+		z-index: 2000
+		top: 0
+		transition: all 1s ease
+	.logo.sticky
+		display: none
+		transition: all 1s ease
+	nav.nav-collapse
+		background-image: url(img/menu-bg.jpg)
+		background-repeat: repeat-x
+		transition: all 1s ease
+		float: none
+		width: 100%
+		ul
+			margin: 0 auto
+			width: 418px
+			min-height: 33px
+	.menu-item a
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 100px
+
+	
+	nav.nav-collapse .navbar > li > a:hover:after, nav.nav-collapse .navbar > li > a.active:after
+		width: 100px
+
+	nav.nav-collapse .navbar > li > a
+		color: $white
+		background-color: $bl
+		transition: color 1s ease
+		position: relative
+		text-align: center
+		text-decoration: none
+	nav.nav-collapse .navbar > li
+		width: 100px
+
+	nav.nav-collapse .navbar > li > a:after
+		-webkit-transition: 0.5s ease
+		transition: 0.5s ease
+		position: absolute
+		height: 2px
+		top: 100%
+		margin-top: -1px
+		content: ''
+		left: 50%
+		margin-left: -50px
+		background-color: $red
+		opacity: 1
+		width: 0
+		z-index: 20
+
+	nav.nav-collapse .navbar > .active > a,  nav.nav-collapse .navbar > .active > a:focus
+		color: $white
+		background-color: $sdgrey
+		border-left: 1px $mc solid  
+		border-right: 1px $mc solid 
+		border-bottom: 1px $red solid
+		transition: background-color 1s ease
+
+	nav.nav-collapse .navbar > .active > a:hover
+		
+		background-color: $sdgrey
+		transition: color 1s ease
+
+	nav.nav-collapse .navbar > .active > a:after
+		-webkit-transition: 0.5s ease
+		transition: 0.5s ease
+		position: absolute
+		height: 2px
+		top: 100%
+		margin-top: -1px
+		content: ''
+		left: 50%
+		margin-left: -50px
+		background-color: $red
+		opacity: 1
+		width: 0
+		z-index: 20
+
+	nav.nav-collapse .navbar > li > a:hover
+		color: $white
+		background-color: $sdgrey
+		transition: color 1s ease
+	nav.nav-collapse .navbar > li > a:focus
+		color: $white
+		background-color: $dbc
+		transition: color 1s ease
+
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px)
 	/**/
@@ -69,4 +227,3 @@
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px)
 	/**/
-
