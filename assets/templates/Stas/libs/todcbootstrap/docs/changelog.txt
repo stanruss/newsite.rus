@@ -1,5 +1,0 @@
-Changelog for Todc.Bootstrap
-
-0.0.1 (15.02.2013)
-==============
-- Initial release.

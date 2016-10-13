@@ -24,64 +24,64 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('sass', ['headersass'], function() {
-	return gulp.src('assets/app/sass/**/*.sass')
+	return gulp.src('assets/templates/paychatnia/sass/**/*.sass')
 		.pipe(sass({
 			includePaths: bourbon.includePaths
 		}).on('error', sass.logError))
 		.pipe(rename({suffix: '.min', prefix : ''}))
 		.pipe(autoprefixer(['last 15 versions']))
 		.pipe(cleanCSS())
-		.pipe(gulp.dest('assets/app/css'))
+		.pipe(gulp.dest('assets/templates/paychatnia'))
 		.pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('headersass', function() {
-	return gulp.src('assets/app/header.sass')
+	return gulp.src('assets/templates/paychatnia/header.sass')
 		.pipe(sass({
 			includePaths: bourbon.includePaths
 		}).on('error', sass.logError))
 		.pipe(rename({suffix: '.min', prefix : ''}))
 		.pipe(autoprefixer(['last 15 versions']))
 		.pipe(cleanCSS())
-		.pipe(gulp.dest('assets/app'))
+		.pipe(gulp.dest('assets/templates/paychatnia'))
 		.pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('libs', function() {
 	return gulp.src([
-		'assets/app/libs/jquery/dist/jquery.min.js',
-		'assets/app/libs/magnific-popup/dist/jquery.magnific-popup.js'
+		'assets/templates/paychatnia/js/jquery.js',
+		'assets/templates/paychatnia/libs/magnific-popup/dist/jquery.magnific-popup.js'
 		])
 		.pipe(concat('libs.min.js'))
 		.pipe(uglify())
-		.pipe(gulp.dest('assets/app/js'));
+		.pipe(gulp.dest('assets/templates/paychatnia/js'));
 });
 
 gulp.task('watch', ['sass', 'libs', 'browser-sync'], function() {
-	gulp.watch('assets/app/header.sass', ['headersass']);
-	gulp.watch('assets/app/sass/**/*.sass', ['sass']);
-	gulp.watch('assets/app/*.html', browserSync.reload);
-	gulp.watch('assets/app/js/**/*.js', browserSync.reload);
+	gulp.watch('assets/templates/paychatnia/header.sass', ['headersass']);
+	gulp.watch('assets/templates/paychatnia/sass/**/*.sass', ['sass']);
+	gulp.watch('assets/templates/paychatnia/*.html', browserSync.reload);
+	gulp.watch('assets/templates/paychatnia/js/**/*.js', browserSync.reload);
 });
 
 gulp.task('imagemin', function() {
-	return gulp.src('assets/app/img/**/*')
+	return gulp.src('assets/templates/paychatnia/img/**/*')
 		.pipe(cache(imagemin({
 			interlaced: true,
 			progressive: true,
 			svgoPlugins: [{removeViewBox: false}],
 			use: [pngquant()]
 		})))
-		.pipe(gulp.dest('assets/dist/img')); 
+		.pipe(gulp.dest('assets/templates/paychatnia/dist/img')); 
 });
 
 gulp.task('buildhtml', function() {
-  gulp.src(['assets/app/*.html'])
+  gulp.src(['assets/templates/paychatnia/*.html'])
     .pipe(fileinclude({
       prefix: '@@'
     }))
     .pipe(gulpRemoveHtml())
-    .pipe(gulp.dest('assets/dist/'));
+    .pipe(gulp.dest('assets/templates/paychatnia/dist/'));
 });
 
 gulp.task('removedist', function() { return del.sync('dist'); });
@@ -89,19 +89,19 @@ gulp.task('removedist', function() { return del.sync('dist'); });
 gulp.task('build', ['removedist', 'buildhtml', 'imagemin', 'sass', 'libs'], function() {
 
 	var buildCss = gulp.src([
-		'assets/app/css/fonts.min.css',
-		'assets/app/css/main.min.css'
-		]).pipe(gulp.dest('assets/dist/css'));
+		'assets/templates/paychatnia/fonts.min.css',
+		'assets/templates/paychatnia/main.min.css'
+		]).pipe(gulp.dest('assets/templates/paychatnia/dist'));
 
 	var buildFiles = gulp.src([
-		'assets/app/.htaccess'
-	]).pipe(gulp.dest('assets/dist'));
+		'assets/templates/paychatnia/.htaccess'
+	]).pipe(gulp.dest('assets/templates/paychatnia/dist'));
 
-	var buildFonts = gulp.src('assets/app/fonts/**/*').pipe(gulp.dest('assets/dist/fonts'));
+	var buildFonts = gulp.src('assets/templates/paychatnia/fonts/**/*').pipe(gulp.dest('assets/templates/paychatnia/dist/fonts'));
 
-	var buildFiles = gulp.src('assets/app/libs/**/*').pipe(gulp.dest('assets/dist/libs'));
+	var buildFiles = gulp.src('assets/templates/paychatnia/libs/**/*').pipe(gulp.dest('assets/templates/paychatnia/dist/libs'));
 
-	var buildJs = gulp.src('assets/app/js/**/*').pipe(gulp.dest('assets/dist/js'));
+	var buildJs = gulp.src('assets/templates/paychatnia/js/**/*').pipe(gulp.dest('assets/templates/paychatnia/dist/js'));
 
 });
 
@@ -116,8 +116,8 @@ gulp.task('deploy', ['build'], function() {
 	});
 
 	var globs = [
-	'assets/dist/**',
-	'assets/dist/.htaccess',
+	'assets/templates/paychatnia/dist/**',
+	'assets/templates/paychatnia/dist/.htaccess',
 	];
 	return gulp.src( globs, { buffer: false } )
 	.pipe( conn.dest( '/path/to/folder/on/server' ) );

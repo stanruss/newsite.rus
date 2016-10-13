@@ -1,0 +1,378 @@
+@import "bourbon"
+@import "assets/templates/paychatnia/sass/vars.sass"
+
+
+
+
+
+h1
+  font-size: 1.375em
+
+h2
+  font-size: 1.25em
+
+h3
+  font-size: 1.125em
+
+h4
+  font-size: 1em
+
+h5
+  font-size: .9375em
+
+h6
+  font-size: .875em
+
+b, strong
+  font-weight: 700
+
+body
+  font-size: 16px
+  min-width: 240
+  position: relative
+  line-height: 1.6
+  font-family: RobotoRegular,sans-serif
+  overflow-x: hidden
+  color: $black
+  background-color: $white
+  background-color--webkit-text-size-adjust: 100%
+  background-color--ms-text-size-adjust: 100%
+  background-color-text-size-adjust: 100%
+
+.hidden
+  display: none
+
+#hellopreloader_preload
+  display: block
+  position: fixed
+  z-index: 99999
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  min-width: 1000px
+  background: url(img/Fotolia_29798645_Subscription_Monthly_XL_1.jpg) center center no-repeat $white
+  background-size: 240px
+
+article, aside, blockquote, body, dd, div, dl, dt, fieldset, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, label, legend, li, menu, nav, ol, p, pre, section, summary, td, th, ul
+  margin: 0
+  padding: 0
+  border: 0
+
+a
+  &:active, &:hover
+    outline: 0
+
+@-ms-viewport
+  width: device-width
+
+
+@viewport
+  width: device-width
+
+
+
+
+  
+
+.js .nav-collapse
+  clip: rect(0 0 0 0)
+  max-height: 0
+  display: block
+  overflow: hidden
+  zoom: 1
+
+.nav-collapse.opened
+  max-height: 9999px
+
+.disable-pointer-events
+  pointer-events: none !important
+
+@media screen and (min-width: 768px)
+  .js .nav-collapse
+    position: relative
+    &.closed
+      max-height: none
+  .nav-toggle
+    display: none
+  .owl-carousel
+    margin-top: 121px
+  .nav-collapse ul.navbar a
+    padding-top: 7px
+    padding-bottom: 6px
+  nav.nav-collapse.sticky
+    position: fixed
+    z-index: 2000
+    top: 0
+    transition: all 1s ease
+  .logo.sticky
+    display: none
+    transition: all 1s ease
+  nav.nav-collapse
+    background-image: url(img/menu-bg.jpg)
+    background-repeat: repeat-x
+    transition: all 1s ease
+    float: none
+    width: 100%
+    ul
+      margin: 0 auto
+      width: 418px
+      min-height: 33px
+  .menu-item a
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100px
+
+  
+  nav.nav-collapse .navbar > li > a:hover:after, nav.nav-collapse .navbar > li > a.active:after
+    width: 100px
+
+  nav.nav-collapse .navbar > li > a
+    color: $white
+    background-color: #3b4255
+    transition: color 1s ease
+    position: relative
+    text-align: center
+    text-decoration: none
+  nav.nav-collapse .navbar > li
+    width: 100px
+
+  nav.nav-collapse .navbar > li > a:after
+    -webkit-transition: 0.5s ease
+    transition: 0.5s ease
+    position: absolute
+    height: 2px
+    top: 100%
+    margin-top: -1px
+    content: ''
+    left: 50%
+    margin-left: -50px
+    background-color: $red
+    opacity: 1
+    width: 0
+    z-index: 20
+
+  nav.nav-collapse .navbar > .active > a,  nav.nav-collapse .navbar > .active > a:focus
+    color: $white
+    background-color: $sdgrey
+    border-left: 1px $mc solid  
+    border-right: 1px $mc solid 
+    border-bottom: 1px $red solid
+    transition: background-color 1s ease
+
+  nav.nav-collapse .navbar > .active > a:hover
+    
+    background-color: $sdgrey
+    transition: color 1s ease
+
+  nav.nav-collapse .navbar > .active > a:after
+    -webkit-transition: 0.5s ease
+    transition: 0.5s ease
+    position: absolute
+    height: 2px
+    top: 100%
+    margin-top: -1px
+    content: ''
+    left: 50%
+    margin-left: -50px
+    background-color: $red
+    opacity: 1
+    width: 0
+    z-index: 20
+
+  nav.nav-collapse .navbar > li > a:hover
+    color: $white
+    background-color: $sdgrey
+    transition: color 1s ease
+  nav.nav-collapse .navbar > li > a:focus
+    color: $white
+    background-color: $dbc
+    transition: color 1s ease
+
+
+
+section
+  position: relative
+  text-align: center
+  width: 100%
+  top: 56px
+    
+
+h1
+  margin-bottom: .5em
+
+p.logo
+  margin-bottom: 0
+
+header
+  background: #bec1c8
+  position: fixed
+  z-index: 300
+  width: 100%
+  left: 0
+  top: 0
+  border-bottom: 1px $black solid
+  .logo
+    height: 141px
+    width: 100%
+    background-image: url(img/top-bg.jpg)
+    background-position: center
+    
+    h3
+      letter-spacing: 3px
+      font-size: em(53px)
+      display: block
+      width: 400px
+      height: 59px
+      margin: 0 auto
+      margin-top: 0
+      margin-bottom: 0
+      padding-top: 30px
+      color: $white
+      text-align: center
+      font-family: $hul
+      text-shadow: -1px -1px 3px rgba(0, 0, 0, 1)
+      transition: all 1s ease
+    p
+      letter-spacing: 3px
+      font-size: em(15px)
+      display: block
+      width: 400px
+      height: 59px
+      margin: 0 auto
+      margin-top: 0
+      margin-bottom: 0
+      padding-top: 30px
+      color: #ebdbaa
+      text-align: center
+      font-family: $hr
+      text-shadow: 0 0 1px rgba(0, 0, 0, 1)
+      transition: all 1s ease
+
+.android .mask
+  -webkit-transition: none
+  transition: none
+
+.js-nav-active .mask
+  visibility: visible
+  opacity: 1
+
+
+@media screen and (max-width: 490px) 
+  header .logo
+    height: 70px
+    h3
+      font-size: em(18px) 
+      margin-right: 0
+      width: 100%
+      height: 30px
+      padding-top: 10px
+    p
+      font-size: em(9px)
+      width: 100%
+      padding-top: 10px
+
+  section#owl, section#about
+    top: 0
+
+@media screen and (max-width: 767px)
+  header .nav-collapse
+    float: left
+    top: 0
+    clear: both
+    margin-bottom: 0
+    width: 100%
+    z-index: 200
+    ul
+      width: 100%
+      padding-bottom: 20px
+      padding-right: 0
+      background-color: #57617c
+      border-bottom: 25px #57617c solid
+      li
+        padding: 22px 20px
+        float: none
+        width: 100%
+        text-align: center
+        background-color: #fff
+        &.active
+          background: #313747
+          border-bottom: 1px $black solid
+          a
+            color: $white
+            background: #313747
+            padding-top: 24px
+            padding-bottom: 24px
+            padding-left: 43%
+            padding-right: 43% 
+
+        &:hover
+          background-color: #313747
+
+        a
+          float: none
+          padding-top: 24px
+          padding-bottom: 24px
+          padding-left: 46%
+          padding-right: 46%
+          &:hover
+            color: $white
+            transition: color 1s ease
+            text-decoration: none
+  .menutriangle
+    background-image: url(img/mtr.jpg)
+    background-repeat: repeat-x
+    height: 15px
+    width: 100%
+
+
+  .owl-carousel
+    margin-top: 121px
+  .logo.sticky
+    display: none
+
+
+@font-face
+  font-family: responsivenav
+  src: url(icons/responsivenav.eot)
+  src: url(icons/responsivenav.eot?#iefix) format("embedded-opentype"), url(icons/responsivenav.ttf) format("truetype"), url(icons/responsivenav.woff) format("woff"), url(icons/responsivenav.svg#responsivenav) format("svg")
+  font-weight: 400
+  font-style: normal
+
+
+.nav-toggle
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  -o-user-select: none
+  user-select: none
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-indent: -300px
+  position: relative
+  overflow: hidden
+  width: 60px
+  height: 36px
+  float: right
+  
+  &:before
+    color: $black
+    font: 400 28px/37px responsivenav
+    text-transform: none
+    text-align: center
+    position: absolute
+    content: "\2261"
+    text-indent: 0
+    speak: none
+    width: 100%
+    left: 0
+    top: 0
+    transition: all 0.5s ease
+  &.active:before
+    font-size: 20px
+    content: "\78"
+    transition: all 0.5s ease
+
+
