@@ -8,13 +8,37 @@ var gulp           = require('gulp'),
 		rename         = require('gulp-rename'),
 		del            = require('del'),
 		imagemin       = require('gulp-imagemin'),
-		pngquant       = require('imagemin-pngquant'),
 		cache          = require('gulp-cache'),
 		autoprefixer   = require('gulp-autoprefixer'),
-		fileinclude    = require('gulp-file-include'),
-		gulpRemoveHtml = require('gulp-remove-html'),
-		bourbon        = require('node-bourbon'),
-		ftp            = require('vinyl-ftp');
+		ftp            = require('vinyl-ftp'),
+		notify         = require("gulp-notify");
+
+// Скрипты проекта
+
+gulp.task('common-js', function() {
+	return gulp.src([
+		'assets/templates/Stas/app/js/common.js',
+		])
+	.pipe(concat('common.min.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest('assets/templates/Stas/app/js'));
+});
+
+gulp.task('scripts', ['common-js'], function() {
+	return gulp.src([
+		'assets/templates/Stas/app/libs/jquery/dist/jquery.min.js',
+		// 'assets/templates/Stas/app/libs/mmenu/js/jquery.mmenu.all.min.js',
+		// 'assets/templates/Stas/app/libs/owl.carousel/owl.carousel.min.js',
+		// 'assets/templates/Stas/app/libs/fotorama/fotorama.js',
+		// 'assets/templates/Stas/app/libs/selectize/js/standalone/selectize.min.js',
+		// 'assets/templates/Stas/app/libs/equalHeights/equalheights.js',
+		'assets/templates/Stas/app/js/common.min.js', // Всегда в конце
+		])
+	.pipe(concat('scripts.min.js'))
+	// .pipe(uglify()) // Минимизировать весь js (на выбор)
+	.pipe(gulp.dest('assets/templates/Stas/app/js'))
+	.pipe(browserSync.reload({stream: true}));
+});
 
 gulp.task('browser-sync', function() {
 	browserSync({
@@ -23,89 +47,50 @@ gulp.task('browser-sync', function() {
 	});
 });
 
-gulp.task('sass', ['headersass'], function() {
-	return gulp.src('assets/templates/paychatnia/sass/**/*.sass')
-		.pipe(sass({
-			includePaths: bourbon.includePaths
-		}).on('error', sass.logError))
-		.pipe(rename({suffix: '.min', prefix : ''}))
-		.pipe(autoprefixer(['last 15 versions']))
-		.pipe(cleanCSS())
-		.pipe(gulp.dest('assets/templates/paychatnia'))
-		.pipe(browserSync.reload({stream: true}))
+gulp.task('sass', function() {
+	return gulp.src('assets/templates/Stas/app/sass/**/*.sass')
+	.pipe(sass().on("error", notify.onError()))
+	.pipe(rename({suffix: '.min', prefix : ''}))
+	.pipe(autoprefixer(['last 15 versions']))
+	.pipe(cleanCSS())
+	.pipe(gulp.dest('assets/templates/Stas/app/css'))
+	.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('headersass', function() {
-	return gulp.src('assets/templates/paychatnia/header.sass')
-		.pipe(sass({
-			includePaths: bourbon.includePaths
-		}).on('error', sass.logError))
-		.pipe(rename({suffix: '.min', prefix : ''}))
-		.pipe(autoprefixer(['last 15 versions']))
-		.pipe(cleanCSS())
-		.pipe(gulp.dest('assets/templates/paychatnia'))
-		.pipe(browserSync.reload({stream: true}))
-});
-
-gulp.task('libs', function() {
-	return gulp.src([
-		'assets/templates/paychatnia/js/jquery.js',
-		'assets/templates/paychatnia/libs/magnific-popup/dist/jquery.magnific-popup.js'
-		])
-		.pipe(concat('libs.min.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest('assets/templates/paychatnia/js'));
-});
-
-gulp.task('watch', ['sass', 'libs', 'browser-sync'], function() {
-	gulp.watch('assets/templates/paychatnia/header.sass', ['headersass']);
-	gulp.watch('assets/templates/paychatnia/sass/**/*.sass', ['sass']);
-	gulp.watch('assets/templates/paychatnia/*.html', browserSync.reload);
-	gulp.watch('assets/templates/paychatnia/js/**/*.js', browserSync.reload);
+gulp.task('watch', ['sass', 'scripts', 'browser-sync'], function() {
+	gulp.watch('assets/templates/Stas/app/sass/**/*.sass', ['sass']);
+	gulp.watch(['assets/templates/Stas/libs/**/*.js', 'app/js/common.js'], ['scripts']);
+	gulp.watch('assets/templates/Stas/app/*.php', browserSync.reload);
 });
 
 gulp.task('imagemin', function() {
-	return gulp.src('assets/templates/paychatnia/img/**/*')
-		.pipe(cache(imagemin({
-			interlaced: true,
-			progressive: true,
-			svgoPlugins: [{removeViewBox: false}],
-			use: [pngquant()]
-		})))
-		.pipe(gulp.dest('assets/templates/paychatnia/dist/img')); 
+	return gulp.src('assets/templates/Stas/app/img/**/*')
+	.pipe(cache(imagemin()))
+	.pipe(gulp.dest('assets/templates/Stas/dist/img')); 
 });
 
-gulp.task('buildhtml', function() {
-  gulp.src(['assets/templates/paychatnia/*.html'])
-    .pipe(fileinclude({
-      prefix: '@@'
-    }))
-    .pipe(gulpRemoveHtml())
-    .pipe(gulp.dest('assets/templates/paychatnia/dist/'));
-});
-
-gulp.task('removedist', function() { return del.sync('dist'); });
-
-gulp.task('build', ['removedist', 'buildhtml', 'imagemin', 'sass', 'libs'], function() {
-
-	var buildCss = gulp.src([
-		'assets/templates/paychatnia/fonts.min.css',
-		'assets/templates/paychatnia/main.min.css'
-		]).pipe(gulp.dest('assets/templates/paychatnia/dist'));
+gulp.task('build', ['removedist', 'imagemin', 'sass', 'scripts'], function() {
 
 	var buildFiles = gulp.src([
-		'assets/templates/paychatnia/.htaccess'
-	]).pipe(gulp.dest('assets/templates/paychatnia/dist'));
+		'assets/templates/Stas/app/*.php',
+		'app/.htaccess',
+		]).pipe(gulp.dest('assets/templates/Stas/dist'));
 
-	var buildFonts = gulp.src('assets/templates/paychatnia/fonts/**/*').pipe(gulp.dest('assets/templates/paychatnia/dist/fonts'));
+	var buildCss = gulp.src([
+		'assets/templates/Stas/app/css/main.min.css',
+		]).pipe(gulp.dest('assets/templates/Stas/dist/css'));
 
-	var buildFiles = gulp.src('assets/templates/paychatnia/libs/**/*').pipe(gulp.dest('assets/templates/paychatnia/dist/libs'));
+	var buildJs = gulp.src([
+		'assets/templates/Stas/app/js/scripts.min.js',
+		]).pipe(gulp.dest('assets/templates/Stas/dist/js'));
 
-	var buildJs = gulp.src('assets/templates/paychatnia/js/**/*').pipe(gulp.dest('assets/templates/paychatnia/dist/js'));
+	var buildFonts = gulp.src([
+		'assets/templates/Stas/app/fonts/**/*',
+		]).pipe(gulp.dest('assets/templates/Stas/dist/fonts'));
 
 });
 
-gulp.task('deploy', ['build'], function() {
+gulp.task('deploy', function() {
 
 	var conn = ftp.create({
 		host:      'hostname.com',
@@ -116,14 +101,15 @@ gulp.task('deploy', ['build'], function() {
 	});
 
 	var globs = [
-	'assets/templates/paychatnia/dist/**',
-	'assets/templates/paychatnia/dist/.htaccess',
+	'assets/templates/Stas/dist/**',
+	'assets/templates/Stas/dist/.htaccess',
 	];
-	return gulp.src( globs, { buffer: false } )
-	.pipe( conn.dest( '/path/to/folder/on/server' ) );
+	return gulp.src(globs, {buffer: false})
+	.pipe(conn.dest('/path/to/folder/on/server'));
 
 });
 
+gulp.task('removedist', function() { return del.sync('dist'); });
 gulp.task('clearcache', function () { return cache.clearAll(); });
 
 gulp.task('default', ['watch']);

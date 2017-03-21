@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 13 2016 г., 14:38
+-- Время создания: Мар 21 2017 г., 11:26
 -- Версия сервера: 5.5.50
 -- Версия PHP: 5.3.29
 
@@ -1462,7 +1462,7 @@ CREATE TABLE IF NOT EXISTS `modx_manager_log` (
   `action` varchar(100) NOT NULL DEFAULT '',
   `classKey` varchar(100) NOT NULL DEFAULT '',
   `item` varchar(255) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=1187 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1193 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_manager_log`
@@ -2655,7 +2655,13 @@ INSERT INTO `modx_manager_log` (`id`, `user`, `occurred`, `action`, `classKey`, 
 (1183, 1, '2016-10-13 14:36:13', 'chunk_update', 'modChunk', '55'),
 (1184, 1, '2016-10-13 14:36:14', 'propertyset_update_from_element', 'modChunk', '55'),
 (1185, 1, '2016-10-13 14:36:59', 'chunk_update', 'modChunk', '55'),
-(1186, 1, '2016-10-13 14:37:00', 'propertyset_update_from_element', 'modChunk', '55');
+(1186, 1, '2016-10-13 14:37:00', 'propertyset_update_from_element', 'modChunk', '55'),
+(1187, 1, '2017-03-21 10:44:34', 'login', 'modContext', 'mgr'),
+(1188, 1, '2017-03-21 11:05:22', 'login', 'modContext', 'mgr'),
+(1189, 1, '2017-03-21 11:05:40', 'template_update', 'modTemplate', '6'),
+(1190, 1, '2017-03-21 11:05:40', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1191, 1, '2017-03-21 11:07:12', 'template_update', 'modTemplate', '6'),
+(1192, 1, '2017-03-21 11:07:13', 'propertyset_update_from_element', 'modTemplate', '6');
 
 -- --------------------------------------------------------
 
@@ -3162,7 +3168,9 @@ CREATE TABLE IF NOT EXISTS `modx_session` (
 --
 
 INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES
-('85mal7ja451p7hdbihg2dcbfj5', 1476358698, 'modx.user.contextTokens|a:0:{}');
+('85mal7ja451p7hdbihg2dcbfj5', 1476358698, 'modx.user.contextTokens|a:0:{}'),
+('hhqdui1p1t07q3icuoi1r256b6', 1490082274, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:1;}modx.mgr.user.token|s:52:"modx56f9829a055867.21816248_158d0d9e27b5418.85109283";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}'),
+('vbv1sseh816nidsfa2tb3pu943', 1490083523, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:1;}modx.user.0.resourceGroups|a:1:{s:3:"web";a:0:{}}modx.user.0.attributes|a:1:{s:3:"web";a:5:{s:16:"modAccessContext";a:1:{s:3:"web";a:1:{i:0;a:3:{s:9:"principal";i:0;s:9:"authority";s:1:"0";s:6:"policy";a:1:{s:4:"load";b:1;}}}}s:22:"modAccessResourceGroup";a:0:{}s:17:"modAccessCategory";a:0:{}s:28:"sources.modAccessMediaSource";a:0:{}s:18:"modAccessNamespace";a:0:{}}}modx.mgr.user.token|s:52:"modx56f9829a055867.21816248_158d0dec2e5df78.30805215";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}');
 
 -- --------------------------------------------------------
 
@@ -3592,7 +3600,7 @@ INSERT INTO `modx_site_templates` (`id`, `source`, `property_preprocess`, `templ
 (2, 0, 0, 'Blogit container', 'Blogit - Created by MPThemes http://mpthemes.com', 0, 7, '', 0, '<!DOCTYPE html>\r\n<html lang="en">\r\n<head>\r\n	<base href="[[++site_url]]" />\r\n        <meta charset="[[++modx_charset:lcase]]" />\r\n        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">\r\n        <title>[[*longtitle:strip_tags:empty=`[[*pagetitle:strip_tags]]`]] | [[++site_name:strip_tags]]</title>\r\n        <meta name="description" content="[[*description:notempty=`[[*description]]`:default=`[[+content:ellipsis=`155`]]`]]">\r\n        <meta name="viewport" content="width=device-width, initial-scale=1">\r\n</head>\r\n<body>\r\n	[[*content]]\r\n	<!-- BlogIt - This chunk grabs all children of the resource. -->\r\n	[[$blogit.get_posts]]\r\n	<!-- BlogIt - This chunk grabs all uses Tagger tags used in posts -->\r\n	[[$blogit.taglist]]\r\n</body>\r\n</html>', 0, NULL, 0, ''),
 (3, 0, 0, 'Blogit post', 'Blogit - Created by MPThemes http://mpthemes.com', 0, 7, '', 0, '<!DOCTYPE html>\r\n<html lang="en">\r\n<head>\r\n	<base href="[[++site_url]]" />\r\n        <meta charset="[[++modx_charset:lcase]]" />\r\n        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">\r\n        <title>[[*longtitle:strip_tags:empty=`[[*pagetitle:strip_tags]]`]] | [[++site_name:strip_tags]]</title>\r\n        <meta name="description" content="[[*description:notempty=`[[*description]]`:default=`[[+content:ellipsis=`155`]]`]]">\r\n        <meta name="viewport" content="width=device-width, initial-scale=1">\r\n</head>\r\n<body>\r\n	[[blogit.lexicon_load]]\r\n	<p><a href="[[~[[*parent]]]]">[[%blogit.back_to_overview]]</a></p>\r\n	<article>\r\n		<header>\r\n			<h1>[[*longtitle:strip_tags:empty=`[[*pagetitle:strip_tags]]`]]</h1>\r\n		</header>\r\n		[[*blogit.post_main_image:isnot=``:then=`<img src="[[*blogit.post_main_image:phpthumbof=`w=[[++blogit.main_image_width]]`]]" alt="[[*blogit.post_main_image_alt]]">`]]\r\n		[[*content]]\r\n		<footer>\r\n			<small>[[%blogit.published_on]]: <time datetime="[[*publishedon:strtotime:date=`%y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d %Y`]]</time></small><br>\r\n			<small>[[%blogit.created_by]]: [[*createdby:userinfo=`username`]]</small><br>\r\n			[[++blogit.use_tags:isequalto=`1`:then=`\r\n			<small>Tags: [[!TaggerGetTags? &resources=`[[*id]]` &rowTpl=`blogit.tag_links_tpl` &separator=`, ` &target=`[[++blogit.blog_container_id]]`]]</small>\r\n			`]]\r\n		</footer>\r\n	</article>\r\n</body>\r\n</html>', 0, NULL, 0, ''),
 (4, 1, 0, 'Forgot Password', '', 0, 0, '', 0, '<!DOCTYPE html>\n<html lang="ru">\n  <head>\n    [[$Todc.Head]]\n  </head>\n  <body>\n    <header>\n      [[$Header]]\n    </header>\n    <section class="forgot">\n      [[!ForgotPassword? &resetResourceId=`12` &tpl=`lgnForgotPassTpl`]]\n    </section>   	\n    [[$Todc.Scripts?]]\n  </body>\n</html>', 0, 'a:0:{}', 0, ''),
-(6, 1, 0, 'Главная страница', '', 0, 0, '', 0, '[[$Todc.Head]]\n\n[[$Header]] \n    \n[[$Todc.Scripts?]]\n  \n\n', 0, 'a:0:{}', 0, ''),
+(6, 1, 0, 'Главная страница', '', 0, 0, '', 0, '<!DOCTYPE html>\n<html lang="ru">\n\n<head>\n\n	<meta charset="utf-8">\n\n	<title>Smitler</title>\n	<meta name="description" content="">\n\n	<meta http-equiv="X-UA-Compatible" content="IE=edge">\n	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">\n\n	<meta property="og:image" content="path/to/image.jpg">\n	<link rel="shortcut icon" href="assets/templates/Stas/app/img/favicon/favicon.ico" type="image/x-icon">\n	<link rel="apple-touch-icon" href="assets/templates/Stas/app/img/favicon/apple-touch-icon.png">\n	<link rel="apple-touch-icon" sizes="72x72" href="assets/templates/Stas/app/img/favicon/apple-touch-icon-72x72.png">\n	<link rel="apple-touch-icon" sizes="114x114" href="assets/templates/Stas/app/img/favicon/apple-touch-icon-114x114.png">\n\n	<!-- Chrome, Firefox OS and Opera -->\n	<meta name="theme-color" content="#000">\n	<!-- Windows Phone -->\n	<meta name="msapplication-navbutton-color" content="#000">\n	<!-- iOS Safari -->\n	<meta name="apple-mobile-web-app-status-bar-style" content="#000">\n\n	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #151515; }</style>\n\n</head>\n\n<body>\n\n\n	<link rel="stylesheet" href="assets/templates/Stas/app/css/main.min.css">\n	<script src="assets/templates/Stas/app/js/scripts.min.js"></script>\n\n</body>\n</html>\n\n', 0, 'a:0:{}', 0, ''),
 (7, 1, 0, 'Результаты поиска', '', 0, 0, '', 0, '<!DOCTYPE html>\n<html lang="ru">\n  <head>\n    [[$Todc.Head]]\n  </head>\n  <body>\n    <header>\n      [[$Header]]\n    </header>\n    <section class="search-all">\n      <div class="container">\n        <div class="row">\n          <div class="col-md-12">\n            [[!SimpleSearch? \n              &tpl=`SimpleSearchResult` \n              &containerTpl=`SimpleSearchOuter` \n              &pageTpl=`SimpleSearchPageTpl` \n              &currentPageTpl=`SimpleSearchPageTplActive` \n              &includeTVs=`1` \n              &processTVs=`1`\n            ]]\n            [[!SimpleSearchForm? \n              &landing=`17` \n              &tpl=`search`\n            ]]\n          </div>\n        </div>\n      </div>\n    </section>		\n  [[$Todc.Scripts?]]\n  </body>\n</html>', 0, 'a:0:{}', 0, ''),
 (9, 1, 0, 'Подтверждение регистрации', '', 0, 0, '', 0, '<!DOCTYPE html>\n<html lang="ru">\n  <head>\n    [[$Todc.Head]]\n  </head>\n  <body>\n    <header>\n      [[$Header]]\n    </header>\n    <section class="podreg">  \n      <p> Подтвердите свою регистрацию на почте </p>\n    </section>\n    [[$Todc.Scripts?]]\n  </body>\n</html>', 0, 'a:0:{}', 0, ''),
 (10, 1, 0, 'Регистрация', '', 0, 0, '', 0, '<!DOCTYPE html>\n<html lang="ru">\n  <head>\n    [[$Todc.Head]]\n  </head>\n  <body>\n    <header>\n      [[$Header]]\n    </header>\n    <section class="reg">  \n      <h3>Регистрация пользователя.</h3>\n      [[!Register?\n        &submitVar=`registerbtn`\n        &activationResourceId=`15`\n        &activationEmailTpl=`myActivationEmailTpl`\n        &activationEmailSubject=`Спасибо за регистрацию!`\n        &submittedResourceId=`14`\n        &usergroups=`Пользователь`\n        &validate=`nospam:blank,\n          username:required:minLength=^3^,\n          password:required:minLength=^6^,\n          password_confirm:password_confirm=^password^,\n          email:required:email`\n        &placeholderPrefix=`reg.`\n      ]]\n      <div class="register">\n        <div class="registerMessage">[[!+reg.error.message]]</div>\n        <form class="form" action="[[~[[*id]]]]" method="post">\n          <input type="hidden" name="nospam" value="[[!+reg.nospam]]" />\n          <label for="username">[[%register.username? &namespace=`login` &topic=`register`]]\n          <span class="error">[[!+reg.error.username]]</span>\n          </label>\n          <input type="text" name="username"  id="username" value="[[!+reg.username]]" />\n          <label for="password">[[%register.password]]\n          <span class="error">[[!+reg.error.password]]</span>\n          </label>\n          <input type="password" name="password" id="password" value="[[!+reg.password]]" />\n          <label for="password_confirm">[[%register.password_confirm]]\n          <span class="error">[[!+reg.error.password_confirm]]</span>\n          </label>\n          <input type="password" name="password_confirm" id="password_confirm" value="[[!+reg.password_confirm]]" />\n          <label for="fullname">[[%register.fullname]]\n          <span class="error">[[!+reg.error.fullname]]</span>\n          </label>\n          <input type="text" name="fullname" id="fullname" value="[[!+reg.fullname]]" />\n          <label for="email">[[%register.email]]\n          <span class="error">[[!+reg.error.email]]</span>\n          </label>\n          <input type="text" name="email" id="email" value="[[!+reg.email]]" />\n        <br class="clear" />\n          <div class="form-buttons">\n            <input class="sub" type="submit" name="registerbtn" value="Зарегистрироваться" />\n          </div>\n        </form>\n      </div>\n    </section>     \n    [[$Todc.Scripts?]]\n  </body>\n</html>', 0, 'a:0:{}', 0, ''),
@@ -4566,7 +4574,7 @@ CREATE TABLE IF NOT EXISTS `modx_user_attributes` (
 --
 
 INSERT INTO `modx_user_attributes` (`id`, `internalKey`, `fullname`, `email`, `phone`, `mobilephone`, `blocked`, `blockeduntil`, `blockedafter`, `logincount`, `lastlogin`, `thislogin`, `failedlogincount`, `sessionid`, `dob`, `gender`, `address`, `country`, `city`, `state`, `zip`, `fax`, `photo`, `comment`, `website`, `extended`) VALUES
-(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 86, 1476348213, 1476357370, 0, 'k18qear30h4ufi32f9pdc82vm3', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
+(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 88, 1490082274, 1490083522, 0, 'vbv1sseh816nidsfa2tb3pu943', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
 (5, 21, 'Елена', 'El.v.grach@gmail.com', '', '', 0, 0, 0, 2, 1462557837, 1463385057, 0, '875e8b21d41ee290402eb98fb8c389f8', 0, 0, '', '', '', '', '', '', '', '', '', '[]'),
 (6, 22, 'Владимир', 'vova.karabok.02@mail.ru', '', '', 0, 0, 0, 1, 0, 1463421916, 0, 'd9d0b90b26e0a8a18db0f838d8bc16b5', 0, 0, '', '', '', '', '', '', '', '', '', '[]');
 
@@ -5704,7 +5712,7 @@ ALTER TABLE `modx_lexicon_entries`
 -- AUTO_INCREMENT для таблицы `modx_manager_log`
 --
 ALTER TABLE `modx_manager_log`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1187;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1193;
 --
 -- AUTO_INCREMENT для таблицы `modx_media_sources`
 --
