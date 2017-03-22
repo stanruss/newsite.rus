@@ -27,7 +27,7 @@ gulp.task('common-js', function() {
 gulp.task('scripts', ['common-js'], function() {
 	return gulp.src([
 		'assets/templates/Stas/app/libs/jquery/dist/jquery.min.js',
-		// 'assets/templates/Stas/app/libs/mmenu/js/jquery.mmenu.all.min.js',
+		'assets/templates/Stas/app/libs/mmenu/js/jquery.mmenu.all.min.js',
 		// 'assets/templates/Stas/app/libs/owl.carousel/owl.carousel.min.js',
 		// 'assets/templates/Stas/app/libs/fotorama/fotorama.js',
 		// 'assets/templates/Stas/app/libs/selectize/js/standalone/selectize.min.js',

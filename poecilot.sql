@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 21 2017 г., 11:26
+-- Время создания: Мар 22 2017 г., 09:34
 -- Версия сервера: 5.5.50
 -- Версия PHP: 5.3.29
 
@@ -725,7 +725,7 @@ CREATE TABLE IF NOT EXISTS `modx_categories` (
   `parent` int(10) unsigned DEFAULT '0',
   `category` varchar(45) NOT NULL DEFAULT '',
   `rank` int(11) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_categories`
@@ -734,7 +734,7 @@ CREATE TABLE IF NOT EXISTS `modx_categories` (
 INSERT INTO `modx_categories` (`id`, `parent`, `category`, `rank`) VALUES
 (1, 0, 'pdoTools', 0),
 (2, 0, 'ClientConfig', 0),
-(3, 0, 'Collections', 0),
+(3, 0, 'Main_chanks', 0),
 (4, 0, 'pThumb', 0),
 (5, 0, 'Resizer', 0),
 (6, 0, 'Tagger', 0),
@@ -750,7 +750,9 @@ INSERT INTO `modx_categories` (`id`, `parent`, `category`, `rank`) VALUES
 (16, 0, 'Quip', 0),
 (17, 0, 'SimpleSearch', 0),
 (18, 0, 'TinyMCE Rich Text Editor', 0),
-(20, 0, 'BreadCrumb', 0);
+(20, 0, 'BreadCrumb', 0),
+(21, 0, 'Wayfinder', 0),
+(22, 0, 'Content', 1);
 
 -- --------------------------------------------------------
 
@@ -806,7 +808,11 @@ INSERT INTO `modx_categories_closure` (`ancestor`, `descendant`, `depth`) VALUES
 (18, 18, 0),
 (0, 18, 0),
 (20, 20, 0),
-(0, 20, 0);
+(0, 20, 0),
+(21, 21, 0),
+(0, 21, 0),
+(22, 22, 0),
+(0, 22, 0);
 
 -- --------------------------------------------------------
 
@@ -1462,7 +1468,7 @@ CREATE TABLE IF NOT EXISTS `modx_manager_log` (
   `action` varchar(100) NOT NULL DEFAULT '',
   `classKey` varchar(100) NOT NULL DEFAULT '',
   `item` varchar(255) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=1193 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1275 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_manager_log`
@@ -2661,7 +2667,89 @@ INSERT INTO `modx_manager_log` (`id`, `user`, `occurred`, `action`, `classKey`, 
 (1189, 1, '2017-03-21 11:05:40', 'template_update', 'modTemplate', '6'),
 (1190, 1, '2017-03-21 11:05:40', 'propertyset_update_from_element', 'modTemplate', '6'),
 (1191, 1, '2017-03-21 11:07:12', 'template_update', 'modTemplate', '6'),
-(1192, 1, '2017-03-21 11:07:13', 'propertyset_update_from_element', 'modTemplate', '6');
+(1192, 1, '2017-03-21 11:07:13', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1193, 1, '2017-03-22 08:29:20', 'login', 'modContext', 'mgr'),
+(1194, 1, '2017-03-22 08:30:15', 'login', 'modContext', 'mgr'),
+(1195, 1, '2017-03-22 08:30:40', 'template_update', 'modTemplate', '6'),
+(1196, 1, '2017-03-22 08:30:40', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1197, 1, '2017-03-22 08:31:03', 'template_update', 'modTemplate', '6'),
+(1198, 1, '2017-03-22 08:31:04', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1199, 1, '2017-03-22 08:31:21', 'template_update', 'modTemplate', '6'),
+(1200, 1, '2017-03-22 08:31:22', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1201, 1, '2017-03-22 08:31:52', 'template_update', 'modTemplate', '6'),
+(1202, 1, '2017-03-22 08:31:52', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1203, 1, '2017-03-22 08:32:15', 'template_update', 'modTemplate', '6'),
+(1204, 1, '2017-03-22 08:32:15', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1205, 1, '2017-03-22 08:38:04', 'template_update', 'modTemplate', '6'),
+(1206, 1, '2017-03-22 08:38:04', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1207, 1, '2017-03-22 08:40:38', 'template_update', 'modTemplate', '6'),
+(1208, 1, '2017-03-22 08:40:38', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1209, 1, '2017-03-22 08:47:56', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1210, 1, '2017-03-22 08:48:02', 'template_update', 'modTemplate', '6'),
+(1211, 1, '2017-03-22 08:48:02', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1212, 1, '2017-03-22 08:48:59', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1213, 1, '2017-03-22 08:49:18', 'template_update', 'modTemplate', '6'),
+(1214, 1, '2017-03-22 08:49:18', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1215, 1, '2017-03-22 08:49:42', 'template_update', 'modTemplate', '6'),
+(1216, 1, '2017-03-22 08:49:42', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1217, 1, '2017-03-22 08:49:44', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1218, 1, '2017-03-22 08:50:32', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1219, 1, '2017-03-22 08:50:34', 'template_update', 'modTemplate', '6'),
+(1220, 1, '2017-03-22 08:50:34', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1221, 1, '2017-03-22 08:50:56', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1222, 1, '2017-03-22 08:51:12', 'template_update', 'modTemplate', '6'),
+(1223, 1, '2017-03-22 08:51:12', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1224, 1, '2017-03-22 08:52:56', 'template_update', 'modTemplate', '6'),
+(1225, 1, '2017-03-22 08:52:56', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1226, 1, '2017-03-22 08:53:26', 'chunk_update', 'modChunk', '64'),
+(1227, 1, '2017-03-22 08:53:26', 'propertyset_update_from_element', 'modChunk', '64'),
+(1228, 1, '2017-03-22 08:53:48', 'chunk_update', 'modChunk', '64'),
+(1229, 1, '2017-03-22 08:53:49', 'propertyset_update_from_element', 'modChunk', '64'),
+(1230, 1, '2017-03-22 08:58:56', 'chunk_update', 'modChunk', '64'),
+(1231, 1, '2017-03-22 08:58:57', 'propertyset_update_from_element', 'modChunk', '64'),
+(1232, 1, '2017-03-22 09:00:19', 'template_update', 'modTemplate', '6'),
+(1233, 1, '2017-03-22 09:00:19', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1234, 1, '2017-03-22 09:00:52', 'chunk_update', 'modChunk', '66'),
+(1235, 1, '2017-03-22 09:00:52', 'propertyset_update_from_element', 'modChunk', '66'),
+(1236, 1, '2017-03-22 09:01:53', 'template_update', 'modTemplate', '6'),
+(1237, 1, '2017-03-22 09:01:53', 'propertyset_update_from_element', 'modTemplate', '6'),
+(1238, 1, '2017-03-22 09:02:34', 'chunk_create', 'modChunk', '72'),
+(1239, 1, '2017-03-22 09:15:57', 'chunk_delete', 'modChunk', '48'),
+(1240, 1, '2017-03-22 09:16:02', 'chunk_delete', 'modChunk', '49'),
+(1241, 1, '2017-03-22 09:17:51', 'chunk_delete', 'modChunk', '55'),
+(1242, 1, '2017-03-22 09:18:07', 'chunk_delete', 'modChunk', '56'),
+(1243, 1, '2017-03-22 09:18:12', 'chunk_delete', 'modChunk', '57'),
+(1244, 1, '2017-03-22 09:18:17', 'chunk_delete', 'modChunk', '58'),
+(1245, 1, '2017-03-22 09:18:22', 'chunk_delete', 'modChunk', '59'),
+(1246, 1, '2017-03-22 09:18:28', 'chunk_delete', 'modChunk', '60'),
+(1247, 1, '2017-03-22 09:18:34', 'chunk_delete', 'modChunk', '61'),
+(1248, 1, '2017-03-22 09:18:48', 'chunk_delete', 'modChunk', '62'),
+(1249, 1, '2017-03-22 09:18:52', 'chunk_delete', 'modChunk', '63'),
+(1250, 1, '2017-03-22 09:20:02', 'category_create', 'modCategory', '21'),
+(1251, 1, '2017-03-22 09:20:38', 'chunk_update', 'modChunk', '68'),
+(1252, 1, '2017-03-22 09:20:38', 'propertyset_update_from_element', 'modChunk', '68'),
+(1253, 1, '2017-03-22 09:21:14', 'chunk_update', 'modChunk', '69'),
+(1254, 1, '2017-03-22 09:21:14', 'propertyset_update_from_element', 'modChunk', '69'),
+(1255, 1, '2017-03-22 09:21:31', 'chunk_update', 'modChunk', '70'),
+(1256, 1, '2017-03-22 09:21:31', 'propertyset_update_from_element', 'modChunk', '70'),
+(1257, 1, '2017-03-22 09:21:45', 'chunk_update', 'modChunk', '71'),
+(1258, 1, '2017-03-22 09:21:45', 'propertyset_update_from_element', 'modChunk', '71'),
+(1259, 1, '2017-03-22 09:22:05', 'chunk_update', 'modChunk', '50'),
+(1260, 1, '2017-03-22 09:22:05', 'propertyset_update_from_element', 'modChunk', '50'),
+(1261, 1, '2017-03-22 09:22:40', 'category_create', 'modCategory', '22'),
+(1262, 1, '2017-03-22 09:23:04', 'chunk_update', 'modChunk', '52'),
+(1263, 1, '2017-03-22 09:23:04', 'propertyset_update_from_element', 'modChunk', '52'),
+(1264, 1, '2017-03-22 09:23:15', 'chunk_update', 'modChunk', '53'),
+(1265, 1, '2017-03-22 09:23:16', 'propertyset_update_from_element', 'modChunk', '53'),
+(1266, 1, '2017-03-22 09:23:26', 'chunk_update', 'modChunk', '54'),
+(1267, 1, '2017-03-22 09:23:26', 'propertyset_update_from_element', 'modChunk', '54'),
+(1268, 1, '2017-03-22 09:23:48', 'chunk_update', 'modChunk', '65'),
+(1269, 1, '2017-03-22 09:23:49', 'propertyset_update_from_element', 'modChunk', '65'),
+(1270, 1, '2017-03-22 09:24:05', 'chunk_update', 'modChunk', '51'),
+(1271, 1, '2017-03-22 09:24:05', 'propertyset_update_from_element', 'modChunk', '51'),
+(1272, 1, '2017-03-22 09:25:28', 'category_update', 'modCategory', '3'),
+(1273, 1, '2017-03-22 09:26:59', 'chunk_update', 'modChunk', '64'),
+(1274, 1, '2017-03-22 09:26:59', 'propertyset_update_from_element', 'modChunk', '64');
 
 -- --------------------------------------------------------
 
@@ -3168,9 +3256,7 @@ CREATE TABLE IF NOT EXISTS `modx_session` (
 --
 
 INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES
-('85mal7ja451p7hdbihg2dcbfj5', 1476358698, 'modx.user.contextTokens|a:0:{}'),
-('hhqdui1p1t07q3icuoi1r256b6', 1490082274, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:1;}modx.mgr.user.token|s:52:"modx56f9829a055867.21816248_158d0d9e27b5418.85109283";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}'),
-('vbv1sseh816nidsfa2tb3pu943', 1490083523, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:1;}modx.user.0.resourceGroups|a:1:{s:3:"web";a:0:{}}modx.user.0.attributes|a:1:{s:3:"web";a:5:{s:16:"modAccessContext";a:1:{s:3:"web";a:1:{i:0;a:3:{s:9:"principal";i:0;s:9:"authority";s:1:"0";s:6:"policy";a:1:{s:4:"load";b:1;}}}}s:22:"modAccessResourceGroup";a:0:{}s:17:"modAccessCategory";a:0:{}s:28:"sources.modAccessMediaSource";a:0:{}s:18:"modAccessNamespace";a:0:{}}}modx.mgr.user.token|s:52:"modx56f9829a055867.21816248_158d0dec2e5df78.30805215";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}');
+('mt807vobi6p687h7bhe07itlv5', 1490164365, 'modx.user.contextTokens|a:0:{}');
 
 -- --------------------------------------------------------
 
@@ -3262,7 +3348,7 @@ CREATE TABLE IF NOT EXISTS `modx_site_htmlsnippets` (
   `properties` text,
   `static` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `static_file` varchar(255) NOT NULL DEFAULT ''
-) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `modx_site_htmlsnippets`
@@ -3316,29 +3402,19 @@ INSERT INTO `modx_site_htmlsnippets` (`id`, `source`, `property_preprocess`, `na
 (45, 1, 0, 'SimpleSearchPageTpl', '', 0, 17, 0, '<span class="sisea-page"><a href="[[+link]]">[[+text]]</a>[[+separator]]</span>', 0, 'a:0:{}', 0, ''),
 (46, 1, 0, 'SimpleSearchPageTplActive', '', 0, 17, 0, '<span class="sisea-page sisea-current-page">[[+text]]</span>', 0, 'a:0:{}', 0, ''),
 (47, 1, 0, 'SimpleSearchResult', '', 0, 17, 0, '<div class="sisea-result">\n    <h3>[[+idx]]. <a href="[[+link:is=``:then=`[[~[[+id]]]]`:else=`[[+link]]`]]" title="[[+longtitle]]">[[+pagetitle]]</a></h3>\n    <div class="extract"><p>[[+extract]]</p></div>\n</div>', 0, 'a:0:{}', 0, ''),
-(48, 0, 0, 'baguetteBoxcss', '', 0, 3, 0, ' <link href="[[++assets_url]]templates/Stas/libs/baguetteBox/baguetteBox.min.css" rel="stylesheet">', 0, NULL, 0, ''),
-(49, 1, 0, 'baguetteBoxjs', '', 0, 3, 0, ' <script src="[[++assets_url]]templates/Stas/libs/baguetteBox/baguetteBox.min.js"></script>\n <script type="text/javascript">\n    $(function() {\n        baguetteBox.run(''.gallery'');\n    });\n</script>', 0, 'a:0:{}', 0, ''),
-(50, 1, 0, 'blogListPost', '', 0, 3, 0, '<div class="blogPost">\n<div class="date"></div>\n<h2><a href="[[~[[+id]]]]" title="">[[+pagetitle]]</a></h2>\n<p class="author"><strong>Author:</strong> <span class="author">\n[[+createdby:userinfo=`username`]]</span></p>\n<p class="summary">[[+introtext]]</p>\n<p class="readmore"><a href="[[~[[+id]]]]"><span>Read more</span></a></p>\n<div class="clear"></div>\n</div>\n<hr/>', 0, 'a:0:{}', 0, ''),
-(51, 1, 0, 'Breadcrumb', '', 0, 3, 0, '[[BreadCrumb?\n	&containerTpl=`tpl.Breadcrumb.container`\n	&linkCrumbTpl=`tpl.Breadcrumb.row`\n	&showHomeCrumb=`1`\n]]\n\n', 0, 'a:0:{}', 0, ''),
-(52, 1, 0, 'Content', '', 0, 3, 0, '<div id="content" class="main">\n	[[*id:isnot=`[[++site_start]]`:then=`<h1>[[*longtitle:default=`[[*pagetitle]]`]]</h1>`]]\n	[[*content]]\n</div>', 0, 'a:0:{}', 0, ''),
-(53, 1, 0, 'Content.list', '', 0, 3, 0, '<div id="content" class="main">\n	[[*id:isnot=`[[++site_start]]`:then=`<h1>[[*longtitle:default=`[[*pagetitle]]`]]</h1>`]]\n	[[*content]]\n	[[!getPage?\n		&parents=`[[*id]]`\n		&element=`getResources`\n		&tpl=`tpl.getResources.row`\n		&limit=`5`\n		&pageActiveTpl=`<li[[+activeClasses:default=` class="active"`]]><a[[+activeClasses:default=` class="active"`]][[+title]] href="[[+href]]">[[+pageNo]]</a></li>`\n	]]\n\n	<div class="pagination">\n		<ul>\n			[[!+page.nav]]\n		</ul>\n	</div>\n</div>\n', 0, 'a:0:{}', 0, ''),
-(54, 1, 0, 'Counters', '', 0, 3, 0, '<!-- Javascript code for counting page hits -->\n<!-- For example - Google analitics -->\n', 0, 'a:0:{}', 0, ''),
-(55, 1, 0, 'Header', '', 0, 3, 0, '<!--[[+prelouder]]-->\n\n<header id="[[+headerClass]]">\n  <div class="[[+headerLogo]]">\n    <h3></h3>\n    <p></p></div>\n    <nav class="[[+navClass]]">\n      \n      <ul class="[[+ulClass]]">\n        <li class="menu-item active"><a href="#home" data-scroll="" data-options="{\n          &quot;speed&quot;: 500,\n          &quot;easing&quot;: &quot;easeInOutCubic&quot;,\n          &quot;offset&quot;: 0\n        }">Главная</a></li>\n        \n        \n      </ul>\n    </nav>\n  </header>\n  ', 0, 'a:6:{s:9:"bodyClass";a:7:{s:4:"name";s:9:"bodyClass";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:6:"nohome";s:7:"lexicon";N;s:4:"area";s:0:"";}s:11:"headerClass";a:7:{s:4:"name";s:11:"headerClass";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:4:"home";s:7:"lexicon";N;s:4:"area";s:0:"";}s:10:"headerLogo";a:7:{s:4:"name";s:10:"headerLogo";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:4:"logo";s:7:"lexicon";N;s:4:"area";s:0:"";}s:8:"navClass";a:7:{s:4:"name";s:8:"navClass";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:12:"nav-collapse";s:7:"lexicon";N;s:4:"area";s:0:"";}s:9:"prelouder";a:7:{s:4:"name";s:9:"prelouder";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:530:"<div id="hellopreloader"><div id="hellopreloader_preload"></div></div><script type="text/javascript"> var hellopreloader = document.getElementById("hellopreloader_preload"); function fadeOutnojquery(el){el.style.opacity = 1;var interhellopreloader = setInterval(function(){el.style.opacity = el.style.opacity - 0.05;if (el.style.opacity <=0.05){ clearInterval(interhellopreloader);  hellopreloader.style.display = "none";}},46);}window.onload = function(){setTimeout(function(){fadeOutnojquery(hellopreloader);},3000);};</script> ";s:7:"lexicon";N;s:4:"area";s:0:"";}s:7:"ulClass";a:7:{s:4:"name";s:7:"ulClass";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:32:"list-unstyled list-inline navbar";s:7:"lexicon";N;s:4:"area";s:0:"";}}', 0, ''),
-(56, 1, 0, 'Hidden', '', 0, 3, 0, '<div class=hidden>\n[[!getImageList?\n               &tvname=`hiddeninfo`\n               &tpl=`hiddeninfo`\n               ]]	\n</div>', 0, 'a:0:{}', 0, ''),
-(57, 1, 0, 'Info', '', 0, 3, 0, '<section class="info">\n    <div class="container">\n        <div class="row">\n            <div class="col-md-12">\n               [[!getImageList?\n               &tvname=`opis`\n               &tpl=`opis`\n               ]]\n            </div>\n            \n        </div>\n    </div>\n</section>', 0, 'a:0:{}', 0, ''),
-(58, 1, 0, 'magnific-popupcss', '', 0, 3, 0, ' <link href="[[++assets_url]]templates/Stas/libs/magnific-popup/dist/magnific-popup.css" rel="stylesheet">\n     <link href="[[++assets_url]]templates/Stas/libs/magnific-popup/dist/magnific-custom.css" rel="stylesheet">', 0, 'a:0:{}', 0, ''),
-(59, 1, 0, 'magnific-popupjs', '', 0, 3, 0, ' <script src="[[++assets_url]]templates/Stas/libs/magnific-popup/dist/jquery.magnific-popup.js"></script>\n <script>\n     \n     $(document).ready(function() {\n  \n  $(''.popup-with-move-anim'').magnificPopup({\n    type: ''inline'',\n\n    fixedContentPos: false,\n    fixedBgPos: true,\n\n    overflowY: ''auto'',\n\n    closeBtnInside: true,\n    preloader: false,\n    \n    midClick: true,\n    removalDelay: 300,\n    mainClass: ''my-mfp-slide-bottom''\n  });\n});\n </script>', 0, 'a:0:{}', 0, ''),
-(60, 1, 0, 'Main', '', 0, 3, 0, '<section class="about">\n    <div class="container">\n        <div class="row">\n            <h1 class="center">Наша команда</h1>\n            [[!getImageList?\n    &tvname=`about`\n    &tpl=`about`]]\n    \n        </div>\n    </div>\n</section>\n<section class="search">\n    <div class="container">\n        <div class="row">\n            <div class="col-sm-12">\n                 [[!SimpleSearchForm? &landing=`17` &tpl=`search`]]\n            </div>\n        </div>\n    </div>\n</section>\n<section class="hal">\n    <div class="container">\n        <div class="row">\n            \n            <div class="col-sm-4">\n               <a href="https://clck.yandex.ru/redir/dtype=stred/pid=7/cid=1228/*https://pogoda.yandex.ru/213" target="_blank"><img src="//info.weather.yandex.net/213/2.ru.png?domain=ru" border="0" alt="Яндекс.Погода"/><img width="1" height="1" src="https://clck.yandex.ru/click/dtype=stred/pid=7/cid=1227/*https://img.yandex.ru/i/pix.gif" alt="" border="0"/></a>\n                \n            </div>\n            <div class="col-sm-4">\n                \n            <a href="https://clck.yandex.ru/redir/dtype=stred/pid=7/cid=1228/*https://pogoda.yandex.ru/2" target="_blank"><img src="//info.weather.yandex.net/2/2.ru.png?domain=ru" border="0" alt="Яндекс.Погода"/><img width="1" height="1" src="https://clck.yandex.ru/click/dtype=stred/pid=7/cid=1227/*https://img.yandex.ru/i/pix.gif" alt="" border="0"/></a>\n\n</div>\n<div class="col-sm-4">\n   <!--Kursvalut.com main 220x130 Москва orange-->\n<div class="center" id=''kursvalut-com-informer-main-220x130-moskva-orange-container''>Курс валют предоставлен сайтом <a href=''https://kursvalut.com/'' id=''kursvalut-com-informer-main-220x130-moskva-orange'' title=''Курс валют'' target=''_blank''>kursvalut.com</a></div>\n<script type=''text/javascript''>\n(function() {var iframe = ''<ifr''+''ame src="https://kursvalut.com/informer/inf2/181?color=orange" width="220" height="130" frameborder="0" vspace="0" scrolling="no" hspace="0"></ifr''+''ame>'';var container = document.getElementById(''kursvalut-com-informer-main-220x130-moskva-orange'');container.parentNode.innerHTML = iframe;})();\n</script>\n<noscript><img src=''https://kursvalut.com/static/images/informer/kurs.png'' width=''52'' height=''26'' alt=''kursvalut.com: курс валют в России!'' title=''Курс валют'' border=''0'' /></noscript>\n<!--//Kursvalut.com main 220x130 Москва orange-->\n</div>   \n            \n            \n        </div>\n    </div>\n</section>', 0, 'a:0:{}', 0, ''),
-(61, 1, 0, 'opisanie', '', 0, 3, 0, '\n<section class="services">\n			<div class="container-fluid">\n				<div class="container">\n					<div class="row">\n						[[!getImageList?\n						&tvname=`opisanieinfo`\n						&tpl=`opisanieinfo`\n						]]\n						</div>\n					</div>\n				</div>\n		</section>', 0, 'a:0:{}', 0, ''),
-(62, 1, 0, 'Todc.Carousel', '', 0, 3, 0, '<section class="carousels">\n  <div class="container-fluid">\n      <h1>Добро пожаловать на сайт любителей пауков рода Poecilotheria.</h1>\n    <div class="col-sm-8 col-sm-push-4"> \n      \n      <p>После прохождения регистрации вы сможете прочесть информацию о каждом виде рода, посмотреть качественные фотографии пауков в галерее, задать вопросы и пообщаться с другими пользователями на форуме, опубликовать свою статью в специальном разделе, разместить объявление о покупке или продаже  животных.</p>\n\n<p>Мы надеемся, вам будет интересно и познавательно на нашем сайте, и мы с радостью выслушаем ваши пожелания о работе сервиса.</p>\n\n<p> Для отправки сообщений, отзывов и пожеланий, вы можете воспользоваться формой в низу страницы.</p>\n    </div>\n    <div class="col-sm-4 col-sm-pull-8">\n      \n        [[!Login? &loginTpl=`lgnLoginTpl` &logoutTpl=`lgnLogoutTpl` &errTpl=`lgnErrTpl` &loginResourceId=`1` &logoutResourceId=`1`]]\n      \n    </div>\n  </div>\n</section>\n   ', 0, 'a:0:{}', 0, ''),
-(63, 1, 0, 'Todc.Footer', '', 0, 3, 0, '<section id="contact">\n  <div class="container">\n    <div class="row">\n      <div class="col-md-12">\n        [[!AjaxForm?\n          &snippet=`FormIt`\n          &form=`tpl.AjaxForm.example`\n          &hooks=`email`\n          &emailSubject=`Сообщение с сайта Poecilotheria.ru`\n          &emailTo=`stan19781@gmail.com`\n          &validate=`name:required,email:required,message:required`\n          &validationErrorMessage=`В форме содержатся ошибки!`\n          &successMessage=`Сообщение успешно отправлено`\n        ]]\n      </div>\n    </div>\n  </div>\n</section>', 0, 'a:0:{}', 0, ''),
-(64, 1, 0, 'Todc.Head', '', 0, 3, 0, '<!DOCTYPE html>\n<html lang="ru">\n  <head>\n<base href="[[+site_url]]" />\n  <title>[[*longtitle:default=`[[*pagetitle]]`]] - [[+site_name]]</title>\n    <meta charset="[[+modx_charset]]" />\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">\n    <meta name="description" content="">\n    <meta name="author" content="">\n    <meta property="og:image" content="path/to/image.jpg">\n      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="[[+assets_url]]templates/paychatnia/img/ico/apple-touch-icon-144.png">\n      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="[[+assets_url]]templates/paychatnia/img/ico/apple-touch-icon-114.png">\n      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="[[+assets_url]]templates/paychatnia/img/ico/apple-touch-icon-72.png">\n      <link rel="apple-touch-icon-precomposed" href="[[++assets_url]]templates/paychatnia/img/ico/apple-touch-icon-57.png">\n      <link rel="shortcut icon" href="[[+assets_url]]templates/paychatnia/img/ico/favicon.ico">\n          \n          <style>@@include(''header.min.css'')</style>\n          \n    <script>!function(e){"use strict";function t(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function n(t,n){return e.localStorage&&localStorage[t+"_content"]&&localStorage[t+"_file"]===n}function a(t,a){if(e.localStorage&&e.XMLHttpRequest)n(t,a)?o(localStorage[t+"_content"]):l(t,a);else{var s=r.createElement("link");s.href=a,s.id=t,s.rel="stylesheet",s.type="text/css",r.getElementsByTagName("head")[0].appendChild(s),r.cookie=t}}function l(e,t){var n=new XMLHttpRequest;n.open("GET",t,!0),n.onreadystatechange=function(){4===n.readyState&&200===n.status&&(o(n.responseText),localStorage[e+"_content"]=n.responseText,localStorage[e+"_file"]=t)},n.send()}function o(e){var t=r.createElement("style");t.setAttribute("type","text/css"),r.getElementsByTagName("head")[0].appendChild(t),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e}var r=e.document;e.loadCSS=function(e,t,n){var a,l=r.createElement("link");if(t)a=t;else{var o;o=r.querySelectorAll?r.querySelectorAll("style,link[rel=stylesheet],script"):(r.body||r.getElementsByTagName("head")[0]).childNodes,a=o[o.length-1]}var s=r.styleSheets;l.rel="stylesheet",l.href=e,l.media="only x",a.parentNode.insertBefore(l,t?a:a.nextSibling);var c=function(e){for(var t=l.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};return l.onloadcssdefined=c,c(function(){l.media=n||"all"}),l},e.loadLocalStorageCSS=function(l,o){n(l,o)||r.cookie.indexOf(l)>-1?a(l,o):t(e,"load",function(){a(l,o)})}}(this);</script>\n    \n    <script>\n		loadCSS( "[[++assets_url]]templates/paychatnia/fonts.min.css?ver=1.0.0", false, "all" ); // Loading fonts, if the site is located in a subfolder\n		// loadLocalStorageCSS( "webfonts", "css/fonts.min.css?ver=1.0.0" ); // Loading fonts, if the site is at the root\n	</script>\n	\n	<!--<Deject>--><script>loadCSS( "[[+assets_url]]templates/paychatnia/header.min.css?ver=1.0.0", false, "all" );</script><!--</Deject>-->\n    <script>loadCSS( "[[+assets_url]]templates/paychatnia/main.min.css?ver=1.0.0", false, "all" );</script>\n    <script>loadCSS( "[[+assets_url]]templates/paychatnia/libs/bootstrap/css/bootstrap.css?ver=1.0.0", false, "all" );</script>\n	<script>loadCSS( "[[+assets_url]]templates/paychatnia/libs/photoswipe/dist/photoswipe.css?ver=1.0.0", false, "all" );</script>\n	<script>loadCSS( "[[+assets_url]]templates/paychatnia/libs/photoswipe/dist/default-skin/default-skin.css?ver=1.0.0", false, "all" );</script>\n	<script>loadCSS( "[[+assets_url]]templates/paychatnia/libs/OwlCarousel/owl-carousel/owl.carousel.css?ver=1.0.0", false, "all" );</script>\n	<script>loadCSS( "[[+assets_url]]templates/paychatnia/libs/OwlCarousel/owl-carousel/owl.theme.css?ver=1.0.0", false, "all" );</script>\n	<script>loadCSS( "[[+assets_url]]templates/paychatnia/libs/OwlCarousel/owl-carousel/owl.transitions.css?ver=1.0.0", false, "all" );</script>\n	<script>loadCSS( "[[+assets_url]]templates/paychatnia/libs/font-awesome.css?ver=1.0.0", false, "all" );</script>\n	\n	<noscript>\n		<link rel="stylesheet" href="[[+assets_url]]templates/paychatnia/fonts.min.css">\n		<link rel="stylesheet" href="[[+assets_url]]templates/paychatnia/main.min.css">\n		<link rel="stylesheet" href="[[+assets_url]]templates/paychatnia/libs/bootstrap/css/bootstrap.css">\n		<link rel="stylesheet" href="[[+assets_url]]templates/paychatnia/libs/photoswipe/dist/photoswipe.css">\n		<link rel="stylesheet" href="[[+assets_url]]templates/paychatnia/libs/photoswipe/dist/default-skin/default-skin.css">\n		<link rel="stylesheet" href="[[+assets_url]]templates/paychatnia/libs/OwlCarousel/owl-carousel/owl.carousel.css">\n		<link rel="stylesheet" href="[[+assets_url]]templates/paychatnia/libs/OwlCarousel/owl-carousel/owl.theme.css">\n		<link rel="stylesheet" href="[[+assets_url]]templates/paychatnia/libs/OwlCarousel/owl-carousel/owl.transitions.css">\n		<link rel="stylesheet" href="[[+assets_url]]templates/paychatnia/libs/font-awesome.css">\n	</noscript>\n	\n	\n	<meta name="theme-color" content="#000">\n\n	<meta name="msapplication-navbutton-color" content="#000">\n	\n	<meta name="apple-mobile-web-app-status-bar-style" content="#000">\n        \n        \n </head>\n  <body class="[[+bodyClass]]">\n', 0, 'a:5:{s:10:"assets_url";a:7:{s:4:"name";s:10:"assets_url";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:16:"[[++assets_url]]";s:7:"lexicon";N;s:4:"area";s:0:"";}s:9:"bodyClass";a:7:{s:4:"name";s:9:"bodyClass";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:4:"home";s:7:"lexicon";N;s:4:"area";s:0:"";}s:12:"modx_charset";a:7:{s:4:"name";s:12:"modx_charset";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:18:"[[++modx_charset]]";s:7:"lexicon";N;s:4:"area";s:0:"";}s:9:"site_name";a:7:{s:4:"name";s:9:"site_name";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:15:"[[++site_name]]";s:7:"lexicon";N;s:4:"area";s:0:"";}s:8:"site_url";a:7:{s:4:"name";s:8:"site_url";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:14:"[[++site_url]]";s:7:"lexicon";N;s:4:"area";s:0:"";}}', 0, ''),
-(65, 1, 0, 'Todc.Navbar', '', 0, 3, 0, '<nav class="navbar navbar-default">\n  <div class="container-fluid">\n    <div class="navbar-header">\n      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">\n        <span class="sr-only">Toggle navigation</span>\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n      </button>\n    </div>\n    <div id="navbar" class="navbar-collapse collapse">\n      <ul class="nav navbar-nav">\n        [[Wayfinder?\n          &startId=`0`\n          &level=`1`\n          &outerTpl=`tpl.Wayfinder.outer`\n          &parentRowTpl=`tpl.Wayfinder.row.parent`\n          &innerRowTpl=`tpl.Wayfinder.row.inner`\n          &rowTpl=`tpl.Wayfinder.row`\n        ]]\n      </ul>\n    </div>\n  </div>\n</nav>', 0, 'a:0:{}', 0, ''),
-(66, 1, 0, 'Todc.Scripts', '', 0, 3, 0, '<script>var scr = {"scripts":[\n		{"src" : "[[+assets_url]]templates/paychatnia/js/libs.min.js", "async" : false},\n		{"src" : "[[+assets_url]]templates/paychatnia/js/common.js", "async" : false},\n		{"src" : "[[+assets_url]]templates/paychatnia/js/smooth-scroll.js", "async" : false},\n		{"src" : "[[+assets_url]]templates/paychatnia/js/fastclick.js", "async" : false},\n		{"src" : "[[+assets_url]]templates/paychatnia/js/responsive-nav.js", "async" : false},\n		{"src" : "[[+assets_url]]templates/paychatnia/js/fixed-responsive-nav.js", "async" : false},\n		{"src" : "[[+assets_url]]templates/paychatnia/js/bootstrap.js", "async" : false},\n		{"src" : "[[+assets_url]]templates/paychatnia/libs/animate/animate-css.js", "async" : false},\n		{"src" : "[[+assets_url]]templates/paychatnia/libs/photoswipe/dist/photoswipe.min.js", "async" : false},\n		{"src" : "[[+assets_url]]templates/paychatnia/libs/photoswipe/dist/photoswipe-ui-default.min.js", "async" : false},\n		{"src" : "[[+assets_url]]templates/paychatnia/libs/OwlCarousel/owl-carousel/owl.carousel.js", "async" : false}\n		]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);\n	</script>\n\n</body>\n</html>', 0, 'a:1:{s:10:"assets_url";a:7:{s:4:"name";s:10:"assets_url";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:16:"[[++assets_url]]";s:7:"lexicon";N;s:4:"area";s:0:"";}}', 0, ''),
-(68, 1, 0, 'tpl.Wayfinder.outer', '', 0, 3, 0, '[[+wf.wrapper]]\n', 0, 'a:0:{}', 0, ''),
-(69, 1, 0, 'tpl.Wayfinder.row', '', 0, 3, 0, '<li [[+wf.classes]]>\n	<a href="[[+wf.link]]" [[+wf.attributes]]>[[+wf.linktext]]</a>\n	[[+wf.wrapper]]\n</li>\n', 0, 'a:0:{}', 0, ''),
-(70, 1, 0, 'tpl.Wayfinder.row.inner', '', 0, 3, 0, '<li [[+wf.classes]]>\n	<a href="[[+wf.link]]" [[+wf.attributes]]>[[+wf.linktext]]</a>\n	[[+wf.wrapper]]\n</li>\n', 0, 'a:0:{}', 0, ''),
-(71, 1, 0, 'tpl.Wayfinder.row.parent', '', 0, 3, 0, '<li class="[[+wf.classnames]] dropdown">\n	<a href="#" title="[[+wf.title]]" class="dropdown-toggle" data-toggle="dropdown" [[+wf.attributes]]>\n		[[+wf.linktext]] \n		<b class="caret"></b>\n	</a>\n	<ul class="dropdown-menu">\n		[[+wf.wrapper]]\n	</ul>\n</li>\n', 0, 'a:0:{}', 0, '');
+(50, 1, 0, 'blogListPost', '', 0, 7, 0, '<div class="blogPost">\n<div class="date"></div>\n<h2><a href="[[~[[+id]]]]" title="">[[+pagetitle]]</a></h2>\n<p class="author"><strong>Author:</strong> <span class="author">\n[[+createdby:userinfo=`username`]]</span></p>\n<p class="summary">[[+introtext]]</p>\n<p class="readmore"><a href="[[~[[+id]]]]"><span>Read more</span></a></p>\n<div class="clear"></div>\n</div>\n<hr/>', 0, 'a:0:{}', 0, ''),
+(51, 1, 0, 'Breadcrumb', '', 0, 22, 0, '[[BreadCrumb?\n	&containerTpl=`tpl.Breadcrumb.container`\n	&linkCrumbTpl=`tpl.Breadcrumb.row`\n	&showHomeCrumb=`1`\n]]\n\n', 0, 'a:0:{}', 0, ''),
+(52, 1, 0, 'Content', '', 0, 22, 0, '<div id="content" class="main">\n	[[*id:isnot=`[[++site_start]]`:then=`<h1>[[*longtitle:default=`[[*pagetitle]]`]]</h1>`]]\n	[[*content]]\n</div>', 0, 'a:0:{}', 0, ''),
+(53, 1, 0, 'Content.list', '', 0, 22, 0, '<div id="content" class="main">\n	[[*id:isnot=`[[++site_start]]`:then=`<h1>[[*longtitle:default=`[[*pagetitle]]`]]</h1>`]]\n	[[*content]]\n	[[!getPage?\n		&parents=`[[*id]]`\n		&element=`getResources`\n		&tpl=`tpl.getResources.row`\n		&limit=`5`\n		&pageActiveTpl=`<li[[+activeClasses:default=` class="active"`]]><a[[+activeClasses:default=` class="active"`]][[+title]] href="[[+href]]">[[+pageNo]]</a></li>`\n	]]\n\n	<div class="pagination">\n		<ul>\n			[[!+page.nav]]\n		</ul>\n	</div>\n</div>\n', 0, 'a:0:{}', 0, ''),
+(54, 1, 0, 'Counters', '', 0, 22, 0, '<!-- Javascript code for counting page hits -->\n<!-- For example - Google analitics -->\n', 0, 'a:0:{}', 0, ''),
+(64, 1, 0, 'Head', '', 0, 3, 0, '<!DOCTYPE html>\n<html lang="ru">\n\n<head>\n    \n    <base href="[[+site_url]]" />\n	<meta charset="[[+modx_charset]]" />\n\n	<title>[[*longtitle:default=`[[*pagetitle]]`]] - [[+site_url]]</title>\n	<meta name="description" content="">\n\n	<meta http-equiv="X-UA-Compatible" content="IE=edge">\n	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">\n\n	<meta property="og:image" content="path/to/image.jpg">\n	<link rel="shortcut icon" href="[[+assets_url]]templates/Stas/app/img/favicon/favicon.ico" type="image/x-icon">\n	<link rel="apple-touch-icon" href="[[+assets_url]]templates/Stas/app/img/favicon/apple-touch-icon.png">\n	<link rel="apple-touch-icon" sizes="72x72" href="[[+assets_url]]templates/Stas/app/img/favicon/apple-touch-icon-72x72.png">\n	<link rel="apple-touch-icon" sizes="114x114" href="[[+assets_url]]templates/Stas/app/img/favicon/apple-touch-icon-114x114.png">\n\n	<!-- Chrome, Firefox OS and Opera -->\n	<meta name="theme-color" content="#000">\n	<!-- Windows Phone -->\n	<meta name="msapplication-navbutton-color" content="#000">\n	<!-- iOS Safari -->\n	<meta name="apple-mobile-web-app-status-bar-style" content="#000">\n\n	<!--<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #151515; }</style>-->\n\n</head>\n', 0, 'a:5:{s:10:"assets_url";a:7:{s:4:"name";s:10:"assets_url";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:16:"[[++assets_url]]";s:7:"lexicon";N;s:4:"area";s:0:"";}s:9:"bodyClass";a:7:{s:4:"name";s:9:"bodyClass";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:4:"home";s:7:"lexicon";N;s:4:"area";s:0:"";}s:12:"modx_charset";a:7:{s:4:"name";s:12:"modx_charset";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:18:"[[++modx_charset]]";s:7:"lexicon";N;s:4:"area";s:0:"";}s:9:"site_name";a:7:{s:4:"name";s:9:"site_name";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:15:"[[++site_name]]";s:7:"lexicon";N;s:4:"area";s:0:"";}s:8:"site_url";a:7:{s:4:"name";s:8:"site_url";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:14:"[[++site_url]]";s:7:"lexicon";N;s:4:"area";s:0:"";}}', 0, ''),
+(65, 1, 0, 'Todc.Navbar', '', 0, 22, 0, '<nav class="navbar navbar-default">\n  <div class="container-fluid">\n    <div class="navbar-header">\n      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">\n        <span class="sr-only">Toggle navigation</span>\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n      </button>\n    </div>\n    <div id="navbar" class="navbar-collapse collapse">\n      <ul class="nav navbar-nav">\n        [[Wayfinder?\n          &startId=`0`\n          &level=`1`\n          &outerTpl=`tpl.Wayfinder.outer`\n          &parentRowTpl=`tpl.Wayfinder.row.parent`\n          &innerRowTpl=`tpl.Wayfinder.row.inner`\n          &rowTpl=`tpl.Wayfinder.row`\n        ]]\n      </ul>\n    </div>\n  </div>\n</nav>', 0, 'a:0:{}', 0, ''),
+(66, 1, 0, 'Scripts', '', 0, 3, 0, '<link rel="stylesheet" href="[[+assets_url]]templates/Stas/app/css/main.min.css">\n<script src="[[+assets_url]]templates/Stas/app/js/scripts.min.js"></script>', 0, 'a:1:{s:10:"assets_url";a:7:{s:4:"name";s:10:"assets_url";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:16:"[[++assets_url]]";s:7:"lexicon";N;s:4:"area";s:0:"";}}', 0, ''),
+(72, 1, 0, 'Body', '', 0, 3, 0, '<body>\n\n\n	[[$Scripts]]\n\n</body>\n</html>\n', 0, 'a:0:{}', 0, ''),
+(68, 1, 0, 'tpl.Wayfinder.outer', '', 0, 21, 0, '[[+wf.wrapper]]\n', 0, 'a:0:{}', 0, ''),
+(69, 1, 0, 'tpl.Wayfinder.row', '', 0, 21, 0, '<li [[+wf.classes]]>\n	<a href="[[+wf.link]]" [[+wf.attributes]]>[[+wf.linktext]]</a>\n	[[+wf.wrapper]]\n</li>\n', 0, 'a:0:{}', 0, ''),
+(70, 1, 0, 'tpl.Wayfinder.row.inner', '', 0, 21, 0, '<li [[+wf.classes]]>\n	<a href="[[+wf.link]]" [[+wf.attributes]]>[[+wf.linktext]]</a>\n	[[+wf.wrapper]]\n</li>\n', 0, 'a:0:{}', 0, ''),
+(71, 1, 0, 'tpl.Wayfinder.row.parent', '', 0, 21, 0, '<li class="[[+wf.classnames]] dropdown">\n	<a href="#" title="[[+wf.title]]" class="dropdown-toggle" data-toggle="dropdown" [[+wf.attributes]]>\n		[[+wf.linktext]] \n		<b class="caret"></b>\n	</a>\n	<ul class="dropdown-menu">\n		[[+wf.wrapper]]\n	</ul>\n</li>\n', 0, 'a:0:{}', 0, '');
 
 -- --------------------------------------------------------
 
@@ -3600,7 +3676,7 @@ INSERT INTO `modx_site_templates` (`id`, `source`, `property_preprocess`, `templ
 (2, 0, 0, 'Blogit container', 'Blogit - Created by MPThemes http://mpthemes.com', 0, 7, '', 0, '<!DOCTYPE html>\r\n<html lang="en">\r\n<head>\r\n	<base href="[[++site_url]]" />\r\n        <meta charset="[[++modx_charset:lcase]]" />\r\n        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">\r\n        <title>[[*longtitle:strip_tags:empty=`[[*pagetitle:strip_tags]]`]] | [[++site_name:strip_tags]]</title>\r\n        <meta name="description" content="[[*description:notempty=`[[*description]]`:default=`[[+content:ellipsis=`155`]]`]]">\r\n        <meta name="viewport" content="width=device-width, initial-scale=1">\r\n</head>\r\n<body>\r\n	[[*content]]\r\n	<!-- BlogIt - This chunk grabs all children of the resource. -->\r\n	[[$blogit.get_posts]]\r\n	<!-- BlogIt - This chunk grabs all uses Tagger tags used in posts -->\r\n	[[$blogit.taglist]]\r\n</body>\r\n</html>', 0, NULL, 0, ''),
 (3, 0, 0, 'Blogit post', 'Blogit - Created by MPThemes http://mpthemes.com', 0, 7, '', 0, '<!DOCTYPE html>\r\n<html lang="en">\r\n<head>\r\n	<base href="[[++site_url]]" />\r\n        <meta charset="[[++modx_charset:lcase]]" />\r\n        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">\r\n        <title>[[*longtitle:strip_tags:empty=`[[*pagetitle:strip_tags]]`]] | [[++site_name:strip_tags]]</title>\r\n        <meta name="description" content="[[*description:notempty=`[[*description]]`:default=`[[+content:ellipsis=`155`]]`]]">\r\n        <meta name="viewport" content="width=device-width, initial-scale=1">\r\n</head>\r\n<body>\r\n	[[blogit.lexicon_load]]\r\n	<p><a href="[[~[[*parent]]]]">[[%blogit.back_to_overview]]</a></p>\r\n	<article>\r\n		<header>\r\n			<h1>[[*longtitle:strip_tags:empty=`[[*pagetitle:strip_tags]]`]]</h1>\r\n		</header>\r\n		[[*blogit.post_main_image:isnot=``:then=`<img src="[[*blogit.post_main_image:phpthumbof=`w=[[++blogit.main_image_width]]`]]" alt="[[*blogit.post_main_image_alt]]">`]]\r\n		[[*content]]\r\n		<footer>\r\n			<small>[[%blogit.published_on]]: <time datetime="[[*publishedon:strtotime:date=`%y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d %Y`]]</time></small><br>\r\n			<small>[[%blogit.created_by]]: [[*createdby:userinfo=`username`]]</small><br>\r\n			[[++blogit.use_tags:isequalto=`1`:then=`\r\n			<small>Tags: [[!TaggerGetTags? &resources=`[[*id]]` &rowTpl=`blogit.tag_links_tpl` &separator=`, ` &target=`[[++blogit.blog_container_id]]`]]</small>\r\n			`]]\r\n		</footer>\r\n	</article>\r\n</body>\r\n</html>', 0, NULL, 0, ''),
 (4, 1, 0, 'Forgot Password', '', 0, 0, '', 0, '<!DOCTYPE html>\n<html lang="ru">\n  <head>\n    [[$Todc.Head]]\n  </head>\n  <body>\n    <header>\n      [[$Header]]\n    </header>\n    <section class="forgot">\n      [[!ForgotPassword? &resetResourceId=`12` &tpl=`lgnForgotPassTpl`]]\n    </section>   	\n    [[$Todc.Scripts?]]\n  </body>\n</html>', 0, 'a:0:{}', 0, ''),
-(6, 1, 0, 'Главная страница', '', 0, 0, '', 0, '<!DOCTYPE html>\n<html lang="ru">\n\n<head>\n\n	<meta charset="utf-8">\n\n	<title>Smitler</title>\n	<meta name="description" content="">\n\n	<meta http-equiv="X-UA-Compatible" content="IE=edge">\n	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">\n\n	<meta property="og:image" content="path/to/image.jpg">\n	<link rel="shortcut icon" href="assets/templates/Stas/app/img/favicon/favicon.ico" type="image/x-icon">\n	<link rel="apple-touch-icon" href="assets/templates/Stas/app/img/favicon/apple-touch-icon.png">\n	<link rel="apple-touch-icon" sizes="72x72" href="assets/templates/Stas/app/img/favicon/apple-touch-icon-72x72.png">\n	<link rel="apple-touch-icon" sizes="114x114" href="assets/templates/Stas/app/img/favicon/apple-touch-icon-114x114.png">\n\n	<!-- Chrome, Firefox OS and Opera -->\n	<meta name="theme-color" content="#000">\n	<!-- Windows Phone -->\n	<meta name="msapplication-navbutton-color" content="#000">\n	<!-- iOS Safari -->\n	<meta name="apple-mobile-web-app-status-bar-style" content="#000">\n\n	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #151515; }</style>\n\n</head>\n\n<body>\n\n\n	<link rel="stylesheet" href="assets/templates/Stas/app/css/main.min.css">\n	<script src="assets/templates/Stas/app/js/scripts.min.js"></script>\n\n</body>\n</html>\n\n', 0, 'a:0:{}', 0, ''),
+(6, 1, 0, 'Главная страница', '', 0, 0, '', 0, '[[$Head]]\n[[$Body]]\n', 0, 'a:1:{s:10:"assets_url";a:7:{s:4:"name";s:10:"assets_url";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:20:"[[+site_url]]assets/";s:7:"lexicon";N;s:4:"area";s:0:"";}}', 0, ''),
 (7, 1, 0, 'Результаты поиска', '', 0, 0, '', 0, '<!DOCTYPE html>\n<html lang="ru">\n  <head>\n    [[$Todc.Head]]\n  </head>\n  <body>\n    <header>\n      [[$Header]]\n    </header>\n    <section class="search-all">\n      <div class="container">\n        <div class="row">\n          <div class="col-md-12">\n            [[!SimpleSearch? \n              &tpl=`SimpleSearchResult` \n              &containerTpl=`SimpleSearchOuter` \n              &pageTpl=`SimpleSearchPageTpl` \n              &currentPageTpl=`SimpleSearchPageTplActive` \n              &includeTVs=`1` \n              &processTVs=`1`\n            ]]\n            [[!SimpleSearchForm? \n              &landing=`17` \n              &tpl=`search`\n            ]]\n          </div>\n        </div>\n      </div>\n    </section>		\n  [[$Todc.Scripts?]]\n  </body>\n</html>', 0, 'a:0:{}', 0, ''),
 (9, 1, 0, 'Подтверждение регистрации', '', 0, 0, '', 0, '<!DOCTYPE html>\n<html lang="ru">\n  <head>\n    [[$Todc.Head]]\n  </head>\n  <body>\n    <header>\n      [[$Header]]\n    </header>\n    <section class="podreg">  \n      <p> Подтвердите свою регистрацию на почте </p>\n    </section>\n    [[$Todc.Scripts?]]\n  </body>\n</html>', 0, 'a:0:{}', 0, ''),
 (10, 1, 0, 'Регистрация', '', 0, 0, '', 0, '<!DOCTYPE html>\n<html lang="ru">\n  <head>\n    [[$Todc.Head]]\n  </head>\n  <body>\n    <header>\n      [[$Header]]\n    </header>\n    <section class="reg">  \n      <h3>Регистрация пользователя.</h3>\n      [[!Register?\n        &submitVar=`registerbtn`\n        &activationResourceId=`15`\n        &activationEmailTpl=`myActivationEmailTpl`\n        &activationEmailSubject=`Спасибо за регистрацию!`\n        &submittedResourceId=`14`\n        &usergroups=`Пользователь`\n        &validate=`nospam:blank,\n          username:required:minLength=^3^,\n          password:required:minLength=^6^,\n          password_confirm:password_confirm=^password^,\n          email:required:email`\n        &placeholderPrefix=`reg.`\n      ]]\n      <div class="register">\n        <div class="registerMessage">[[!+reg.error.message]]</div>\n        <form class="form" action="[[~[[*id]]]]" method="post">\n          <input type="hidden" name="nospam" value="[[!+reg.nospam]]" />\n          <label for="username">[[%register.username? &namespace=`login` &topic=`register`]]\n          <span class="error">[[!+reg.error.username]]</span>\n          </label>\n          <input type="text" name="username"  id="username" value="[[!+reg.username]]" />\n          <label for="password">[[%register.password]]\n          <span class="error">[[!+reg.error.password]]</span>\n          </label>\n          <input type="password" name="password" id="password" value="[[!+reg.password]]" />\n          <label for="password_confirm">[[%register.password_confirm]]\n          <span class="error">[[!+reg.error.password_confirm]]</span>\n          </label>\n          <input type="password" name="password_confirm" id="password_confirm" value="[[!+reg.password_confirm]]" />\n          <label for="fullname">[[%register.fullname]]\n          <span class="error">[[!+reg.error.fullname]]</span>\n          </label>\n          <input type="text" name="fullname" id="fullname" value="[[!+reg.fullname]]" />\n          <label for="email">[[%register.email]]\n          <span class="error">[[!+reg.error.email]]</span>\n          </label>\n          <input type="text" name="email" id="email" value="[[!+reg.email]]" />\n        <br class="clear" />\n          <div class="form-buttons">\n            <input class="sub" type="submit" name="registerbtn" value="Зарегистрироваться" />\n          </div>\n        </form>\n      </div>\n    </section>     \n    [[$Todc.Scripts?]]\n  </body>\n</html>', 0, 'a:0:{}', 0, ''),
@@ -4574,7 +4650,7 @@ CREATE TABLE IF NOT EXISTS `modx_user_attributes` (
 --
 
 INSERT INTO `modx_user_attributes` (`id`, `internalKey`, `fullname`, `email`, `phone`, `mobilephone`, `blocked`, `blockeduntil`, `blockedafter`, `logincount`, `lastlogin`, `thislogin`, `failedlogincount`, `sessionid`, `dob`, `gender`, `address`, `country`, `city`, `state`, `zip`, `fax`, `photo`, `comment`, `website`, `extended`) VALUES
-(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 88, 1490082274, 1490083522, 0, 'vbv1sseh816nidsfa2tb3pu943', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
+(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 90, 1490160560, 1490160615, 0, '66l3ejp5ek9d0lbh3je09c4822', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
 (5, 21, 'Елена', 'El.v.grach@gmail.com', '', '', 0, 0, 0, 2, 1462557837, 1463385057, 0, '875e8b21d41ee290402eb98fb8c389f8', 0, 0, '', '', '', '', '', '', '', '', '', '[]'),
 (6, 22, 'Владимир', 'vova.karabok.02@mail.ru', '', '', 0, 0, 0, 1, 0, 1463421916, 0, 'd9d0b90b26e0a8a18db0f838d8bc16b5', 0, 0, '', '', '', '', '', '', '', '', '', '[]');
 
@@ -5602,7 +5678,7 @@ ALTER TABLE `modx_actions_fields`
 -- AUTO_INCREMENT для таблицы `modx_categories`
 --
 ALTER TABLE `modx_categories`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT для таблицы `modx_class_map`
 --
@@ -5712,7 +5788,7 @@ ALTER TABLE `modx_lexicon_entries`
 -- AUTO_INCREMENT для таблицы `modx_manager_log`
 --
 ALTER TABLE `modx_manager_log`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1193;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1275;
 --
 -- AUTO_INCREMENT для таблицы `modx_media_sources`
 --
@@ -5787,7 +5863,7 @@ ALTER TABLE `modx_site_content`
 -- AUTO_INCREMENT для таблицы `modx_site_htmlsnippets`
 --
 ALTER TABLE `modx_site_htmlsnippets`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=73;
 --
 -- AUTO_INCREMENT для таблицы `modx_site_plugins`
 --
